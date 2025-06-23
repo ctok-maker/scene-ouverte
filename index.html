@@ -1,23 +1,1927 @@
 
     <!DOCTYPE html>
-    <html>
+    <html lang="fr">
     <head>
       <meta charset="UTF-8">
       <title>Scène ouverte</title>
       <style>
-        body { font-family: sans-serif; padding: 2em; background: #f9f9f9; }
-        table { border-collapse: collapse; width: 100%; }
-        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-        th { background-color: #eee; }
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f5f5f5;
+          padding: 2em;
+        }
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          background-color: #fff;
+        }
+        th, td {
+          padding: 10px;
+          border: 1px solid #ddd;
+        }
+        th {
+          background-color: #eee;
+        }
+        td.link-cell a {
+          color: #1a0dab;
+          text-decoration: underline;
+        }
+        td.number-cell {
+          color: #000;
+        }
+        @media (max-width: 600px) {
+          table, th, td {
+            font-size: 14px;
+          }
+        }
       </style>
     </head>
     <body>
-      <h1>Données de la feuille "Général"</h1>
+      <h1>Répertoire Général</h1>
       <table>
-        <thead><tr><th>on</th><th></th><th>Titres </th><th>Chapitre</th><th>Version</th><th>Tona</th><th>transpo
-opérée / YouTube</th><th>Tempo</th><th>Liens YouTube</th><th></th><th></th></tr></thead>
+        <thead>
+          <tr>
+            <th>Titres </th>
+            <th>Chapitre</th>
+          </tr>
+        </thead>
         <tbody>
-          <tr><td>off</td><td></td><td>A l’ombre des maris</td><td>2014</td><td>Georges Brassens</td><td></td><td></td><td>104</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>A nos souvenirs</td><td>205</td><td>3 cafés gourmands</td><td>D</td><td>-2</td><td>138</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>A Paris</td><td>1132</td><td>Yves Montand</td><td>Dm</td><td>0</td><td>84</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>A tes seins</td><td>300</td><td>Real Book</td><td>G</td><td>0</td><td>104</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>A Toi</td><td>284</td><td>Joe Dassin</td><td>Am</td><td>0</td><td>128</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>absent L’</td><td>1081 – 293</td><td>Gilbert Bécaud</td><td>A</td><td>0</td><td>112</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>accordéoniste L’</td><td>3142</td><td>Edith Piaf</td><td>Am</td><td>+2</td><td>72x3</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Ah le petit vin blanc</td><td>3007</td><td>Lina Margy</td><td>C</td><td>-5</td><td>75</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>ai se eu te pego</td><td>44</td><td>Michel Teló</td><td>G</td><td>-4</td><td>100</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>aigle noir L'</td><td>1058</td><td>Barbara</td><td>F</td><td>0</td><td>69</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Aimer à perdre la raison</td><td>293 / 1005</td><td>Jean Ferrat</td><td>A</td><td>+3</td><td>88</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Ain't no sunshin</td><td>135</td><td>Bill Wither</td><td>Am</td><td>0</td><td>144</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Aline</td><td>209</td><td>Christophe</td><td>G</td><td>-5</td><td>60</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>All along the watch Tower</td><td>100</td><td>Jimi Hendrix</td><td>Dm</td><td>+2</td><td>84</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>All of Me</td><td></td><td>Real Book</td><td>C</td><td>-7</td><td>152</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>All The Things You Are</td><td></td><td>Real Book</td><td>F</td><td>-4</td><td>122</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Allo Maman Bobo</td><td>216</td><td>Alain Souchon</td><td>F</td><td>-2</td><td>112</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Allumer le feu</td><td>145</td><td>Johnny Hallyday</td><td>Bm</td><td>+2</td><td>152</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Always Remembers Us This Way</td><td>75</td><td>Lady Gaga</td><td>C</td><td>0</td><td>66</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Amado Mio</td><td>125</td><td>Pink Martini</td><td>Dm</td><td>+5</td><td>126</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>amants d’un jour Les</td><td>3156</td><td>Edith Piaf</td><td>Am</td><td>+2</td><td>152</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>amour ça fait passer le temps L'</td><td>191</td><td>Marcel Amont</td><td>A</td><td>-3</td><td>100</td><td>Youtube</td><td>gr</td><td>faire grille</td></tr><tr><td>off</td><td></td><td>Amour en Fuite L'</td><td>20</td><td>Alain Souchon</td><td>Am</td><td>-5</td><td>84</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>amour est un bouquet de violettes L'</td><td>3197</td><td>Luis Mariano</td><td>C</td><td>-3</td><td>184</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Amoureux de ma femme</td><td>17</td><td>Richard Anthonny</td><td>Em</td><td>-3</td><td>132</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Amsterdam</td><td>293</td><td>Jacques Brel</td><td>Em</td><td>-2</td><td>56</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Anamour L'</td><td>200</td><td>Serge Gainsbourg</td><td>G</td><td>+5</td><td>96</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Aragon et Castille</td><td>293</td><td>Boby Lapointe</td><td>C</td><td>0</td><td>144</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Armstrong</td><td>201</td><td>Claude Nougaro</td><td>Gm</td><td>0</td><td>116</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Arrêtez les aiguilles</td><td>3052</td><td>Berthe Sylva</td><td>F</td><td>+3</td><td>132</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>au bal de l'amour</td><td>3102</td><td>Tino Rossi</td><td>C</td><td>-4</td><td>176</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Au bord de la Tiretaine</td><td>3182</td><td>Jean Maupoint</td><td>A</td><td>0</td><td></td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Au Café des Délices</td><td>6</td><td>Patrick Bruel</td><td>Em</td><td>0</td><td>168</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Auprès de mon arbre</td><td>293 / 2027</td><td>Georges Brassens</td><td>C</td><td>+1</td><td>126</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Autumn Leaves</td><td></td><td>Real Book</td><td>G</td><td>+5</td><td></td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Avant de nous dire adieu</td><td>250</td><td>Jeane Manson</td><td>Em</td><td>0</td><td>92</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Avec les filles je ne sais pas</td><td>30</td><td>Philippe Lavil</td><td>Bm</td><td>+3</td><td>126</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Aventurier (L')</td><td>55</td><td>Indochine</td><td>Am</td><td>+1</td><td>168</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Back in USSR</td><td>100</td><td>The Beatles</td><td>A</td><td>0</td><td>144</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Bahia</td><td></td><td>Véronique Sanson</td><td>Am</td><td>0</td><td>116</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Ballade de Jim (La)</td><td>145</td><td>Alain Souchon</td><td>Eb</td><td>0</td><td>132</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>ballade des gens heureux La</td><td>59</td><td>Gérard Lenorman</td><td>C</td><td>-5</td><td>126</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Ballade Nord Irlandaise La</td><td>260</td><td>Renaud</td><td>C</td><td>-5</td><td>120</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>bals populaires Les</td><td>3</td><td>Michel Sardou</td><td>G</td><td>-1</td><td>108</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Bamba La</td><td>62</td><td>Los Bobos</td><td>C</td><td>0</td><td>152</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Bambino</td><td>3172</td><td>Dalida</td><td>C</td><td>+3</td><td>160</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Be Bop a Lula</td><td>100</td><td>Johnny Hallyday</td><td>E</td><td>0</td><td>126</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Beautiful that way</td><td>213</td><td>Noa</td><td>E</td><td>0</td><td>132</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Before you accuse me</td><td>100</td><td>Eric Clapton</td><td>E</td><td>0</td><td>108</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Believe</td><td>115</td><td>Cher</td><td>G</td><td>0</td><td>132</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Belle</td><td>251</td><td>Notre Dame de Paris</td><td>Am</td><td>-5</td><td>80</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Belle Belle Belle</td><td>4</td><td>Claude François</td><td>G</td><td>-1</td><td>176</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Belle La</td><td>203</td><td>Louis Chedid</td><td>Am</td><td>0</td><td>100</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>belle vie La</td><td>284</td><td>Sacha Distel</td><td>G</td><td>-2</td><td>116</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Bensonhurst Blues</td><td>288</td><td>Oscar Benton</td><td>Bbm</td><td>+1</td><td>112</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Berry Blues</td><td>PC</td><td>Les Charlots</td><td>C</td><td>0</td><td>192</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Besame Mucho</td><td>3001</td><td>Consuelo Velazquez</td><td>Dm</td><td>2</td><td>116</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Black Magic Woman</td><td>100</td><td>Santana</td><td>Bm</td><td>-3</td><td>126</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Black Orpheus</td><td></td><td>Real Book</td><td>Am</td><td>0</td><td>126</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Black Trombone</td><td>76</td><td>Serge Gainsbourg</td><td>C</td><td>0</td><td>126</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Blues du Businessman Le</td><td>261</td><td>Starmania</td><td>Bm</td><td>+5</td><td>138</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Bohème La</td><td>293 / 1066</td><td>Charles Aznavour</td><td>Dm</td><td>+4</td><td>116</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Bombe Humaine La</td><td>43</td><td>Téléphone</td><td>A</td><td>0</td><td>112</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Bonne du Curé La</td><td>74</td><td>Annie Cordy</td><td>C</td><td>+3</td><td>96</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Born to be wild (easy rider)</td><td>135</td><td>Steppenwolf</td><td>A</td><td>0</td><td>144</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>boudeuse La</td><td>3048</td><td>Tino Rossi</td><td>D</td><td>0</td><td>176</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Boum</td><td>3118</td><td>Charles Trenet</td><td>C</td><td>-2</td><td>100</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Braconne La</td><td>203</td><td>Serge Lama</td><td>C</td><td>0</td><td>72</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Brand New Cadillac</td><td>100</td><td>the clash</td><td>E</td><td>0</td><td>152</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Brave Margot</td><td>2068</td><td>Georges Brassens</td><td>D</td><td>+2</td><td>126</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Bridge Over Trouble Water</td><td></td><td>simon and garfunkel</td><td>A</td><td>+6</td><td>84</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Bruxelles</td><td>288</td><td>Dick Annegarn</td><td>E</td><td>0</td><td>120</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Bruyères Corréziennes</td><td>3186</td><td>Jean Ségurel</td><td>G</td><td>+5</td><td>69</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>bulletin de santé Le</td><td>2046</td><td>Georges Brassens</td><td>A</td><td>0</td><td>120</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>C'est Beau La Vie</td><td>34</td><td>Jean Ferra</td><td>C</td><td>0</td><td>76</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>C’est comme ça que je t’aime</td><td>252</td><td>Mike Brandt</td><td>D</td><td>-6</td><td>66</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>C'est Extra</td><td>253</td><td>Léo Férré</td><td>C</td><td>-4</td><td>66</td><td>Youtube</td><td>gr</td><td>transpo A</td></tr><tr><td>off</td><td></td><td>C'est la vie, fais la belle</td><td>145</td><td>Eddy Mitchell</td><td>C</td><td>0</td><td>152</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>C'est ma Vie</td><td>205</td><td>Salvatore Adamo</td><td>D</td><td>+7</td><td>92</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>C'est un mauvais garçon</td><td>3078</td><td>Henri Garat</td><td>Fm</td><td>0</td><td>66</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Ça c’est vraiment toi</td><td>19</td><td>Téléphone</td><td>C</td><td>-4</td><td>138</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Ça je ne l'ai jamais vu</td><td>204</td><td>graeme allwright</td><td>C</td><td>-2</td><td>132</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Cactus Les</td><td>37</td><td>Jacques Dutronc</td><td>A</td><td>+5</td><td>124</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Can You Feel the Love Tonight</td><td></td><td>Elton John</td><td>C</td><td>-3</td><td>66</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Can't Help Falling In Love</td><td>208</td><td>Elvis Presley</td><td>C</td><td>-2</td><td>200</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Carillon d'Alsace</td><td></td><td>André Verchuren</td><td>F</td><td>0</td><td>200</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Carioca</td><td></td><td>Les Nuls</td><td>E</td><td>0</td><td>144</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Caroline</td><td>140</td><td>Status Quo</td><td>F</td><td>0</td><td>152</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>cascade La</td><td>3039</td><td>J-Désiré Bailly</td><td>D</td><td></td><td></td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Casser la voix</td><td>280</td><td>Patrick Bruel</td><td>G</td><td>-5</td><td>138</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Ce n'est rien</td><td>205</td><td>Julien Clerc</td><td>C#m</td><td>-3</td><td>98</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Célimene</td><td>254</td><td>David Martial</td><td>C</td><td></td><td></td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Céline</td><td>255</td><td>Hugues Aufray</td><td>F#m</td><td>+1</td><td>100</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Cendrillon</td><td>10</td><td>Téléphone</td><td>A</td><td>0</td><td>144</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>cerisiers roses et pommiers blancs</td><td>3120</td><td>André Claveau</td><td>D</td><td>+1</td><td>108</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Cette année-là</td><td>65</td><td>Claude François</td><td>C</td><td>-2</td><td>108</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Champs Élysée Aux</td><td>206</td><td>joe dassin</td><td>G</td><td>+3</td><td>112</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Chanson de Lara (La)</td><td>3064</td><td>Chanson de Film</td><td>G</td><td>0</td><td>176</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>chanson de Prévert La</td><td>1078</td><td>Serge Gainsbourg</td><td>Am</td><td>+2</td><td>152</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>chanson des blés d'or La</td><td>3040</td><td>André Dassary</td><td>D</td><td>+6</td><td>84</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Chanson populaire</td><td>61</td><td>Claude François</td><td>Cm</td><td>-5</td><td>84</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Chanson pour l'Auvergnat</td><td>256 / 2024</td><td>Georges Brassens</td><td>C#m</td><td>+2</td><td></td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Chanson pour Pierrot</td><td>316</td><td>Renaud</td><td>Em</td><td>0</td><td>76</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Chanson sur ma drôle de vie</td><td>288</td><td>Véronique Sanson</td><td>C</td><td>+3</td><td>96</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Chansonnette à celle qui reste pucelle</td><td>2066</td><td>Georges Brassens</td><td>Bm</td><td>+2</td><td></td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>chant du gardian Le</td><td>3050</td><td>Tino Rossi</td><td>E</td><td>-3</td><td>144</td><td>Youtube</td><td>Gr</td><td></td></tr><tr><td>off</td><td></td><td>Chante</td><td>5</td><td>Les Forbans</td><td>E</td><td>-3</td><td>184</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Chante comme si tu devais</td><td>206</td><td>Michel Fugain</td><td>Cm</td><td>0</td><td>92</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Chanteur Malheureux (Le)</td><td>29</td><td>Claude François</td><td>A</td><td>+5</td><td>69</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>chapelle au clair de lune La</td><td>3166</td><td>Léo Marjane</td><td>A</td><td>-4</td><td>102</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>chasse aux papillons La</td><td>2018</td><td>Georges Brassens</td><td>A</td><td>0</td><td>138</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Chasseur Le</td><td>262</td><td>Michel Delpech</td><td>C#m</td><td>-5</td><td>112</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Chenille (la)</td><td>258</td><td>La Bande à Basile</td><td>C</td><td>-4</td><td>132</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Chevalier de la table ronde</td><td>3183</td><td>Chansons à boire</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Chica de Cuba La</td><td>15</td><td>Philippe Lavil</td><td>Em</td><td></td><td>100</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Clodi Clodo</td><td>1030</td><td>Claude Nougaro</td><td>D</td><td>0</td><td>96</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Cocaine</td><td>105</td><td>Eric Clapton</td><td>Em</td><td>0</td><td>112</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Come Away With Me</td><td>115</td><td>Norah Jones</td><td>C</td><td>0</td><td>84</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Come together</td><td>105</td><td>The Beatles</td><td>Cm</td><td>0</td><td>84</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Comédiens Les</td><td>206 / 1072</td><td>Charles Aznavour</td><td>G</td><td>-3</td><td>184</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Comme d'habitude</td><td>60</td><td>Claude François</td><td>A</td><td>+4</td><td>84</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Comme de bien entendu</td><td>3097</td><td></td><td>G</td><td>-3</td><td></td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Comme toi</td><td>51</td><td>Jean-Jacques Goldmann</td><td>Gm</td><td>-7</td><td>120</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>comme tout l' monde</td><td>3097</td><td>Ray Ventura</td><td>G</td><td>-3</td><td>69x3</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Comme un arbre</td><td>293</td><td>Maxime Leforestier</td><td>Am</td><td>0</td><td>84</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Comme un avion sans ailes</td><td>67</td><td>Charlélie Couture</td><td>C</td><td>-5</td><td>88</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Comme un Boomerang</td><td>75</td><td>Etienne Daho / Dani</td><td>G#m</td><td>0</td><td>116</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>complainte de la Butte La</td><td>76</td><td>Cora Vaucaire</td><td>C</td><td>0</td><td></td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>complainte du phoque en Alaska La</td><td>1018</td><td>Beau Dommage</td><td>C</td><td></td><td>104</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Confidence pour confidence</td><td>62</td><td>Jean Schultheis</td><td>C</td><td>+5</td><td>116</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Copains d'abord Les</td><td>206 / 2041</td><td>Georges Brassens</td><td>D</td><td>0</td><td>80</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>coq et la pendule Le</td><td>1026</td><td>Claude Nougaro</td><td>C</td><td>0</td><td>160</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>corons Les</td><td>1052</td><td>Pierre Bachelet</td><td>F#m</td><td>0</td><td>116</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Country road, Take me home</td><td>243</td><td>John denver</td><td>E</td><td>-5</td><td>88</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>coup de soleil (Le)</td><td>283</td><td>Richard Cocciante</td><td>C</td><td>-5</td><td>88</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Creep</td><td>71</td><td>Radiohead</td><td>E</td><td>-3</td><td>92</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>croquants (Les)</td><td>2039</td><td>Georges Brassens</td><td>Em</td><td>0</td><td>72x3</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>dame de Haute Savoie La</td><td>36</td><td>Francis Cabrel</td><td>D</td><td>0</td><td>132</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Dancing in the Moonlight</td><td>130</td><td>Thin Lizzy</td><td>G</td><td>0</td><td>145</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Daniela</td><td>35</td><td>Ulmer Foolbeat</td><td>D</td><td>-2</td><td>116</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Dans les Prisons de Nantes</td><td>53</td><td>trad</td><td>Am</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Dans les Yeux d'Emilie</td><td>145</td><td>joe dassin</td><td>Cm</td><td>0</td><td>76</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Dans mon HLM</td><td>332</td><td>Renaud</td><td></td><td></td><td>120</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>danseur de Charleston Le</td><td>3086</td><td>Philippe Clay</td><td>Cm</td><td></td><td></td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Day Tripper</td><td>105</td><td>The Beatles</td><td>E</td><td>0</td><td>138</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Débit de l'eau débit de lait</td><td>293/1048</td><td>CharlesTrenet</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Déjeuner en paix</td><td>292</td><td>Stephan Eicher</td><td>Bm</td><td>0</td><td>126</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Demain sera parfait</td><td></td><td>Jean-Louis Aubert</td><td></td><td></td><td></td><td>Youtube</td><td></td><td>faire grille</td></tr><tr><td>off</td><td></td><td>Démons de minuit les</td><td>221</td><td>Emile et Image</td><td>Gm</td><td>+3</td><td>116</td><td>Youtube</td><td></td><td></td></tr><tr><td>on</td><td></td><td>dénicheur Le</td><td>3020</td><td>Fréhel</td><td>C</td><td>-4</td><td></td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Derrière l'amour</td><td>207</td><td>Johnny Hallyday</td><td>A</td><td>-3</td><td>72</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Dès que le vent soufflera</td><td>207</td><td>Renaud</td><td>Em</td><td>0</td><td>126</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Dessins animés</td><td>143</td><td>film</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Diamonds-On-The-Inside</td><td>105</td><td>Ben Harper</td><td>G</td><td>-1</td><td>84</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Diego</td><td>226</td><td>Johnny Hallyday</td><td>Em</td><td>+4</td><td>116</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Dieu fumeur de havanes</td><td></td><td>Serge Gainsbourg</td><td>G</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Dis Lui</td><td>257</td><td>Mike Brandt</td><td>Bm</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Dis quand reviendras tu</td><td>293</td><td>Barbara</td><td>Ab</td><td>0</td><td>135</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Domino</td><td>3136</td><td>André Claveau</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Don't Speak</td><td>75</td><td>No Doubt</td><td>Fm</td><td>0</td><td>76</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Don't You Remember</td><td>75</td><td>Adele</td><td>Eb</td><td>-1</td><td>52</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Douce France</td><td>293</td><td>Charles Trenet</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Dream a Little Dream of Me</td><td></td><td>Real Book</td><td>C</td><td>0</td><td>80</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Du gris</td><td>3018</td><td>Berthe Sylva</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Du Rhum des Femmes</td><td>6</td><td>Soldat louis</td><td>G</td><td>0</td><td>132</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Dust in the Wind</td><td>106</td><td>Kansas</td><td>C</td><td></td><td>96</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Élisa</td><td>208</td><td>Serge Gainsbourg</td><td>G</td><td>-1</td><td>88</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Elle était si jolie</td><td>186</td><td>Alain Barrière</td><td>Am</td><td>-3</td><td>104</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Elle préfère l’amour en mer</td><td>34</td><td>Philippe Lavil</td><td>D</td><td>-3</td><td>88</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Émilie jolie</td><td>204</td><td>Comédie Musicale</td><td>C</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>on</td><td></td><td>emmène moi danser ce soir</td><td>216/3127</td><td>Michèle Torr</td><td>C</td><td>0</td><td>104</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Emmenez-moi</td><td>209</td><td>Charles Aznavour</td><td>Am</td><td>0</td><td>72</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>En chantant</td><td>243</td><td>Michel Sardou</td><td>Eb</td><td>+1</td><td>120</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>En Couleurs</td><td></td><td>Andreal</td><td>F#</td><td>0</td><td>80</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Encore et Encore</td><td></td><td>Francis Cabrel</td><td>Em</td><td>0</td><td>168</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>enfants du Pirée (Les)</td><td>209</td><td>Dalida</td><td>C</td><td>-4</td><td>116</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Enola Gay</td><td>105</td><td>Orchestral Manoeuvres In The Dark</td><td>F</td><td>0</td><td>144</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Envie ( L’)</td><td>31</td><td>Johnny Hallyday</td><td>Bm</td><td>+7</td><td>80</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Envole moi</td><td>69</td><td>Jean-Jacques Goldmann</td><td>F#m</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Et Bam</td><td>56</td><td>Mentissa</td><td>Bm</td><td>0</td><td>54 np</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Et maintenant</td><td>209 / 1086</td><td>Gilbert becaud</td><td>F</td><td>0</td><td>126</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Et même après je t'aimerai</td><td>244</td><td>Hoshi</td><td>Em</td><td>-1</td><td>100</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Et Moi Je Chante</td><td>38</td><td>Gérard Lenorman</td><td>G</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Et moi, et moi, et moi</td><td>44</td><td>Jacques Dutronc</td><td>A</td><td>0</td><td>84</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Et mon père</td><td>210</td><td>Nicolas Peyrac</td><td>Am</td><td>0</td><td>96</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Et puis je sais</td><td>280</td><td>Johnny Hallyday</td><td>G</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Et si tu n'existait pas</td><td>150</td><td>joe dassin</td><td>Dm</td><td>+3</td><td>100</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>été (L') "Lavilliers"</td><td>244</td><td>Bernard Lavillier</td><td>F</td><td>-2</td><td>155</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Éteins la lumière</td><td>292</td><td>Axel Bauer</td><td>Am</td><td>0</td><td>144</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Étoile des neiges</td><td>3014</td><td>Line Renaud</td><td>F</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>étoile des troubadours L'</td><td>3011</td><td>Roger Sy</td><td>C</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Etre un homme comme vous</td><td></td><td>Walt Disney</td><td>F#m</td><td>+6</td><td>100</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Every Breath You Take</td><td>110</td><td>Sting</td><td>C</td><td>+3</td><td>120</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>everything matters</td><td></td><td>Aurora</td><td>Gm</td><td>0</td><td>108</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Eviva Espana</td><td>3092</td><td>Georgette Plana</td><td>Cm</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>facteur de Santa-Cruz Le</td><td>3170</td><td>Henri Genès</td><td></td><td></td><td></td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Faire un Pont</td><td>243</td><td>Dick Rivers</td><td>E</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Fais comme l'oiseau</td><td>211</td><td>Michel Fugain</td><td>E</td><td>-1</td><td>92</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Fantôme Le</td><td>2086</td><td>Georges Brassens</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Félicie aussi</td><td>3162</td><td>Fernandel</td><td>C</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>on</td><td></td><td>Femme libérée / The Passenger</td><td>11</td><td>Cookie Dingler / Iggy Pop</td><td>Gm</td><td>0</td><td>138</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Femme que j'aime</td><td>280</td><td>Jean-Luc Lahaye</td><td>A</td><td>-6</td><td></td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Fernande</td><td>211 / 2012</td><td>Georges Brassens</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>feuilles mortes les</td><td>1136</td><td>Yves Montand</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>on</td><td></td><td>fiancés d'Auvergne</td><td>3003</td><td>André Verchuren</td><td>G</td><td>0</td><td>200</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Fille du Motel La</td><td>26</td><td>Eddy Mitchell</td><td>F</td><td>-4</td><td>144</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Fille du père Noël La</td><td>39</td><td>Jacques dutronc</td><td>E</td><td>+2</td><td>120</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>filles de mon pays les</td><td>216</td><td>Enrico Macias</td><td>C</td><td>0</td><td>126</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Fleur aux dents La</td><td>28</td><td>joe dassin</td><td>C</td><td>+1</td><td>112</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Fleur de Paris</td><td>3074</td><td>Maurice Chevalier</td><td>C</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Flipper</td><td>40</td><td>Téléphone</td><td>Bm</td><td></td><td>96</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Fly me To the Moon</td><td></td><td>Real Book</td><td>Gm</td><td>+5</td><td>138</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Fontenay aux roses</td><td>18</td><td>Maxime Leforestier</td><td>G</td><td>0</td><td>126</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Foule La</td><td>211</td><td>Edith Piaf</td><td>Am</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Foule sentimentale</td><td>211</td><td>Alain Souchon</td><td>Am</td><td>-7</td><td>112</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>France Le</td><td>217</td><td>Michel Sardou</td><td>C</td><td>-4</td><td>76</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Frou Frou</td><td>3008</td><td>Berthe Sylva</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Gabrielle</td><td>20</td><td>Johnny Hallyday</td><td>E</td><td>0</td><td>160</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Gaby oh Gaby</td><td>21</td><td>Alain Bashung</td><td>E</td><td>0</td><td>132</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>gars de la marine</td><td>3024</td><td>Chanson de Film</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Germaine</td><td>211</td><td>Renaud</td><td>C</td><td>0</td><td>76</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Get Back</td><td>110</td><td>The Beatles</td><td>A</td><td></td><td>126</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>gibier manque Le</td><td>211</td><td>Serge Lama</td><td>C</td><td></td><td></td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Gimme all your lovin</td><td>110</td><td>ZZ Top</td><td>C</td><td>0</td><td>120</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Girl</td><td>285</td><td>The Beatles</td><td>F#m</td><td>+6</td><td>96</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Goffa Lolita (La)</td><td>46</td><td>La Petite Culotte</td><td>Am</td><td>0</td><td>130</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>gorille Le</td><td>2020</td><td>Georges Brassens</td><td>D</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Gottingen</td><td>293</td><td>Barbara par Pomme</td><td>Am</td><td>0</td><td>116</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>goualante du pauvre Jean La</td><td>3138</td><td>Edith Piaf</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>grand chêne Le</td><td>2050</td><td>Georges Brassens</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Grand sommeil Le</td><td>42</td><td>Étienne Daho</td><td>A</td><td>-1</td><td>132</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>grande Zoa La</td><td>196</td><td>Régine</td><td>C</td><td>+6</td><td>120</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Grenade (La)</td><td>64</td><td>Clara Luciani</td><td>Dm</td><td>+3</td><td>132</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Groupie du Pianiste (La)</td><td>74</td><td>Michel Berger</td><td>Gm</td><td>0</td><td>104</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Guantanamera</td><td>212</td><td>joe dassin</td><td>C</td><td>-2</td><td>126</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Habana</td><td></td><td>Camila Cabelo</td><td>Gm</td><td></td><td>104</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Hallelujah</td><td>288</td><td>Lèonard Cohen</td><td>E</td><td>+4</td><td>69</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Hécatombe</td><td>2080</td><td>Georges Brassens</td><td></td><td></td><td></td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Hexagone</td><td>326</td><td>Renaud</td><td>Em</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Hey Joe</td><td>110</td><td>jimmy hendrix</td><td>(Em)</td><td>0</td><td>84</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Hey you've got to hide your love away</td><td>227</td><td>The Beatles</td><td>G</td><td>0</td><td>189</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Histoire de faussaire</td><td>213 / 2006</td><td>Georges Brassens</td><td>E</td><td>+2</td><td>120</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>homme à la moto L’</td><td>3155</td><td>Edith Piaf</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Honesty</td><td>68</td><td>Billy Joel</td><td>F</td><td>-4</td><td>126</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Honky Tonk women</td><td>110</td><td>The Rolling Stones</td><td>G</td><td>0</td><td>112</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Hotel California</td><td>100</td><td>Eagles</td><td>Bm</td><td>0</td><td>144</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Hotesse de l'air L'</td><td>213</td><td>Jacques Dutronc</td><td>C</td><td>-2</td><td>69</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Hygiaphone</td><td>40</td><td>Téléphone</td><td>A</td><td>0</td><td>168</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>I Can See Clearly Now</td><td>213</td><td>Jimmy Cliff</td><td>D</td><td>0</td><td>120</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>I Heart It Trough The Grapvine</td><td>110</td><td>Creedence Clearwater Revival</td><td>Dm</td><td>0</td><td>120</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>I Hung My Head</td><td>140</td><td>Sting</td><td>G</td><td>0</td><td>76</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>I shot the sheriff</td><td>110</td><td>Eric Clapton</td><td>Gm</td><td>0</td><td>94</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>I Will Survive</td><td>279</td><td>Gloria Gaynor</td><td>Am</td><td>0</td><td>126</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Idole des Jeunes (L')</td><td>53</td><td>Johnny Hallyday</td><td>D</td><td>0</td><td></td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Il est trop tard</td><td></td><td>Georges Moustaki</td><td>A</td><td>0</td><td>120</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Il était un fois nous deux</td><td>70</td><td>Joe Dassin</td><td>Em</td><td>-1</td><td>120</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Il faut toujours un perdant</td><td></td><td>Julio Iglesias</td><td>A</td><td>-5</td><td>104</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Il Jouait du Piano Debout</td><td>30</td><td>France Gall</td><td>G</td><td>-8</td><td>104</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Il suffira d'un signe</td><td>56</td><td>Jean-Jacques Goldmann</td><td>Dm</td><td>0</td><td>126</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Il suffirait de presque rien</td><td>1120</td><td>Serge Reggiani</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Il tape sur des bambous</td><td>49</td><td>Philippe Lavil</td><td>Dm</td><td></td><td>88</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Il venait d'avoir 18 ans</td><td>277</td><td>Dalida</td><td>F</td><td>0</td><td>72</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Il voyage en solitaire</td><td>206</td><td>Gérard Manset</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Il y a</td><td>340</td><td>Vanessa Paradis</td><td></td><td></td><td></td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Imagine</td><td>115</td><td>John Lenon</td><td>G</td><td>0</td><td>69</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>important c’est la rose L’</td><td>1082</td><td>Gilbert Bécaud</td><td>C</td><td>0</td><td>120</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>It' s a heartache</td><td>215</td><td>Bonnie Tyler</td><td>C</td><td>0</td><td>120</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Italiano (L')</td><td>273</td><td>Toto Cutugno</td><td>Am</td><td></td><td>120</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Itsi bitsi petit bikini</td><td>63</td><td>Johnny Hallyday</td><td>C</td><td>-3</td><td>132</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>J' t 'emmène au vent</td><td>41</td><td>Louise Attaque</td><td>A</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>J' te pardonne</td><td>226</td><td>Hoshi</td><td>Gm</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>J'ai demandé à la lune</td><td>4</td><td>Indochine</td><td>C</td><td></td><td>112</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>J'ai encore rêvé d'elle</td><td>258</td><td>Il était une fois</td><td>E</td><td></td><td></td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>J’ai la mémoire qui flanche</td><td>1010</td><td>Jeanne Moreau</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>J'ai Oubliè de Vivre</td><td>54</td><td>Johnny Hallyday</td><td>G</td><td>+6</td><td>126</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>J'ai rencontré l'homme de ma vie</td><td>284</td><td>Diane Dufresne</td><td>G</td><td>0</td><td>92</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>J'ai rendez-vous avec vous</td><td>2074</td><td>Georges Brassens</td><td>A</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>J'ai un problème</td><td>213</td><td>Johnny Hallyday</td><td>A</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>J'aime les filles</td><td>214</td><td>Jacques Dutronc</td><td>F</td><td>-4</td><td>120</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>J'en Parlerai au Diable</td><td>7</td><td>Johnny Hallyday</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>j'veux du soleil</td><td>18</td><td>Au petit bonheur</td><td>Am</td><td>-2</td><td>112</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Jardin d'hiver</td><td>76</td><td>Henri Salvador</td><td>Bm</td><td>7</td><td>120</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>jardin extraordinaire Le</td><td>3104</td><td>Charles Trenet</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>on</td><td></td><td>java bleue La</td><td>3010</td><td>Fréhel</td><td>F</td><td>-6</td><td></td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>java de Broadway La</td><td>45</td><td>Michel Sardou</td><td>A</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>java des bombes atomiques La</td><td>1118</td><td>Boris Vian</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Javanaise (La)</td><td>215 / 1074</td><td>Serge Gainsbourg</td><td>C</td><td>+3</td><td>132</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Jazz et la Java (Le)</td><td>293</td><td>Claude Nouaro</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>on</td><td></td><td>Je m’ voyais déjà</td><td>215 / 1067</td><td>Charles Aznavour</td><td>Cm</td><td>0</td><td>108</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Je me suis fait tout petit</td><td>2032</td><td>Georges Brassens</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Je n'aurai pas le temps</td><td>213</td><td>Michel Fugain</td><td>D</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Je ne veux pas travailler</td><td>293</td><td>Pink Martini</td><td>C</td><td>-5</td><td>132</td><td>Youtube</td><td></td><td></td></tr><tr><td>on</td><td></td><td>Je pars</td><td>284</td><td>Nicolas Peyrac</td><td>Dm</td><td>-1</td><td>126</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Je partirai demain</td><td>67</td><td>Fred Blondin</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Je reviens chez nous</td><td>3068</td><td>Jean-Pierre Ferland</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>on</td><td></td><td>Je Reviens te Chercher</td><td>48</td><td>Gilbert becaud</td><td>Cm</td><td>0</td><td>98</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Je suis un voyou</td><td>2060</td><td>Georges Brassens</td><td>A</td><td></td><td>0</td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Je suis venu te dire que je m'en vais</td><td>13</td><td>Serge Gainsbourg</td><td>A</td><td></td><td>80</td><td>Youtube</td><td></td><td></td></tr><tr><td>on</td><td></td><td>Je t'aime à la folie</td><td>160</td><td>Serge Lama</td><td>Dm</td><td>0</td><td>144</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Je te le dis quand même</td><td>160</td><td>Patrick Bruel</td><td>G</td><td>0</td><td>63</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Je te promets</td><td>82</td><td>Johnny Hallyday</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Jerk Le</td><td>15</td><td>Thierry Hazard</td><td>A</td><td>+7</td><td>132</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Jésus Reviens</td><td>262</td><td>La vie est un long fleuve</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>jeune fille du métro La</td><td>3130</td><td>Jean Rousselière</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Johnny and Mary</td><td>115</td><td>Robert Palmer</td><td>D</td><td>0</td><td>152</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Johnny be good</td><td>115</td><td>Chuck Berry</td><td>C</td><td>-3</td><td>150</td><td>Youtube</td><td></td><td></td></tr><tr><td>on</td><td></td><td>Jolie Bouteille</td><td>238</td><td>Graemme Alwright</td><td>C</td><td>+1</td><td>138</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Jolie môme</td><td>1014</td><td>Léo Ferré</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>jolies colonies de vacances Les</td><td>215</td><td>Pierre Peret</td><td>Eb</td><td>1</td><td></td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Joue pas de Rock 'n Roll</td><td>90</td><td>Johnny Hallyday</td><td>G</td><td>0</td><td>104</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Jumpin Jack Flash</td><td>115</td><td>Rolling Stones</td><td>Bm</td><td>0</td><td>138</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Jusqu’à la ceinture</td><td>8</td><td>Graeme Allwright</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Just Take Me</td><td>115</td><td>Status Quo</td><td>Bm</td><td></td><td>138</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Juste Quelqu'un de bien</td><td>209</td><td>Enzo Enzo</td><td>F</td><td>-4</td><td>138</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Lacs du Connemara Les</td><td>72</td><td>Michel Sardou</td><td>C</td><td>-3</td><td>80-108</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Lady Lay</td><td>59.1</td><td>Pierre Groscolas</td><td>C</td><td>3</td><td>126</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Lady Madona</td><td>115</td><td>The Beatles</td><td>A</td><td>0</td><td>108</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Laisse béton</td><td>320</td><td>Renaud</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Laura</td><td>13</td><td>Johnny Hallyday</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Layla</td><td>120</td><td>Eric Clapton</td><td>Dm</td><td>0</td><td>116</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Let it be</td><td>71</td><td>The Beatles</td><td>C</td><td>0</td><td>72</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Libertango (I ve seen that face before)</td><td></td><td>Kovacs</td><td>Am</td><td>-1</td><td>120</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Lily Marlene</td><td>3161</td><td>Suzy Solidor</td><td>A</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>lion est mort ce soir (Le)</td><td>1</td><td>Henri Salvador</td><td>F</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Liste (La)</td><td>207</td><td>Rose</td><td>Bb</td><td>+1</td><td>126</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Loir et Cher (Le)</td><td>8</td><td>Michel Delpech</td><td>G</td><td>-5</td><td>144</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Long Train Running</td><td>135</td><td>Doobie Brothers</td><td>Gm</td><td></td><td>120</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Loup La Biche Le Chevalier Le</td><td>57</td><td>Henri Salvador</td><td>C</td><td>0</td><td>116</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>loup, le renard et la belette Le</td><td>52</td><td>trad</td><td>Am</td><td>0</td><td>120</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Love Boat The</td><td>293</td><td>film</td><td>G</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Love me tender</td><td>74</td><td>Elvis Presley</td><td>G</td><td>5</td><td>84</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Luka</td><td></td><td>Suzanne Vega</td><td></td><td></td><td></td><td>Youtube</td><td></td><td>faire grille</td></tr><tr><td>off</td><td></td><td>lundi au soleil Le</td><td>28.1</td><td>Claude François</td><td>Gm</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Ma fille</td><td>288</td><td>Serge Regiani</td><td>Am</td><td>0</td><td>96</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Ma France</td><td>1006</td><td>Jean Ferrat</td><td>Bm</td><td>-1</td><td>76</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Ma Gueule</td><td>220</td><td>Johnny Hallyday</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Ma môme</td><td>1002</td><td>Jean Ferrat</td><td>Eb</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Ma Préférence</td><td>2</td><td>Julien Clerc</td><td>B</td><td>-1</td><td>100</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Macumba</td><td>32</td><td>Jean-Pierre Mader</td><td>Bm</td><td>-5</td><td>132</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Madame Nostalgie</td><td>1122</td><td>Serge Reggiani</td><td>Cm</td><td></td><td> </td><td></td><td>gr</td><td>TRANSPO Am</td></tr><tr><td>off</td><td></td><td>Madelon La</td><td>3094</td><td>Line Renaud</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Madone aux fleurs La</td><td>3158</td><td>Rina Kety</td><td>Am</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Madrague (La)</td><td>160</td><td>Brigitte Bardot</td><td>C</td><td>-7</td><td>116</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Mains d'Or (Les)</td><td>205</td><td>Bernard Lavillier</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>maitresse d'école La</td><td>2064</td><td>Georges Brassens</td><td></td><td></td><td></td><td></td><td>gr</td><td>faire grille</td></tr><tr><td>off</td><td></td><td>maladie d’amour La</td><td>64</td><td>Michel Sardou</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Maldon</td><td>244</td><td>Zouk Machine</td><td>Dm</td><td></td><td>138</td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>mama La</td><td>1060</td><td>Charles Aznavour</td><td>Am</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Marcia Baila</td><td>60</td><td>Rita Mitsouko</td><td>Cm</td><td>+3</td><td>132</td><td>Youtube</td><td></td><td>faire grille</td></tr><tr><td>off</td><td></td><td>Marguerite</td><td>178</td><td>Richard Cocciante</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Marinela</td><td>3058</td><td>Tino Rossi</td><td>D</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Marionnettes Les</td><td>54</td><td>Christophe</td><td>Am</td><td>0</td><td>138</td><td>Youtube</td><td></td><td>faire grille</td></tr><tr><td>on</td><td></td><td>Maritza La</td><td>207</td><td>Sylvie Vartan</td><td>Dm</td><td>0</td><td>76</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Marjolaine</td><td>3036</td><td>Francis Lemarque</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Marquise</td><td>2058</td><td>Georges Brassens</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Mary had a little lamb</td><td>140</td><td>Stevie Ray Vaughan</td><td>Eb</td><td>0</td><td>120</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>mauvais sujet repenti Le</td><td>2010</td><td>Georges Brassens</td><td>A</td><td>+1</td><td>120</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>méditérannée</td><td>3186</td><td>Luis Mariano</td><td>D</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>on</td><td></td><td>Méditerranéenne</td><td>286</td><td>Toto Cutugno</td><td>Dm</td><td>3</td><td>126</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Ménilmontant</td><td>1046</td><td>Charles Trenet</td><td>G</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Ménilmontant La marche de</td><td>3132</td><td>Maurice Chevalier</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Mère à Titi La</td><td>293</td><td>Renaud</td><td>A</td><td>-2</td><td>120</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Mes emmerdes</td><td>221 / 1062</td><td>Charles Aznavour</td><td>C</td><td>0</td><td>132</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Mes mains</td><td>1084</td><td>Gilbert Bécaud</td><td>C</td><td>-1</td><td>108</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Message in the bottle</td><td>120</td><td>The Police</td><td>Bm</td><td>+5</td><td>152</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>métèque Le</td><td>28</td><td>Georges Moustaki</td><td>A</td><td>0</td><td>100</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Mexico</td><td>221</td><td>Luis Mariano</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Michèle (Lenorman)</td><td>24</td><td>Gérard Lenorman</td><td>Em</td><td>-5</td><td>116</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Million Reasons</td><td>209</td><td>Lady Gaga</td><td>C</td><td>0</td><td>132</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Mirza</td><td>50</td><td>Nino Ferrer</td><td>Dm</td><td>-3</td><td>144</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Mistral gagnant</td><td>265</td><td>Renaud</td><td>Dm</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Moi j’aime le music-hall</td><td>3108</td><td>Charles Trenet</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Moins joli</td><td>63</td><td>Iliona</td><td>C</td><td>0</td><td>92</td><td>Youtube</td><td></td><td></td></tr><tr><td>on</td><td></td><td>Mon amant de Saint Jean</td><td>76</td><td>Patrick Bruel</td><td>Dm</td><td>0</td><td>192</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Mon Dieu</td><td>3193</td><td>Edith Piaf</td><td>E</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Mon fils ma bataille</td><td></td><td>Daniel Balavoine</td><td>D</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Mon Frère</td><td>145</td><td>Maxime Leforestier</td><td>Am</td><td>-5</td><td>80</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Mon manège à moi</td><td>3140</td><td>Edith Piaf</td><td>C</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Mon nom</td><td></td><td>Lynda Lemay</td><td>Am</td><td>+1</td><td>88</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Mon vieux</td><td>10/1054</td><td>Daniel Guichard</td><td>Am</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Montagne La</td><td>285</td><td>Jean Ferra</td><td>Bm</td><td></td><td>116</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Moulins de mon cœur (Les)</td><td>293 /1016</td><td>Michel Grand</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>mourir d'aimer</td><td>1063</td><td>Charles Aznavour</td><td>Bm</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Mourir pour des idées</td><td>1092</td><td>Georges Brassens</td><td>Am</td><td>0</td><td>96</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Mourir sur scène</td><td>278</td><td>Dalida</td><td>Am</td><td>+3</td><td>126</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>murs de poussière</td><td>75</td><td>Francis Cabrel</td><td>Dm</td><td>0</td><td>144</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>musique que j'aime La</td><td>221</td><td>Johnny Hallyday</td><td>E</td><td>0</td><td>104</td><td>Youtube</td><td></td><td></td></tr><tr><td>on</td><td></td><td>n'avoue jamais</td><td>70/3198</td><td>Guy Mardel</td><td>Bb</td><td>0</td><td>76</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Nathalie</td><td>216</td><td>Gilbert Bécaud</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Nature Boy</td><td></td><td>Real Book</td><td>Dm</td><td>0</td><td>132</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>neiges du Kilimandjaro</td><td>39</td><td>Pascal Danel</td><td>Bm</td><td></td><td>72</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>New York avec toi</td><td>38</td><td>Téléphone</td><td>A</td><td>0</td><td>152</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Nice very nice</td><td>1029</td><td>Claude Nougaro</td><td>D</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Nini peau de chien</td><td>3016</td><td>Aristide Bruant</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>no woman no cry</td><td>120</td><td>Bob Marley</td><td>C</td><td>0</td><td>76</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Noël interdit</td><td>285</td><td>Johnny Hallyday</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Noir c'est Noir</td><td>23</td><td>Johnny Hallyday</td><td>G</td><td>-4</td><td>138</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Non je ne regrette rien</td><td>3150</td><td>Edith Piaf</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Nuit de Folie</td><td>57</td><td>Début de soirée</td><td>Am</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>nymphomane La</td><td>1112</td><td>Serge Lama</td><td></td><td></td><td></td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>O gué Vive la rose (Mon amant me délaisse)</td><td>3165</td><td>Guy Béart</td><td>C</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>O Sole moi</td><td>275</td><td>Italien</td><td>A</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>on</td><td></td><td>Obladi Oblada</td><td>105</td><td>The Beatles</td><td>Bb</td><td>0</td><td>126</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>ogresse L’</td><td>1108</td><td>Serge Lama</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Oh ma jolie Sarah</td><td>102</td><td>Johnny Hallyday</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>on</td><td></td><td>oiseau et l'enfant L'</td><td>150/3190</td><td>Marie Myriam</td><td>Dm</td><td>2</td><td></td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Olé torero</td><td>3070</td><td>Luis Mariano</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>On a pas tous les jours 20 ans</td><td>3044</td><td>Berthe Sylva</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>On est pas là pour se faire engueller</td><td>  286 - 1116</td><td>Boris Vian</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>On laisse tous un jour</td><td>222</td><td>Michel Fugain</td><td>C</td><td>5</td><td>88</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>On the sunny side of the street</td><td></td><td>Real Book</td><td>C</td><td>-7</td><td></td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>On va s’aimer</td><td>74</td><td>Gilbert Montagné</td><td>F#m</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>on</td><td></td><td>Opportuniste L’</td><td>223</td><td>Jacques Dutronc</td><td>G</td><td>0</td><td>84</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Orage L’</td><td>224 / 2005</td><td>Georges Brassens</td><td>Bm</td><td>1</td><td>132</td><td>Youtube</td><td></td><td></td></tr><tr><td>on</td><td></td><td>p'tit bal du samedi soir</td><td>3089</td><td>Georges Guétary</td><td>Em</td><td>0</td><td></td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>p'tites femmes de Pigalle</td><td>160</td><td>Serge Lama</td><td>A</td><td>-2</td><td>144</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Padam... Padam... Padam...</td><td>3152</td><td>Edith Piaf</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>parapluie Le</td><td>2040</td><td>Georges Brassens</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Parc Fermé</td><td></td><td>Benjamen Biolay</td><td>D</td><td>0</td><td>132</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Parce que c'est toi</td><td>227</td><td>Axelle Red</td><td>E</td><td>+5</td><td>102</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Paris canaille</td><td>1013</td><td>Léo Ferré</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>on</td><td></td><td>Pas de Boogie Woogie</td><td>9</td><td>Eddy Mitchell</td><td>G</td><td>-3</td><td>88</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>passantes Les</td><td>2042</td><td>Georges Brassens</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Passer ma route</td><td>226</td><td>Maxime Leforestier</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Paulette</td><td>266</td><td>Les Charlots</td><td>A</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Pauvres Diables</td><td>226</td><td>Julio Iglesias</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>peintre des étoiles (Le)</td><td>280</td><td>Demis Roussos</td><td>Bm</td><td></td><td></td><td>Youtube</td><td></td><td></td></tr><tr><td>on</td><td></td><td>pénitencier Le</td><td>264</td><td>Johnny Hallyday</td><td>Cm</td><td>=+567</td><td>69</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Personal Jesus</td><td>140</td><td>Depeche mode</td><td>F#</td><td>0</td><td>132</td><td>Youtube</td><td></td><td></td></tr><tr><td>on</td><td></td><td>Petit</td><td>243</td><td>Michel Sardou</td><td>A</td><td>-3</td><td>88</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>petit bal de la marine Le</td><td>3168</td><td>François Deguelt</td><td>Am</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>petit bonheur</td><td>213</td><td>Félix Leclerc</td><td>Gm</td><td>0</td><td>116</td><td>Youtube</td><td></td><td></td></tr><tr><td>on</td><td></td><td>petit pain au chocolat Le</td><td>2</td><td>joe dassin</td><td>F</td><td>0</td><td>108</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Petit papa noël</td><td>293</td><td>Tino Rossi</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>on</td><td></td><td>petits papiers Les</td><td>227 / 1076</td><td>Régine</td><td>Dm</td><td>4</td><td></td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Piensa en mi</td><td>234</td><td>Luz Casal</td><td></td><td></td><td></td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>plat pays Le</td><td>1034</td><td>Jacques Brel</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>plus beau des tangos du monde</td><td>3054</td><td>Tino Rossi</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Plus bleu que tes yeux</td><td>1064</td><td>Charles Aznavour</td><td>D</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>poinçonneur des lilas</td><td>243</td><td>Serge Gainsbourg</td><td>Em</td><td>0</td><td>152</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Porque te vas</td><td>267</td><td>Jeannette</td><td>Am</td><td>+2</td><td>88</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>poupée qui fait non La</td><td>228</td><td>Michel Polnareff</td><td>A</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Pour moi la vie va commencer</td><td>0</td><td>Johnny Hallyday</td><td>E</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>on</td><td></td><td>Pour un flirt</td><td>64</td><td>Michel Delpech</td><td>C</td><td>-2</td><td>84</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Pour une amourette</td><td></td><td>Lény Escudéro</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Premier Pas Le</td><td>263</td><td>Claude-Michel Schönberg</td><td>D</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>première fille qu'on a pris dans ses bras La</td><td>1052</td><td>Georges Brassens</td><td>A</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Pretty Woman</td><td>120</td><td>film</td><td>A</td><td>+5</td><td>126</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>prière La</td><td>1084</td><td>Georges Brassens</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Proud Mary</td><td>120</td><td>Creedence Clearwater Revival</td><td>A</td><td>-5</td><td>126</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Puisque tu pars</td><td>258</td><td>Jean-Jacques Goldmann</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Puisque vous partez en voyage</td><td>293 / 1056</td><td>Jean Sablon</td><td>C</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Pull Marine</td><td>222</td><td>Isabelle Adjani</td><td>C</td><td>+1</td><td>69</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Purple Haze</td><td>120</td><td>jimmy hendrix</td><td>E</td><td>0</td><td>100</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Purple rain</td><td>293</td><td>Jeff Beck & Beth Hart</td><td>A</td><td>0</td><td>58</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>putain de toi</td><td>1072</td><td>Georges Brassens</td><td>F</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>quand il est mort le poète</td><td>1089</td><td>Gilbert becaud</td><td>G</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Quand j’étais chanteur</td><td>27</td><td>Michel Delpech</td><td>Ab</td><td>0</td><td>104</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Quand on a que l'amour</td><td>293</td><td>Jacques Brel</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Quand t’es dans le désert</td><td>58</td><td>Jean-Patrick Capdevielle</td><td>Am</td><td>0</td><td>152</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>quatre vingt quinze pour cent</td><td>1036</td><td>Georges Brassens</td><td>G</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Que c'est triste Venise</td><td>250</td><td>Charles Aznavour</td><td>Eb à F</td><td>5</td><td></td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Que je t'aime</td><td>232</td><td>Johnny Hallyday</td><td>Dm</td><td>-5</td><td>80</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Que Marianne était jolie</td><td>268 - 151</td><td>Michel Delpech</td><td>Bm</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Que Reste t il de nos amours</td><td></td><td>Charles Trenet</td><td>C</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>on</td><td></td><td>Qui Saura</td><td>269</td><td>Mike Brandt</td><td>Bb</td><td>7</td><td></td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Quoi</td><td></td><td>Jane Birkin</td><td>D</td><td>0</td><td>102</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Rafale de Vent</td><td>8</td><td>Florent Pagny</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Reality</td><td>19</td><td>La Boum</td><td>D</td><td>-5</td><td>76</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>remparts de Varsovie</td><td>1036</td><td>Jacques Brel</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Requiem pour un fou</td><td>270</td><td>Johnny Hallyday</td><td>Am</td><td>-5</td><td>120</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Résiste</td><td>36</td><td>France Gall</td><td>Am</td><td>+2</td><td>116</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Retiens la nuit</td><td>98</td><td>Johnny Hallyday</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>on</td><td></td><td>Retrouvailles Les</td><td>234</td><td>graeme allwright</td><td>C</td><td>0</td><td>104</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Rimes</td><td>1028</td><td>Claude Nougaro</td><td>Dm</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Riquita</td><td>3012</td><td>Georgette Plana</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>rire du sergent Le</td><td>73</td><td>Michel Sardou</td><td>F</td><td>0</td><td>126</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Rital Le</td><td>238</td><td>Claude Barzoti</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Rivers of Babylon</td><td>22</td><td>Bonney M</td><td>E</td><td>+4</td><td>116</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Rock Collection</td><td>59</td><td>Laurent Voulzy</td><td>Am</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Rosa</td><td>1038</td><td>Jacques Brel</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Rossignol de mes amours</td><td>3178</td><td>Luis Mariano</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>rouille La</td><td>94</td><td>Maxime Leforestier</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Rum and Coca Cola</td><td>75</td><td>Calypso Rose </td><td>C</td><td>0</td><td>84</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Runaway</td><td>16</td><td>Del Shannon</td><td>Em</td><td>-5</td><td>152</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>sabots d'Hélène</td><td>2076</td><td>Georges Brassens</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>on</td><td></td><td>Sacrée bouteille</td><td>239</td><td>graeme allwright</td><td>C</td><td>1</td><td>126</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Salade de fruit</td><td>3164</td><td>Bourvil</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>salle de bain La</td><td>1110</td><td>Serge Lama</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Salut</td><td>240</td><td>Michel Sardou</td><td>E</td><td>0</td><td>76</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Salut les amoureux</td><td>241</td><td>joe dassin</td><td>C</td><td>-2</td><td>88</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>samba brésilienne La</td><td>3072</td><td>Luis Mariano</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Santiano</td><td>14</td><td>Hugues Aufray</td><td>Em</td><td>-2</td><td>120</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Sarah</td><td></td><td>Georges Moustaki</td><td>Bm</td><td>0</td><td>92</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Sarbacane</td><td>46</td><td>Francis Cabrel</td><td>A</td><td>-2</td><td>126</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Sardines Les</td><td>74</td><td>Patrick Sebastien</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Satin Doll</td><td></td><td>Real Book</td><td>C</td><td>-5</td><td>88</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Satisfaction</td><td>120</td><td>The rolling Stones</td><td>E</td><td>0</td><td>138</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Sauf le respect que je vous dois</td><td>2002</td><td>Georges Brassens</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>señorita</td><td></td><td>Camila Cabelo</td><td>Am</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Sentinelle La</td><td>105</td><td>Luke</td><td>192</td><td></td><td></td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>should i stay or should i go</td><td>125</td><td>The Clash</td><td>D</td><td>0</td><td>116</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Si j'étais elle</td><td>225</td><td>Julien Clerc</td><td></td><td></td><td></td><td></td><td>gr</td><td>grille à revoir</td></tr><tr><td>off</td><td></td><td>Si maman si</td><td>271</td><td>France Gall</td><td>Am</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Si t'étais là</td><td>150</td><td>Louane</td><td>Em</td><td>+2</td><td>88</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Si tu ne me laisses pas tomber</td><td>206</td><td>Gérard Lenorman</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Si tu vas à Rio</td><td>3174</td><td>Dario Moreno</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Si tu veux m'essayer</td><td>3</td><td>Florent Pagny</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>on</td><td></td><td>Siffler sur la colline</td><td>29</td><td>joe dassin</td><td>Bm</td><td>-3</td><td>108</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Sign of the times</td><td>150</td><td>Harry Styles</td><td>F</td><td>0</td><td>60</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Smoke on the water</td><td>125</td><td>Deep Purple</td><td>Gm</td><td>0</td><td>120</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Snowman</td><td>150</td><td>Sia</td><td>C</td><td>-1</td><td>70</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Sous le ciel de Paris</td><td>76</td><td>Edith Piaf</td><td>Em</td><td>+5</td><td>200</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Sous les ponts de Paris</td><td>3028</td><td>Maurice Chevalier</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Sous les sunlights des tropiques</td><td>25</td><td>Gilbert Montagné</td><td>C</td><td>+7</td><td>126</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Souvenirs Souvenirs</td><td>96</td><td>Johnny Hallyday</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>stand by me</td><td>125</td><td>Ben E. King</td><td>D</td><td>+5</td><td>120</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Stay</td><td></td><td>Rihana</td><td>C</td><td>0</td><td>112</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Stuck in the middle white you</td><td>135</td><td>Stealers Wheel</td><td>D</td><td>0</td><td>126</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Sucettes Les</td><td>23</td><td>Serge Gainsbourg</td><td>E</td><td></td><td></td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Sud Le</td><td>243</td><td>Nino Ferrer</td><td>C</td><td></td><td>92</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Sultan of the swing</td><td>125</td><td>The Police</td><td>Dm</td><td>0</td><td>152</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Sunny</td><td>125</td><td>Bobby Hebb</td><td>Em</td><td>-4</td><td>132</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Superman</td><td>236</td><td>Serge Lama</td><td>F</td><td>0</td><td>152</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Supplique pour être enterré à la plage de Sète</td><td>2031</td><td>Georges Brassens</td><td>Bm</td><td>0</td><td>132</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>surveillant général le</td><td>243</td><td>Michel Sardou</td><td>C#m</td><td>-1</td><td>88</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Suzie Q</td><td>130</td><td>Creedence Clearwater Revival</td><td>E</td><td>0</td><td>126</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Sway</td><td>13</td><td>Dean Martin</td><td>Dm</td><td>0</td><td>120</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Sweet Caroline</td><td>100</td><td>Neil Diamond</td><td>A</td><td>-2</td><td>127</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Sweet dreams</td><td>130</td><td>Marilyn Manson</td><td>Cm</td><td>0</td><td>92</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>sweet home alabama</td><td>130</td><td>Lynyrd Skynyrd</td><td>G</td><td>0</td><td>100</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Sweet ome Chicago</td><td>130</td><td>The Blues Brothers</td><td>E</td><td>0</td><td>126</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Syracuse</td><td>213</td><td>Yves Montand</td><td>C</td><td>-1</td><td>66</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>T’as beau pas être beau</td><td>24</td><td>Louis Chedid</td><td>E</td><td></td><td></td><td>Youtube</td><td></td><td></td></tr><tr><td>on</td><td></td><td>Ta Katie t'as quitté</td><td>254</td><td>Boby Lapointe</td><td>G</td><td>0</td><td>80</td><td>Youtube</td><td></td><td></td></tr><tr><td>on</td><td></td><td>tactique du gendarme La</td><td>PC</td><td>Bourvil</td><td>C</td><td>2</td><td></td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Tainted Love</td><td>130</td><td>Soft Cell </td><td>Gm</td><td>0</td><td>152</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Take me to Church</td><td></td><td>Hozier</td><td>Am</td><td>+5</td><td>132</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Take the a train</td><td></td><td>Real Book</td><td>C</td><td>-1</td><td>208</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Tata Yoyo</td><td>74</td><td>Annie Cordy</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Tchi Tchi</td><td>3056</td><td>Tino Rossi</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Telephon Le</td><td>26</td><td>Nino Ferrer</td><td>E</td><td>-5</td><td>108</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>temps des cathédrales</td><td>266</td><td>Comédie Musicale</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>temps des cerises</td><td>3062</td><td>Jean-Baptiste Clément</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Temps est bon Le</td><td>226</td><td>Isabelle Pierre</td><td></td><td></td><td></td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>tendresse La</td><td>3060</td><td>Marie Laforet</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>The Girl From Ipanema</td><td></td><td>Real Book</td><td>F</td><td>0</td><td></td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>The Road to Hell</td><td>130</td><td>Chris Rea</td><td>Am</td><td>0</td><td>134</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>The Sound of Silence</td><td></td><td>Simon & Garfunkel</td><td>Bm</td><td>-5</td><td>88</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>The wall (Anoter brick in)</td><td>130</td><td>Pink floyd</td><td>Dm</td><td>0</td><td>104</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>these boots are made for walking</td><td>125</td><td>Nancy Sinatra</td><td>E</td><td>0</td><td>168</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>This Is The Life</td><td>140</td><td>Amy Macdonald</td><td>C#m</td><td>+1</td><td>96</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Ti Amo</td><td>274</td><td>Umberto Tozzi</td><td>F</td><td>-4</td><td>63</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Tie a Yellow Ribbon Round Ole Oak Tree</td><td>140</td><td>Dawn</td><td>F</td><td>0</td><td>88</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Tiroli Tirola</td><td>276</td><td>Linda de Suza</td><td>E</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Toi + Moi</td><td>68</td><td>Grégoire</td><td>C</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>on</td><td></td><td>Tombe la neige</td><td>293</td><td>Salvatore Adamo</td><td>Gm</td><td>+5</td><td>108</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Tomorrow</td><td></td><td>Annie</td><td>D</td><td>0</td><td>84</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Torrent (Le)</td><td></td><td>Gloria Lasso</td><td>C</td><td>+2</td><td>92</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>tourbillon</td><td>1008</td><td>Jeanne Moreau</td><td></td><td></td><td></td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Tous les bateaux tous les oiseaux</td><td>203</td><td>Michel Polnareff</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Tout Savoir</td><td>76</td><td>Adé</td><td>D</td><td>0</td><td>96</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Toute la Pluie Tombe sur moi</td><td></td><td>Sacha Distel</td><td>C</td><td>-1</td><td>120</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Toutes les femmes sont belles</td><td>3159</td><td>Frank Michael</td><td>C</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>trois cloches Les</td><td>3047</td><td>Edith Piaf</td><td>D</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Trois petites note de musique</td><td>1134</td><td>Yves Montand</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Trompettes de la renommée</td><td>2035</td><td>Georges Brassens</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Trousse Chemise</td><td>1070</td><td>Charles Aznavour</td><td>Bm</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Tu verras</td><td>285</td><td>Claude Nougaro</td><td>Dm</td><td>0</td><td>126</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Tulsa Time</td><td>141</td><td>Eric Clapton</td><td>G</td><td>0</td><td>132</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Twist a Saint Tropez</td><td>47</td><td>Les Chats Sauvages</td><td>A</td><td>0</td><td>92</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Twist and Shot</td><td>62</td><td>The Beatles</td><td>C</td><td>0</td><td>120</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Un an d'amour (C'est irréparable)</td><td>236</td><td>Nino Ferrer</td><td>Bm</td><td>-5</td><td>63</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Un ano de amore</td><td>236</td><td>film</td><td>Bm</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Un autre monde</td><td>69</td><td>Téléphone</td><td>D</td><td>0</td><td>138</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Un gamin de Paris</td><td>3128</td><td>Yves Montand</td><td>A</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Un homme et une femme</td><td>1102</td><td>Chanson de Film</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Un jour mon Prince Viendra</td><td>50</td><td>Elodie Frégé</td><td>D</td><td></td><td></td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>un jour tu verras</td><td>3055</td><td>Marcel Mouloudji</td><td>F</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Un p'tit peu d'argent</td><td>3088</td><td>Yvette Giraud</td><td>E</td><td>+1</td><td>192</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Un petit cabanon</td><td>3134</td><td>Alibert</td><td>D</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Unchain my heart</td><td>135</td><td>Joe Coker</td><td>Am</td><td>0</td><td>120</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Une Belle Histoire</td><td>272</td><td>Michel Fugain</td><td>Em</td><td>-3</td><td>92</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Une chanson</td><td>1020</td><td>Charles Dumont</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Une fille aux yeux clairs</td><td>244</td><td>Michel Sardou</td><td>Em</td><td>-2</td><td></td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Une jolie fleur dans une peau de vache</td><td>2054</td><td>Georges Brassens</td><td>D</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Une Partie de Pétanque</td><td>3031</td><td></td><td>G</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Une seule vie</td><td></td><td>Gérald De Palmas</td><td>C</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>valse à mille temps La</td><td>1044</td><td>Jacques Brel</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>valse brune La</td><td>3042</td><td>Fréhel</td><td>C</td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Vanina</td><td>16</td><td>Dave</td><td>Em</td><td>+5</td><td>138</td><td>Youtube</td><td></td><td></td></tr><tr><td>on</td><td></td><td>vent nous portera Le</td><td>13</td><td>Noir désir</td><td>Em</td><td>0</td><td>108</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Vénus callipyge</td><td></td><td>Georges Brassens</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td>Vie d'Artiste</td><td></td><td>La Zarra</td><td>Dm</td><td>0</td><td>75</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>vie en rose La</td><td>3194</td><td>Edith Piaf</td><td>G</td><td>0</td><td></td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>vie par procuration La</td><td>33</td><td>Jean-Jacques Goldmann</td><td>Bm</td><td>0</td><td>120</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Vienne</td><td></td><td>Barbara</td><td>Ab</td><td></td><td></td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Viens danser le twist</td><td>48</td><td>Johnny Hallyday</td><td>E</td><td>+4</td><td>88</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>vieux Léon</td><td>2062</td><td>Georges Brassens</td><td></td><td></td><td></td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>VieuxMariés (Les)</td><td>145</td><td>michel sardou</td><td>C</td><td>-4</td><td>80</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>vingt deux septembre</td><td>2056</td><td>Georges Brassens</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>voiliers Les</td><td>3067</td><td>François Deguelt</td><td>G</td><td></td><td></td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Voulez-vous danser grand-mère?</td><td>3022</td><td>Lina Margy</td><td></td><td></td><td></td><td></td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Walk on the wild side</td><td>130</td><td>Lou reed</td><td>C</td><td>-2</td><td>104</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Welcome to Burlesque</td><td>211</td><td>Cher</td><td>Am</td><td>0</td><td>69</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>When the Saints</td><td>76</td><td>Real Book</td><td>G</td><td>0</td><td></td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>When We were young</td><td>125</td><td>Adèle</td><td>C#m</td><td></td><td>72</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>White Wedding</td><td>135</td><td>Billy Eliott</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>on</td><td></td><td>Wight is Wight</td><td>75</td><td>Michel Delpech</td><td>D</td><td>-3</td><td>72</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Winner take it all The</td><td>217</td><td>Abba</td><td>F</td><td>-3</td><td>118</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Yellow submarine</td><td>7</td><td>The Beatles</td><td>G</td><td>+1</td><td>112</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Yesterday</td><td>293</td><td>The Beatles</td><td>C</td><td>-3</td><td>92</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>You Can Leave Your Hat On</td><td></td><td>Joe Coker</td><td>F</td><td>0</td><td>88</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>You Never Can Tell</td><td>145</td><td>Emmylou Harris</td><td>C</td><td>+2</td><td>152</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>You've got to hide your love away</td><td>244</td><td>The Beatles</td><td>G</td><td>0</td><td>118</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Your Song</td><td></td><td>Elton John</td><td>Eb</td><td>-3</td><td>66</td><td>Youtube</td><td></td><td></td></tr><tr><td>off</td><td></td><td>Your Song</td><td></td><td>Janet Devlin</td><td>Bb</td><td>0</td><td>132</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>off</td><td></td><td>Zizi (Le)</td><td>14</td><td>Pierre Peret</td><td>C</td><td>0</td><td>126</td><td>Youtube</td><td>gr</td><td></td></tr><tr><td>on</td><td></td><td>Fille du coupeur de joints (La)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>off</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr>
+                      <td class="link-cell">A l’ombre des maris</td>
+                      <td class="number-cell">2014</td>
+                    </tr><tr>
+                      <td class="link-cell">A nos souvenirs</td>
+                      <td class="number-cell">205</td>
+                    </tr><tr>
+                      <td class="link-cell">A Paris</td>
+                      <td class="number-cell">1132</td>
+                    </tr><tr>
+                      <td class="link-cell">A tes seins</td>
+                      <td class="number-cell">300</td>
+                    </tr><tr>
+                      <td class="link-cell">A Toi</td>
+                      <td class="number-cell">284</td>
+                    </tr><tr>
+                      <td class="link-cell">absent L’</td>
+                      <td class="number-cell">1081 – 293</td>
+                    </tr><tr>
+                      <td class="link-cell">accordéoniste L’</td>
+                      <td class="number-cell">3142</td>
+                    </tr><tr>
+                      <td class="link-cell">Ah le petit vin blanc</td>
+                      <td class="number-cell">3007</td>
+                    </tr><tr>
+                      <td class="link-cell">ai se eu te pego</td>
+                      <td class="number-cell">44</td>
+                    </tr><tr>
+                      <td class="link-cell">aigle noir L'</td>
+                      <td class="number-cell">1058</td>
+                    </tr><tr>
+                      <td class="link-cell">Aimer à perdre la raison</td>
+                      <td class="number-cell">293 / 1005</td>
+                    </tr><tr>
+                      <td class="link-cell">Ain't no sunshin</td>
+                      <td class="number-cell">135</td>
+                    </tr><tr>
+                      <td class="link-cell">Aline</td>
+                      <td class="number-cell">209</td>
+                    </tr><tr>
+                      <td class="link-cell">All along the watch Tower</td>
+                      <td class="number-cell">100</td>
+                    </tr><tr>
+                      <td class="link-cell">All of Me</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">All The Things You Are</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Allo Maman Bobo</td>
+                      <td class="number-cell">216</td>
+                    </tr><tr>
+                      <td class="link-cell">Allumer le feu</td>
+                      <td class="number-cell">145</td>
+                    </tr><tr>
+                      <td class="link-cell">Always Remembers Us This Way</td>
+                      <td class="number-cell">75</td>
+                    </tr><tr>
+                      <td class="link-cell">Amado Mio</td>
+                      <td class="number-cell">125</td>
+                    </tr><tr>
+                      <td class="link-cell">amants d’un jour Les</td>
+                      <td class="number-cell">3156</td>
+                    </tr><tr>
+                      <td class="link-cell">amour ça fait passer le temps L'</td>
+                      <td class="number-cell">191</td>
+                    </tr><tr>
+                      <td class="link-cell">Amour en Fuite L'</td>
+                      <td class="number-cell">20</td>
+                    </tr><tr>
+                      <td class="link-cell">amour est un bouquet de violettes L'</td>
+                      <td class="number-cell">3197</td>
+                    </tr><tr>
+                      <td class="link-cell">Amoureux de ma femme</td>
+                      <td class="number-cell">17</td>
+                    </tr><tr>
+                      <td class="link-cell">Amsterdam</td>
+                      <td class="number-cell">293</td>
+                    </tr><tr>
+                      <td class="link-cell">Anamour L'</td>
+                      <td class="number-cell">200</td>
+                    </tr><tr>
+                      <td class="link-cell">Aragon et Castille</td>
+                      <td class="number-cell">293</td>
+                    </tr><tr>
+                      <td class="link-cell">Armstrong</td>
+                      <td class="number-cell">201</td>
+                    </tr><tr>
+                      <td class="link-cell">Arrêtez les aiguilles</td>
+                      <td class="number-cell">3052</td>
+                    </tr><tr>
+                      <td class="link-cell">au bal de l'amour</td>
+                      <td class="number-cell">3102</td>
+                    </tr><tr>
+                      <td class="link-cell">Au bord de la Tiretaine</td>
+                      <td class="number-cell">3182</td>
+                    </tr><tr>
+                      <td class="link-cell">Au Café des Délices</td>
+                      <td class="number-cell">6</td>
+                    </tr><tr>
+                      <td class="link-cell">Auprès de mon arbre</td>
+                      <td class="number-cell">293 / 2027</td>
+                    </tr><tr>
+                      <td class="link-cell">Autumn Leaves</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Avant de nous dire adieu</td>
+                      <td class="number-cell">250</td>
+                    </tr><tr>
+                      <td class="link-cell">Avec les filles je ne sais pas</td>
+                      <td class="number-cell">30</td>
+                    </tr><tr>
+                      <td class="link-cell">Aventurier (L')</td>
+                      <td class="number-cell">55</td>
+                    </tr><tr>
+                      <td class="link-cell">Back in USSR</td>
+                      <td class="number-cell">100</td>
+                    </tr><tr>
+                      <td class="link-cell">Bahia</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Ballade de Jim (La)</td>
+                      <td class="number-cell">145</td>
+                    </tr><tr>
+                      <td class="link-cell">ballade des gens heureux La</td>
+                      <td class="number-cell">59</td>
+                    </tr><tr>
+                      <td class="link-cell">Ballade Nord Irlandaise La</td>
+                      <td class="number-cell">260</td>
+                    </tr><tr>
+                      <td class="link-cell">bals populaires Les</td>
+                      <td class="number-cell">3</td>
+                    </tr><tr>
+                      <td class="link-cell">Bamba La</td>
+                      <td class="number-cell">62</td>
+                    </tr><tr>
+                      <td class="link-cell">Bambino</td>
+                      <td class="number-cell">3172</td>
+                    </tr><tr>
+                      <td class="link-cell">Be Bop a Lula</td>
+                      <td class="number-cell">100</td>
+                    </tr><tr>
+                      <td class="link-cell">Beautiful that way</td>
+                      <td class="number-cell">213</td>
+                    </tr><tr>
+                      <td class="link-cell">Before you accuse me</td>
+                      <td class="number-cell">100</td>
+                    </tr><tr>
+                      <td class="link-cell">Believe</td>
+                      <td class="number-cell">115</td>
+                    </tr><tr>
+                      <td class="link-cell">Belle</td>
+                      <td class="number-cell">251</td>
+                    </tr><tr>
+                      <td class="link-cell">Belle Belle Belle</td>
+                      <td class="number-cell">4</td>
+                    </tr><tr>
+                      <td class="link-cell">Belle La</td>
+                      <td class="number-cell">203</td>
+                    </tr><tr>
+                      <td class="link-cell">belle vie La</td>
+                      <td class="number-cell">284</td>
+                    </tr><tr>
+                      <td class="link-cell">Bensonhurst Blues</td>
+                      <td class="number-cell">288</td>
+                    </tr><tr>
+                      <td class="link-cell">Berry Blues</td>
+                      <td class="number-cell">PC</td>
+                    </tr><tr>
+                      <td class="link-cell">Besame Mucho</td>
+                      <td class="number-cell">3001</td>
+                    </tr><tr>
+                      <td class="link-cell">Black Magic Woman</td>
+                      <td class="number-cell">100</td>
+                    </tr><tr>
+                      <td class="link-cell">Black Orpheus</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Black Trombone</td>
+                      <td class="number-cell">76</td>
+                    </tr><tr>
+                      <td class="link-cell">Blues du Businessman Le</td>
+                      <td class="number-cell">261</td>
+                    </tr><tr>
+                      <td class="link-cell">Bohème La</td>
+                      <td class="number-cell">293 / 1066</td>
+                    </tr><tr>
+                      <td class="link-cell">Bombe Humaine La</td>
+                      <td class="number-cell">43</td>
+                    </tr><tr>
+                      <td class="link-cell">Bonne du Curé La</td>
+                      <td class="number-cell">74</td>
+                    </tr><tr>
+                      <td class="link-cell">Born to be wild (easy rider)</td>
+                      <td class="number-cell">135</td>
+                    </tr><tr>
+                      <td class="link-cell">boudeuse La</td>
+                      <td class="number-cell">3048</td>
+                    </tr><tr>
+                      <td class="link-cell">Boum</td>
+                      <td class="number-cell">3118</td>
+                    </tr><tr>
+                      <td class="link-cell">Braconne La</td>
+                      <td class="number-cell">203</td>
+                    </tr><tr>
+                      <td class="link-cell">Brand New Cadillac</td>
+                      <td class="number-cell">100</td>
+                    </tr><tr>
+                      <td class="link-cell">Brave Margot</td>
+                      <td class="number-cell">2068</td>
+                    </tr><tr>
+                      <td class="link-cell">Bridge Over Trouble Water</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Bruxelles</td>
+                      <td class="number-cell">288</td>
+                    </tr><tr>
+                      <td class="link-cell">Bruyères Corréziennes</td>
+                      <td class="number-cell">3186</td>
+                    </tr><tr>
+                      <td class="link-cell">bulletin de santé Le</td>
+                      <td class="number-cell">2046</td>
+                    </tr><tr>
+                      <td class="link-cell">C'est Beau La Vie</td>
+                      <td class="number-cell">34</td>
+                    </tr><tr>
+                      <td class="link-cell">C’est comme ça que je t’aime</td>
+                      <td class="number-cell">252</td>
+                    </tr><tr>
+                      <td class="link-cell">C'est Extra</td>
+                      <td class="number-cell">253</td>
+                    </tr><tr>
+                      <td class="link-cell">C'est la vie, fais la belle</td>
+                      <td class="number-cell">145</td>
+                    </tr><tr>
+                      <td class="link-cell">C'est ma Vie</td>
+                      <td class="number-cell">205</td>
+                    </tr><tr>
+                      <td class="link-cell">C'est un mauvais garçon</td>
+                      <td class="number-cell">3078</td>
+                    </tr><tr>
+                      <td class="link-cell">Ça c’est vraiment toi</td>
+                      <td class="number-cell">19</td>
+                    </tr><tr>
+                      <td class="link-cell">Ça je ne l'ai jamais vu</td>
+                      <td class="number-cell">204</td>
+                    </tr><tr>
+                      <td class="link-cell">Cactus Les</td>
+                      <td class="number-cell">37</td>
+                    </tr><tr>
+                      <td class="link-cell">Can You Feel the Love Tonight</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Can't Help Falling In Love</td>
+                      <td class="number-cell">208</td>
+                    </tr><tr>
+                      <td class="link-cell">Carillon d'Alsace</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Carioca</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Caroline</td>
+                      <td class="number-cell">140</td>
+                    </tr><tr>
+                      <td class="link-cell">cascade La</td>
+                      <td class="number-cell">3039</td>
+                    </tr><tr>
+                      <td class="link-cell">Casser la voix</td>
+                      <td class="number-cell">280</td>
+                    </tr><tr>
+                      <td class="link-cell">Ce n'est rien</td>
+                      <td class="number-cell">205</td>
+                    </tr><tr>
+                      <td class="link-cell">Célimene</td>
+                      <td class="number-cell">254</td>
+                    </tr><tr>
+                      <td class="link-cell">Céline</td>
+                      <td class="number-cell">255</td>
+                    </tr><tr>
+                      <td class="link-cell">Cendrillon</td>
+                      <td class="number-cell">10</td>
+                    </tr><tr>
+                      <td class="link-cell">cerisiers roses et pommiers blancs</td>
+                      <td class="number-cell">3120</td>
+                    </tr><tr>
+                      <td class="link-cell">Cette année-là</td>
+                      <td class="number-cell">65</td>
+                    </tr><tr>
+                      <td class="link-cell">Champs Élysée Aux</td>
+                      <td class="number-cell">206</td>
+                    </tr><tr>
+                      <td class="link-cell">Chanson de Lara (La)</td>
+                      <td class="number-cell">3064</td>
+                    </tr><tr>
+                      <td class="link-cell">chanson de Prévert La</td>
+                      <td class="number-cell">1078</td>
+                    </tr><tr>
+                      <td class="link-cell">chanson des blés d'or La</td>
+                      <td class="number-cell">3040</td>
+                    </tr><tr>
+                      <td class="link-cell">Chanson populaire</td>
+                      <td class="number-cell">61</td>
+                    </tr><tr>
+                      <td class="link-cell">Chanson pour l'Auvergnat</td>
+                      <td class="number-cell">256 / 2024</td>
+                    </tr><tr>
+                      <td class="link-cell">Chanson pour Pierrot</td>
+                      <td class="number-cell">316</td>
+                    </tr><tr>
+                      <td class="link-cell">Chanson sur ma drôle de vie</td>
+                      <td class="number-cell">288</td>
+                    </tr><tr>
+                      <td class="link-cell">Chansonnette à celle qui reste pucelle</td>
+                      <td class="number-cell">2066</td>
+                    </tr><tr>
+                      <td class="link-cell">chant du gardian Le</td>
+                      <td class="number-cell">3050</td>
+                    </tr><tr>
+                      <td class="link-cell">Chante</td>
+                      <td class="number-cell">5</td>
+                    </tr><tr>
+                      <td class="link-cell">Chante comme si tu devais</td>
+                      <td class="number-cell">206</td>
+                    </tr><tr>
+                      <td class="link-cell">Chanteur Malheureux (Le)</td>
+                      <td class="number-cell">29</td>
+                    </tr><tr>
+                      <td class="link-cell">chapelle au clair de lune La</td>
+                      <td class="number-cell">3166</td>
+                    </tr><tr>
+                      <td class="link-cell">chasse aux papillons La</td>
+                      <td class="number-cell">2018</td>
+                    </tr><tr>
+                      <td class="link-cell">Chasseur Le</td>
+                      <td class="number-cell">262</td>
+                    </tr><tr>
+                      <td class="link-cell">Chenille (la)</td>
+                      <td class="number-cell">258</td>
+                    </tr><tr>
+                      <td class="link-cell">Chevalier de la table ronde</td>
+                      <td class="number-cell">3183</td>
+                    </tr><tr>
+                      <td class="link-cell">Chica de Cuba La</td>
+                      <td class="number-cell">15</td>
+                    </tr><tr>
+                      <td class="link-cell">Clodi Clodo</td>
+                      <td class="number-cell">1030</td>
+                    </tr><tr>
+                      <td class="link-cell">Cocaine</td>
+                      <td class="number-cell">105</td>
+                    </tr><tr>
+                      <td class="link-cell">Come Away With Me</td>
+                      <td class="number-cell">115</td>
+                    </tr><tr>
+                      <td class="link-cell">Come together</td>
+                      <td class="number-cell">105</td>
+                    </tr><tr>
+                      <td class="link-cell">Comédiens Les</td>
+                      <td class="number-cell">206 / 1072</td>
+                    </tr><tr>
+                      <td class="link-cell">Comme d'habitude</td>
+                      <td class="number-cell">60</td>
+                    </tr><tr>
+                      <td class="link-cell">Comme de bien entendu</td>
+                      <td class="number-cell">3097</td>
+                    </tr><tr>
+                      <td class="link-cell">Comme toi</td>
+                      <td class="number-cell">51</td>
+                    </tr><tr>
+                      <td class="link-cell">comme tout l' monde</td>
+                      <td class="number-cell">3097</td>
+                    </tr><tr>
+                      <td class="link-cell">Comme un arbre</td>
+                      <td class="number-cell">293</td>
+                    </tr><tr>
+                      <td class="link-cell">Comme un avion sans ailes</td>
+                      <td class="number-cell">67</td>
+                    </tr><tr>
+                      <td class="link-cell">Comme un Boomerang</td>
+                      <td class="number-cell">75</td>
+                    </tr><tr>
+                      <td class="link-cell">complainte de la Butte La</td>
+                      <td class="number-cell">76</td>
+                    </tr><tr>
+                      <td class="link-cell">complainte du phoque en Alaska La</td>
+                      <td class="number-cell">1018</td>
+                    </tr><tr>
+                      <td class="link-cell">Confidence pour confidence</td>
+                      <td class="number-cell">62</td>
+                    </tr><tr>
+                      <td class="link-cell">Copains d'abord Les</td>
+                      <td class="number-cell">206 / 2041</td>
+                    </tr><tr>
+                      <td class="link-cell">coq et la pendule Le</td>
+                      <td class="number-cell">1026</td>
+                    </tr><tr>
+                      <td class="link-cell">corons Les</td>
+                      <td class="number-cell">1052</td>
+                    </tr><tr>
+                      <td class="link-cell">Country road, Take me home</td>
+                      <td class="number-cell">243</td>
+                    </tr><tr>
+                      <td class="link-cell">coup de soleil (Le)</td>
+                      <td class="number-cell">283</td>
+                    </tr><tr>
+                      <td class="link-cell">Creep</td>
+                      <td class="number-cell">71</td>
+                    </tr><tr>
+                      <td class="link-cell">croquants (Les)</td>
+                      <td class="number-cell">2039</td>
+                    </tr><tr>
+                      <td class="link-cell">dame de Haute Savoie La</td>
+                      <td class="number-cell">36</td>
+                    </tr><tr>
+                      <td class="link-cell">Dancing in the Moonlight</td>
+                      <td class="number-cell">130</td>
+                    </tr><tr>
+                      <td class="link-cell">Daniela</td>
+                      <td class="number-cell">35</td>
+                    </tr><tr>
+                      <td class="link-cell">Dans les Prisons de Nantes</td>
+                      <td class="number-cell">53</td>
+                    </tr><tr>
+                      <td class="link-cell">Dans les Yeux d'Emilie</td>
+                      <td class="number-cell">145</td>
+                    </tr><tr>
+                      <td class="link-cell">Dans mon HLM</td>
+                      <td class="number-cell">332</td>
+                    </tr><tr>
+                      <td class="link-cell">danseur de Charleston Le</td>
+                      <td class="number-cell">3086</td>
+                    </tr><tr>
+                      <td class="link-cell">Day Tripper</td>
+                      <td class="number-cell">105</td>
+                    </tr><tr>
+                      <td class="link-cell">Débit de l'eau débit de lait</td>
+                      <td class="number-cell">293/1048</td>
+                    </tr><tr>
+                      <td class="link-cell">Déjeuner en paix</td>
+                      <td class="number-cell">292</td>
+                    </tr><tr>
+                      <td class="link-cell">Demain sera parfait</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Démons de minuit les</td>
+                      <td class="number-cell">221</td>
+                    </tr><tr>
+                      <td class="link-cell">dénicheur Le</td>
+                      <td class="number-cell">3020</td>
+                    </tr><tr>
+                      <td class="link-cell">Derrière l'amour</td>
+                      <td class="number-cell">207</td>
+                    </tr><tr>
+                      <td class="link-cell">Dès que le vent soufflera</td>
+                      <td class="number-cell">207</td>
+                    </tr><tr>
+                      <td class="link-cell">Dessins animés</td>
+                      <td class="number-cell">143</td>
+                    </tr><tr>
+                      <td class="link-cell">Diamonds-On-The-Inside</td>
+                      <td class="number-cell">105</td>
+                    </tr><tr>
+                      <td class="link-cell">Diego</td>
+                      <td class="number-cell">226</td>
+                    </tr><tr>
+                      <td class="link-cell">Dieu fumeur de havanes</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Dis Lui</td>
+                      <td class="number-cell">257</td>
+                    </tr><tr>
+                      <td class="link-cell">Dis quand reviendras tu</td>
+                      <td class="number-cell">293</td>
+                    </tr><tr>
+                      <td class="link-cell">Domino</td>
+                      <td class="number-cell">3136</td>
+                    </tr><tr>
+                      <td class="link-cell">Don't Speak</td>
+                      <td class="number-cell">75</td>
+                    </tr><tr>
+                      <td class="link-cell">Don't You Remember</td>
+                      <td class="number-cell">75</td>
+                    </tr><tr>
+                      <td class="link-cell">Douce France</td>
+                      <td class="number-cell">293</td>
+                    </tr><tr>
+                      <td class="link-cell">Dream a Little Dream of Me</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Du gris</td>
+                      <td class="number-cell">3018</td>
+                    </tr><tr>
+                      <td class="link-cell">Du Rhum des Femmes</td>
+                      <td class="number-cell">6</td>
+                    </tr><tr>
+                      <td class="link-cell">Dust in the Wind</td>
+                      <td class="number-cell">106</td>
+                    </tr><tr>
+                      <td class="link-cell">Élisa</td>
+                      <td class="number-cell">208</td>
+                    </tr><tr>
+                      <td class="link-cell">Elle était si jolie</td>
+                      <td class="number-cell">186</td>
+                    </tr><tr>
+                      <td class="link-cell">Elle préfère l’amour en mer</td>
+                      <td class="number-cell">34</td>
+                    </tr><tr>
+                      <td class="link-cell">Émilie jolie</td>
+                      <td class="number-cell">204</td>
+                    </tr><tr>
+                      <td class="link-cell">emmène moi danser ce soir</td>
+                      <td class="number-cell">216/3127</td>
+                    </tr><tr>
+                      <td class="link-cell">Emmenez-moi</td>
+                      <td class="number-cell">209</td>
+                    </tr><tr>
+                      <td class="link-cell">En chantant</td>
+                      <td class="number-cell">243</td>
+                    </tr><tr>
+                      <td class="link-cell">En Couleurs</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Encore et Encore</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">enfants du Pirée (Les)</td>
+                      <td class="number-cell">209</td>
+                    </tr><tr>
+                      <td class="link-cell">Enola Gay</td>
+                      <td class="number-cell">105</td>
+                    </tr><tr>
+                      <td class="link-cell">Envie ( L’)</td>
+                      <td class="number-cell">31</td>
+                    </tr><tr>
+                      <td class="link-cell">Envole moi</td>
+                      <td class="number-cell">69</td>
+                    </tr><tr>
+                      <td class="link-cell">Et Bam</td>
+                      <td class="number-cell">56</td>
+                    </tr><tr>
+                      <td class="link-cell">Et maintenant</td>
+                      <td class="number-cell">209 / 1086</td>
+                    </tr><tr>
+                      <td class="link-cell">Et même après je t'aimerai</td>
+                      <td class="number-cell">244</td>
+                    </tr><tr>
+                      <td class="link-cell">Et Moi Je Chante</td>
+                      <td class="number-cell">38</td>
+                    </tr><tr>
+                      <td class="link-cell">Et moi, et moi, et moi</td>
+                      <td class="number-cell">44</td>
+                    </tr><tr>
+                      <td class="link-cell">Et mon père</td>
+                      <td class="number-cell">210</td>
+                    </tr><tr>
+                      <td class="link-cell">Et puis je sais</td>
+                      <td class="number-cell">280</td>
+                    </tr><tr>
+                      <td class="link-cell">Et si tu n'existait pas</td>
+                      <td class="number-cell">150</td>
+                    </tr><tr>
+                      <td class="link-cell">été (L') "Lavilliers"</td>
+                      <td class="number-cell">244</td>
+                    </tr><tr>
+                      <td class="link-cell">Éteins la lumière</td>
+                      <td class="number-cell">292</td>
+                    </tr><tr>
+                      <td class="link-cell">Étoile des neiges</td>
+                      <td class="number-cell">3014</td>
+                    </tr><tr>
+                      <td class="link-cell">étoile des troubadours L'</td>
+                      <td class="number-cell">3011</td>
+                    </tr><tr>
+                      <td class="link-cell">Etre un homme comme vous</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Every Breath You Take</td>
+                      <td class="number-cell">110</td>
+                    </tr><tr>
+                      <td class="link-cell">everything matters</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Eviva Espana</td>
+                      <td class="number-cell">3092</td>
+                    </tr><tr>
+                      <td class="link-cell">facteur de Santa-Cruz Le</td>
+                      <td class="number-cell">3170</td>
+                    </tr><tr>
+                      <td class="link-cell">Faire un Pont</td>
+                      <td class="number-cell">243</td>
+                    </tr><tr>
+                      <td class="link-cell">Fais comme l'oiseau</td>
+                      <td class="number-cell">211</td>
+                    </tr><tr>
+                      <td class="link-cell">Fantôme Le</td>
+                      <td class="number-cell">2086</td>
+                    </tr><tr>
+                      <td class="link-cell">Félicie aussi</td>
+                      <td class="number-cell">3162</td>
+                    </tr><tr>
+                      <td class="link-cell">Femme libérée / The Passenger</td>
+                      <td class="number-cell">11</td>
+                    </tr><tr>
+                      <td class="link-cell">Femme que j'aime</td>
+                      <td class="number-cell">280</td>
+                    </tr><tr>
+                      <td class="link-cell">Fernande</td>
+                      <td class="number-cell">211 / 2012</td>
+                    </tr><tr>
+                      <td class="link-cell">feuilles mortes les</td>
+                      <td class="number-cell">1136</td>
+                    </tr><tr>
+                      <td class="link-cell">fiancés d'Auvergne</td>
+                      <td class="number-cell">3003</td>
+                    </tr><tr>
+                      <td class="link-cell">Fille du Motel La</td>
+                      <td class="number-cell">26</td>
+                    </tr><tr>
+                      <td class="link-cell">Fille du père Noël La</td>
+                      <td class="number-cell">39</td>
+                    </tr><tr>
+                      <td class="link-cell">filles de mon pays les</td>
+                      <td class="number-cell">216</td>
+                    </tr><tr>
+                      <td class="link-cell">Fleur aux dents La</td>
+                      <td class="number-cell">28</td>
+                    </tr><tr>
+                      <td class="link-cell">Fleur de Paris</td>
+                      <td class="number-cell">3074</td>
+                    </tr><tr>
+                      <td class="link-cell">Flipper</td>
+                      <td class="number-cell">40</td>
+                    </tr><tr>
+                      <td class="link-cell">Fly me To the Moon</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Fontenay aux roses</td>
+                      <td class="number-cell">18</td>
+                    </tr><tr>
+                      <td class="link-cell">Foule La</td>
+                      <td class="number-cell">211</td>
+                    </tr><tr>
+                      <td class="link-cell">Foule sentimentale</td>
+                      <td class="number-cell">211</td>
+                    </tr><tr>
+                      <td class="link-cell">France Le</td>
+                      <td class="number-cell">217</td>
+                    </tr><tr>
+                      <td class="link-cell">Frou Frou</td>
+                      <td class="number-cell">3008</td>
+                    </tr><tr>
+                      <td class="link-cell">Gabrielle</td>
+                      <td class="number-cell">20</td>
+                    </tr><tr>
+                      <td class="link-cell">Gaby oh Gaby</td>
+                      <td class="number-cell">21</td>
+                    </tr><tr>
+                      <td class="link-cell">gars de la marine</td>
+                      <td class="number-cell">3024</td>
+                    </tr><tr>
+                      <td class="link-cell">Germaine</td>
+                      <td class="number-cell">211</td>
+                    </tr><tr>
+                      <td class="link-cell">Get Back</td>
+                      <td class="number-cell">110</td>
+                    </tr><tr>
+                      <td class="link-cell">gibier manque Le</td>
+                      <td class="number-cell">211</td>
+                    </tr><tr>
+                      <td class="link-cell">Gimme all your lovin</td>
+                      <td class="number-cell">110</td>
+                    </tr><tr>
+                      <td class="link-cell">Girl</td>
+                      <td class="number-cell">285</td>
+                    </tr><tr>
+                      <td class="link-cell">Goffa Lolita (La)</td>
+                      <td class="number-cell">46</td>
+                    </tr><tr>
+                      <td class="link-cell">gorille Le</td>
+                      <td class="number-cell">2020</td>
+                    </tr><tr>
+                      <td class="link-cell">Gottingen</td>
+                      <td class="number-cell">293</td>
+                    </tr><tr>
+                      <td class="link-cell">goualante du pauvre Jean La</td>
+                      <td class="number-cell">3138</td>
+                    </tr><tr>
+                      <td class="link-cell">grand chêne Le</td>
+                      <td class="number-cell">2050</td>
+                    </tr><tr>
+                      <td class="link-cell">Grand sommeil Le</td>
+                      <td class="number-cell">42</td>
+                    </tr><tr>
+                      <td class="link-cell">grande Zoa La</td>
+                      <td class="number-cell">196</td>
+                    </tr><tr>
+                      <td class="link-cell">Grenade (La)</td>
+                      <td class="number-cell">64</td>
+                    </tr><tr>
+                      <td class="link-cell">Groupie du Pianiste (La)</td>
+                      <td class="number-cell">74</td>
+                    </tr><tr>
+                      <td class="link-cell">Guantanamera</td>
+                      <td class="number-cell">212</td>
+                    </tr><tr>
+                      <td class="link-cell">Habana</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Hallelujah</td>
+                      <td class="number-cell">288</td>
+                    </tr><tr>
+                      <td class="link-cell">Hécatombe</td>
+                      <td class="number-cell">2080</td>
+                    </tr><tr>
+                      <td class="link-cell">Hexagone</td>
+                      <td class="number-cell">326</td>
+                    </tr><tr>
+                      <td class="link-cell">Hey Joe</td>
+                      <td class="number-cell">110</td>
+                    </tr><tr>
+                      <td class="link-cell">Hey you've got to hide your love away</td>
+                      <td class="number-cell">227</td>
+                    </tr><tr>
+                      <td class="link-cell">Histoire de faussaire</td>
+                      <td class="number-cell">213 / 2006</td>
+                    </tr><tr>
+                      <td class="link-cell">homme à la moto L’</td>
+                      <td class="number-cell">3155</td>
+                    </tr><tr>
+                      <td class="link-cell">Honesty</td>
+                      <td class="number-cell">68</td>
+                    </tr><tr>
+                      <td class="link-cell">Honky Tonk women</td>
+                      <td class="number-cell">110</td>
+                    </tr><tr>
+                      <td class="link-cell">Hotel California</td>
+                      <td class="number-cell">100</td>
+                    </tr><tr>
+                      <td class="link-cell">Hotesse de l'air L'</td>
+                      <td class="number-cell">213</td>
+                    </tr><tr>
+                      <td class="link-cell">Hygiaphone</td>
+                      <td class="number-cell">40</td>
+                    </tr><tr>
+                      <td class="link-cell">I Can See Clearly Now</td>
+                      <td class="number-cell">213</td>
+                    </tr><tr>
+                      <td class="link-cell">I Heart It Trough The Grapvine</td>
+                      <td class="number-cell">110</td>
+                    </tr><tr>
+                      <td class="link-cell">I Hung My Head</td>
+                      <td class="number-cell">140</td>
+                    </tr><tr>
+                      <td class="link-cell">I shot the sheriff</td>
+                      <td class="number-cell">110</td>
+                    </tr><tr>
+                      <td class="link-cell">I Will Survive</td>
+                      <td class="number-cell">279</td>
+                    </tr><tr>
+                      <td class="link-cell">Idole des Jeunes (L')</td>
+                      <td class="number-cell">53</td>
+                    </tr><tr>
+                      <td class="link-cell">Il est trop tard</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Il était un fois nous deux</td>
+                      <td class="number-cell">70</td>
+                    </tr><tr>
+                      <td class="link-cell">Il faut toujours un perdant</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Il Jouait du Piano Debout</td>
+                      <td class="number-cell">30</td>
+                    </tr><tr>
+                      <td class="link-cell">Il suffira d'un signe</td>
+                      <td class="number-cell">56</td>
+                    </tr><tr>
+                      <td class="link-cell">Il suffirait de presque rien</td>
+                      <td class="number-cell">1120</td>
+                    </tr><tr>
+                      <td class="link-cell">Il tape sur des bambous</td>
+                      <td class="number-cell">49</td>
+                    </tr><tr>
+                      <td class="link-cell">Il venait d'avoir 18 ans</td>
+                      <td class="number-cell">277</td>
+                    </tr><tr>
+                      <td class="link-cell">Il voyage en solitaire</td>
+                      <td class="number-cell">206</td>
+                    </tr><tr>
+                      <td class="link-cell">Il y a</td>
+                      <td class="number-cell">340</td>
+                    </tr><tr>
+                      <td class="link-cell">Imagine</td>
+                      <td class="number-cell">115</td>
+                    </tr><tr>
+                      <td class="link-cell">important c’est la rose L’</td>
+                      <td class="number-cell">1082</td>
+                    </tr><tr>
+                      <td class="link-cell">It' s a heartache</td>
+                      <td class="number-cell">215</td>
+                    </tr><tr>
+                      <td class="link-cell">Italiano (L')</td>
+                      <td class="number-cell">273</td>
+                    </tr><tr>
+                      <td class="link-cell">Itsi bitsi petit bikini</td>
+                      <td class="number-cell">63</td>
+                    </tr><tr>
+                      <td class="link-cell">J' t 'emmène au vent</td>
+                      <td class="number-cell">41</td>
+                    </tr><tr>
+                      <td class="link-cell">J' te pardonne</td>
+                      <td class="number-cell">226</td>
+                    </tr><tr>
+                      <td class="link-cell">J'ai demandé à la lune</td>
+                      <td class="number-cell">4</td>
+                    </tr><tr>
+                      <td class="link-cell">J'ai encore rêvé d'elle</td>
+                      <td class="number-cell">258</td>
+                    </tr><tr>
+                      <td class="link-cell">J’ai la mémoire qui flanche</td>
+                      <td class="number-cell">1010</td>
+                    </tr><tr>
+                      <td class="link-cell">J'ai Oubliè de Vivre</td>
+                      <td class="number-cell">54</td>
+                    </tr><tr>
+                      <td class="link-cell">J'ai rencontré l'homme de ma vie</td>
+                      <td class="number-cell">284</td>
+                    </tr><tr>
+                      <td class="link-cell">J'ai rendez-vous avec vous</td>
+                      <td class="number-cell">2074</td>
+                    </tr><tr>
+                      <td class="link-cell">J'ai un problème</td>
+                      <td class="number-cell">213</td>
+                    </tr><tr>
+                      <td class="link-cell">J'aime les filles</td>
+                      <td class="number-cell">214</td>
+                    </tr><tr>
+                      <td class="link-cell">J'en Parlerai au Diable</td>
+                      <td class="number-cell">7</td>
+                    </tr><tr>
+                      <td class="link-cell">j'veux du soleil</td>
+                      <td class="number-cell">18</td>
+                    </tr><tr>
+                      <td class="link-cell">Jardin d'hiver</td>
+                      <td class="number-cell">76</td>
+                    </tr><tr>
+                      <td class="link-cell">jardin extraordinaire Le</td>
+                      <td class="number-cell">3104</td>
+                    </tr><tr>
+                      <td class="link-cell">java bleue La</td>
+                      <td class="number-cell">3010</td>
+                    </tr><tr>
+                      <td class="link-cell">java de Broadway La</td>
+                      <td class="number-cell">45</td>
+                    </tr><tr>
+                      <td class="link-cell">java des bombes atomiques La</td>
+                      <td class="number-cell">1118</td>
+                    </tr><tr>
+                      <td class="link-cell">Javanaise (La)</td>
+                      <td class="number-cell">215 / 1074</td>
+                    </tr><tr>
+                      <td class="link-cell">Jazz et la Java (Le)</td>
+                      <td class="number-cell">293</td>
+                    </tr><tr>
+                      <td class="link-cell">Je m’ voyais déjà</td>
+                      <td class="number-cell">215 / 1067</td>
+                    </tr><tr>
+                      <td class="link-cell">Je me suis fait tout petit</td>
+                      <td class="number-cell">2032</td>
+                    </tr><tr>
+                      <td class="link-cell">Je n'aurai pas le temps</td>
+                      <td class="number-cell">213</td>
+                    </tr><tr>
+                      <td class="link-cell">Je ne veux pas travailler</td>
+                      <td class="number-cell">293</td>
+                    </tr><tr>
+                      <td class="link-cell">Je pars</td>
+                      <td class="number-cell">284</td>
+                    </tr><tr>
+                      <td class="link-cell">Je partirai demain</td>
+                      <td class="number-cell">67</td>
+                    </tr><tr>
+                      <td class="link-cell">Je reviens chez nous</td>
+                      <td class="number-cell">3068</td>
+                    </tr><tr>
+                      <td class="link-cell">Je Reviens te Chercher</td>
+                      <td class="number-cell">48</td>
+                    </tr><tr>
+                      <td class="link-cell">Je suis un voyou</td>
+                      <td class="number-cell">2060</td>
+                    </tr><tr>
+                      <td class="link-cell">Je suis venu te dire que je m'en vais</td>
+                      <td class="number-cell">13</td>
+                    </tr><tr>
+                      <td class="link-cell">Je t'aime à la folie</td>
+                      <td class="number-cell">160</td>
+                    </tr><tr>
+                      <td class="link-cell">Je te le dis quand même</td>
+                      <td class="number-cell">160</td>
+                    </tr><tr>
+                      <td class="link-cell">Je te promets</td>
+                      <td class="number-cell">82</td>
+                    </tr><tr>
+                      <td class="link-cell">Jerk Le</td>
+                      <td class="number-cell">15</td>
+                    </tr><tr>
+                      <td class="link-cell">Jésus Reviens</td>
+                      <td class="number-cell">262</td>
+                    </tr><tr>
+                      <td class="link-cell">jeune fille du métro La</td>
+                      <td class="number-cell">3130</td>
+                    </tr><tr>
+                      <td class="link-cell">Johnny and Mary</td>
+                      <td class="number-cell">115</td>
+                    </tr><tr>
+                      <td class="link-cell">Johnny be good</td>
+                      <td class="number-cell">115</td>
+                    </tr><tr>
+                      <td class="link-cell">Jolie Bouteille</td>
+                      <td class="number-cell">238</td>
+                    </tr><tr>
+                      <td class="link-cell">Jolie môme</td>
+                      <td class="number-cell">1014</td>
+                    </tr><tr>
+                      <td class="link-cell">jolies colonies de vacances Les</td>
+                      <td class="number-cell">215</td>
+                    </tr><tr>
+                      <td class="link-cell">Joue pas de Rock 'n Roll</td>
+                      <td class="number-cell">90</td>
+                    </tr><tr>
+                      <td class="link-cell">Jumpin Jack Flash</td>
+                      <td class="number-cell">115</td>
+                    </tr><tr>
+                      <td class="link-cell">Jusqu’à la ceinture</td>
+                      <td class="number-cell">8</td>
+                    </tr><tr>
+                      <td class="link-cell">Just Take Me</td>
+                      <td class="number-cell">115</td>
+                    </tr><tr>
+                      <td class="link-cell">Juste Quelqu'un de bien</td>
+                      <td class="number-cell">209</td>
+                    </tr><tr>
+                      <td class="link-cell">Lacs du Connemara Les</td>
+                      <td class="number-cell">72</td>
+                    </tr><tr>
+                      <td class="link-cell">Lady Lay</td>
+                      <td class="number-cell">59.1</td>
+                    </tr><tr>
+                      <td class="link-cell">Lady Madona</td>
+                      <td class="number-cell">115</td>
+                    </tr><tr>
+                      <td class="link-cell">Laisse béton</td>
+                      <td class="number-cell">320</td>
+                    </tr><tr>
+                      <td class="link-cell">Laura</td>
+                      <td class="number-cell">13</td>
+                    </tr><tr>
+                      <td class="link-cell">Layla</td>
+                      <td class="number-cell">120</td>
+                    </tr><tr>
+                      <td class="link-cell">Let it be</td>
+                      <td class="number-cell">71</td>
+                    </tr><tr>
+                      <td class="link-cell">Libertango (I ve seen that face before)</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Lily Marlene</td>
+                      <td class="number-cell">3161</td>
+                    </tr><tr>
+                      <td class="link-cell">lion est mort ce soir (Le)</td>
+                      <td class="number-cell">1</td>
+                    </tr><tr>
+                      <td class="link-cell">Liste (La)</td>
+                      <td class="number-cell">207</td>
+                    </tr><tr>
+                      <td class="link-cell">Loir et Cher (Le)</td>
+                      <td class="number-cell">8</td>
+                    </tr><tr>
+                      <td class="link-cell">Long Train Running</td>
+                      <td class="number-cell">135</td>
+                    </tr><tr>
+                      <td class="link-cell">Loup La Biche Le Chevalier Le</td>
+                      <td class="number-cell">57</td>
+                    </tr><tr>
+                      <td class="link-cell">loup, le renard et la belette Le</td>
+                      <td class="number-cell">52</td>
+                    </tr><tr>
+                      <td class="link-cell">Love Boat The</td>
+                      <td class="number-cell">293</td>
+                    </tr><tr>
+                      <td class="link-cell">Love me tender</td>
+                      <td class="number-cell">74</td>
+                    </tr><tr>
+                      <td class="link-cell">Luka</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">lundi au soleil Le</td>
+                      <td class="number-cell">28.1</td>
+                    </tr><tr>
+                      <td class="link-cell">Ma fille</td>
+                      <td class="number-cell">288</td>
+                    </tr><tr>
+                      <td class="link-cell">Ma France</td>
+                      <td class="number-cell">1006</td>
+                    </tr><tr>
+                      <td class="link-cell">Ma Gueule</td>
+                      <td class="number-cell">220</td>
+                    </tr><tr>
+                      <td class="link-cell">Ma môme</td>
+                      <td class="number-cell">1002</td>
+                    </tr><tr>
+                      <td class="link-cell">Ma Préférence</td>
+                      <td class="number-cell">2</td>
+                    </tr><tr>
+                      <td class="link-cell">Macumba</td>
+                      <td class="number-cell">32</td>
+                    </tr><tr>
+                      <td class="link-cell">Madame Nostalgie</td>
+                      <td class="number-cell">1122</td>
+                    </tr><tr>
+                      <td class="link-cell">Madelon La</td>
+                      <td class="number-cell">3094</td>
+                    </tr><tr>
+                      <td class="link-cell">Madone aux fleurs La</td>
+                      <td class="number-cell">3158</td>
+                    </tr><tr>
+                      <td class="link-cell">Madrague (La)</td>
+                      <td class="number-cell">160</td>
+                    </tr><tr>
+                      <td class="link-cell">Mains d'Or (Les)</td>
+                      <td class="number-cell">205</td>
+                    </tr><tr>
+                      <td class="link-cell">maitresse d'école La</td>
+                      <td class="number-cell">2064</td>
+                    </tr><tr>
+                      <td class="link-cell">maladie d’amour La</td>
+                      <td class="number-cell">64</td>
+                    </tr><tr>
+                      <td class="link-cell">Maldon</td>
+                      <td class="number-cell">244</td>
+                    </tr><tr>
+                      <td class="link-cell">mama La</td>
+                      <td class="number-cell">1060</td>
+                    </tr><tr>
+                      <td class="link-cell">Marcia Baila</td>
+                      <td class="number-cell">60</td>
+                    </tr><tr>
+                      <td class="link-cell">Marguerite</td>
+                      <td class="number-cell">178</td>
+                    </tr><tr>
+                      <td class="link-cell">Marinela</td>
+                      <td class="number-cell">3058</td>
+                    </tr><tr>
+                      <td class="link-cell">Marionnettes Les</td>
+                      <td class="number-cell">54</td>
+                    </tr><tr>
+                      <td class="link-cell">Maritza La</td>
+                      <td class="number-cell">207</td>
+                    </tr><tr>
+                      <td class="link-cell">Marjolaine</td>
+                      <td class="number-cell">3036</td>
+                    </tr><tr>
+                      <td class="link-cell">Marquise</td>
+                      <td class="number-cell">2058</td>
+                    </tr><tr>
+                      <td class="link-cell">Mary had a little lamb</td>
+                      <td class="number-cell">140</td>
+                    </tr><tr>
+                      <td class="link-cell">mauvais sujet repenti Le</td>
+                      <td class="number-cell">2010</td>
+                    </tr><tr>
+                      <td class="link-cell">méditérannée</td>
+                      <td class="number-cell">3186</td>
+                    </tr><tr>
+                      <td class="link-cell">Méditerranéenne</td>
+                      <td class="number-cell">286</td>
+                    </tr><tr>
+                      <td class="link-cell">Ménilmontant</td>
+                      <td class="number-cell">1046</td>
+                    </tr><tr>
+                      <td class="link-cell">Ménilmontant La marche de</td>
+                      <td class="number-cell">3132</td>
+                    </tr><tr>
+                      <td class="link-cell">Mère à Titi La</td>
+                      <td class="number-cell">293</td>
+                    </tr><tr>
+                      <td class="link-cell">Mes emmerdes</td>
+                      <td class="number-cell">221 / 1062</td>
+                    </tr><tr>
+                      <td class="link-cell">Mes mains</td>
+                      <td class="number-cell">1084</td>
+                    </tr><tr>
+                      <td class="link-cell">Message in the bottle</td>
+                      <td class="number-cell">120</td>
+                    </tr><tr>
+                      <td class="link-cell">métèque Le</td>
+                      <td class="number-cell">28</td>
+                    </tr><tr>
+                      <td class="link-cell">Mexico</td>
+                      <td class="number-cell">221</td>
+                    </tr><tr>
+                      <td class="link-cell">Michèle (Lenorman)</td>
+                      <td class="number-cell">24</td>
+                    </tr><tr>
+                      <td class="link-cell">Million Reasons</td>
+                      <td class="number-cell">209</td>
+                    </tr><tr>
+                      <td class="link-cell">Mirza</td>
+                      <td class="number-cell">50</td>
+                    </tr><tr>
+                      <td class="link-cell">Mistral gagnant</td>
+                      <td class="number-cell">265</td>
+                    </tr><tr>
+                      <td class="link-cell">Moi j’aime le music-hall</td>
+                      <td class="number-cell">3108</td>
+                    </tr><tr>
+                      <td class="link-cell">Moins joli</td>
+                      <td class="number-cell">63</td>
+                    </tr><tr>
+                      <td class="link-cell">Mon amant de Saint Jean</td>
+                      <td class="number-cell">76</td>
+                    </tr><tr>
+                      <td class="link-cell">Mon Dieu</td>
+                      <td class="number-cell">3193</td>
+                    </tr><tr>
+                      <td class="link-cell">Mon fils ma bataille</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Mon Frère</td>
+                      <td class="number-cell">145</td>
+                    </tr><tr>
+                      <td class="link-cell">Mon manège à moi</td>
+                      <td class="number-cell">3140</td>
+                    </tr><tr>
+                      <td class="link-cell">Mon nom</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Mon vieux</td>
+                      <td class="number-cell">10/1054</td>
+                    </tr><tr>
+                      <td class="link-cell">Montagne La</td>
+                      <td class="number-cell">285</td>
+                    </tr><tr>
+                      <td class="link-cell">Moulins de mon cœur (Les)</td>
+                      <td class="number-cell">293 /1016</td>
+                    </tr><tr>
+                      <td class="link-cell">mourir d'aimer</td>
+                      <td class="number-cell">1063</td>
+                    </tr><tr>
+                      <td class="link-cell">Mourir pour des idées</td>
+                      <td class="number-cell">1092</td>
+                    </tr><tr>
+                      <td class="link-cell">Mourir sur scène</td>
+                      <td class="number-cell">278</td>
+                    </tr><tr>
+                      <td class="link-cell">murs de poussière</td>
+                      <td class="number-cell">75</td>
+                    </tr><tr>
+                      <td class="link-cell">musique que j'aime La</td>
+                      <td class="number-cell">221</td>
+                    </tr><tr>
+                      <td class="link-cell">n'avoue jamais</td>
+                      <td class="number-cell">70/3198</td>
+                    </tr><tr>
+                      <td class="link-cell">Nathalie</td>
+                      <td class="number-cell">216</td>
+                    </tr><tr>
+                      <td class="link-cell">Nature Boy</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">neiges du Kilimandjaro</td>
+                      <td class="number-cell">39</td>
+                    </tr><tr>
+                      <td class="link-cell">New York avec toi</td>
+                      <td class="number-cell">38</td>
+                    </tr><tr>
+                      <td class="link-cell">Nice very nice</td>
+                      <td class="number-cell">1029</td>
+                    </tr><tr>
+                      <td class="link-cell">Nini peau de chien</td>
+                      <td class="number-cell">3016</td>
+                    </tr><tr>
+                      <td class="link-cell">no woman no cry</td>
+                      <td class="number-cell">120</td>
+                    </tr><tr>
+                      <td class="link-cell">Noël interdit</td>
+                      <td class="number-cell">285</td>
+                    </tr><tr>
+                      <td class="link-cell">Noir c'est Noir</td>
+                      <td class="number-cell">23</td>
+                    </tr><tr>
+                      <td class="link-cell">Non je ne regrette rien</td>
+                      <td class="number-cell">3150</td>
+                    </tr><tr>
+                      <td class="link-cell">Nuit de Folie</td>
+                      <td class="number-cell">57</td>
+                    </tr><tr>
+                      <td class="link-cell">nymphomane La</td>
+                      <td class="number-cell">1112</td>
+                    </tr><tr>
+                      <td class="link-cell">O gué Vive la rose (Mon amant me délaisse)</td>
+                      <td class="number-cell">3165</td>
+                    </tr><tr>
+                      <td class="link-cell">O Sole moi</td>
+                      <td class="number-cell">275</td>
+                    </tr><tr>
+                      <td class="link-cell">Obladi Oblada</td>
+                      <td class="number-cell">105</td>
+                    </tr><tr>
+                      <td class="link-cell">ogresse L’</td>
+                      <td class="number-cell">1108</td>
+                    </tr><tr>
+                      <td class="link-cell">Oh ma jolie Sarah</td>
+                      <td class="number-cell">102</td>
+                    </tr><tr>
+                      <td class="link-cell">oiseau et l'enfant L'</td>
+                      <td class="number-cell">150/3190</td>
+                    </tr><tr>
+                      <td class="link-cell">Olé torero</td>
+                      <td class="number-cell">3070</td>
+                    </tr><tr>
+                      <td class="link-cell">On a pas tous les jours 20 ans</td>
+                      <td class="number-cell">3044</td>
+                    </tr><tr>
+                      <td class="link-cell">On est pas là pour se faire engueller</td>
+                      <td class="number-cell">  286 - 1116</td>
+                    </tr><tr>
+                      <td class="link-cell">On laisse tous un jour</td>
+                      <td class="number-cell">222</td>
+                    </tr><tr>
+                      <td class="link-cell">On the sunny side of the street</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">On va s’aimer</td>
+                      <td class="number-cell">74</td>
+                    </tr><tr>
+                      <td class="link-cell">Opportuniste L’</td>
+                      <td class="number-cell">223</td>
+                    </tr><tr>
+                      <td class="link-cell">Orage L’</td>
+                      <td class="number-cell">224 / 2005</td>
+                    </tr><tr>
+                      <td class="link-cell">p'tit bal du samedi soir</td>
+                      <td class="number-cell">3089</td>
+                    </tr><tr>
+                      <td class="link-cell">p'tites femmes de Pigalle</td>
+                      <td class="number-cell">160</td>
+                    </tr><tr>
+                      <td class="link-cell">Padam... Padam... Padam...</td>
+                      <td class="number-cell">3152</td>
+                    </tr><tr>
+                      <td class="link-cell">parapluie Le</td>
+                      <td class="number-cell">2040</td>
+                    </tr><tr>
+                      <td class="link-cell">Parc Fermé</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Parce que c'est toi</td>
+                      <td class="number-cell">227</td>
+                    </tr><tr>
+                      <td class="link-cell">Paris canaille</td>
+                      <td class="number-cell">1013</td>
+                    </tr><tr>
+                      <td class="link-cell">Pas de Boogie Woogie</td>
+                      <td class="number-cell">9</td>
+                    </tr><tr>
+                      <td class="link-cell">passantes Les</td>
+                      <td class="number-cell">2042</td>
+                    </tr><tr>
+                      <td class="link-cell">Passer ma route</td>
+                      <td class="number-cell">226</td>
+                    </tr><tr>
+                      <td class="link-cell">Paulette</td>
+                      <td class="number-cell">266</td>
+                    </tr><tr>
+                      <td class="link-cell">Pauvres Diables</td>
+                      <td class="number-cell">226</td>
+                    </tr><tr>
+                      <td class="link-cell">peintre des étoiles (Le)</td>
+                      <td class="number-cell">280</td>
+                    </tr><tr>
+                      <td class="link-cell">pénitencier Le</td>
+                      <td class="number-cell">264</td>
+                    </tr><tr>
+                      <td class="link-cell">Personal Jesus</td>
+                      <td class="number-cell">140</td>
+                    </tr><tr>
+                      <td class="link-cell">Petit</td>
+                      <td class="number-cell">243</td>
+                    </tr><tr>
+                      <td class="link-cell">petit bal de la marine Le</td>
+                      <td class="number-cell">3168</td>
+                    </tr><tr>
+                      <td class="link-cell">petit bonheur</td>
+                      <td class="number-cell">213</td>
+                    </tr><tr>
+                      <td class="link-cell">petit pain au chocolat Le</td>
+                      <td class="number-cell">2</td>
+                    </tr><tr>
+                      <td class="link-cell">Petit papa noël</td>
+                      <td class="number-cell">293</td>
+                    </tr><tr>
+                      <td class="link-cell">petits papiers Les</td>
+                      <td class="number-cell">227 / 1076</td>
+                    </tr><tr>
+                      <td class="link-cell">Piensa en mi</td>
+                      <td class="number-cell">234</td>
+                    </tr><tr>
+                      <td class="link-cell">plat pays Le</td>
+                      <td class="number-cell">1034</td>
+                    </tr><tr>
+                      <td class="link-cell">plus beau des tangos du monde</td>
+                      <td class="number-cell">3054</td>
+                    </tr><tr>
+                      <td class="link-cell">Plus bleu que tes yeux</td>
+                      <td class="number-cell">1064</td>
+                    </tr><tr>
+                      <td class="link-cell">poinçonneur des lilas</td>
+                      <td class="number-cell">243</td>
+                    </tr><tr>
+                      <td class="link-cell">Porque te vas</td>
+                      <td class="number-cell">267</td>
+                    </tr><tr>
+                      <td class="link-cell">poupée qui fait non La</td>
+                      <td class="number-cell">228</td>
+                    </tr><tr>
+                      <td class="link-cell">Pour moi la vie va commencer</td>
+                      <td class="number-cell">0</td>
+                    </tr><tr>
+                      <td class="link-cell">Pour un flirt</td>
+                      <td class="number-cell">64</td>
+                    </tr><tr>
+                      <td class="link-cell">Pour une amourette</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Premier Pas Le</td>
+                      <td class="number-cell">263</td>
+                    </tr><tr>
+                      <td class="link-cell">première fille qu'on a pris dans ses bras La</td>
+                      <td class="number-cell">1052</td>
+                    </tr><tr>
+                      <td class="link-cell">Pretty Woman</td>
+                      <td class="number-cell">120</td>
+                    </tr><tr>
+                      <td class="link-cell">prière La</td>
+                      <td class="number-cell">1084</td>
+                    </tr><tr>
+                      <td class="link-cell">Proud Mary</td>
+                      <td class="number-cell">120</td>
+                    </tr><tr>
+                      <td class="link-cell">Puisque tu pars</td>
+                      <td class="number-cell">258</td>
+                    </tr><tr>
+                      <td class="link-cell">Puisque vous partez en voyage</td>
+                      <td class="number-cell">293 / 1056</td>
+                    </tr><tr>
+                      <td class="link-cell">Pull Marine</td>
+                      <td class="number-cell">222</td>
+                    </tr><tr>
+                      <td class="link-cell">Purple Haze</td>
+                      <td class="number-cell">120</td>
+                    </tr><tr>
+                      <td class="link-cell">Purple rain</td>
+                      <td class="number-cell">293</td>
+                    </tr><tr>
+                      <td class="link-cell">putain de toi</td>
+                      <td class="number-cell">1072</td>
+                    </tr><tr>
+                      <td class="link-cell">quand il est mort le poète</td>
+                      <td class="number-cell">1089</td>
+                    </tr><tr>
+                      <td class="link-cell">Quand j’étais chanteur</td>
+                      <td class="number-cell">27</td>
+                    </tr><tr>
+                      <td class="link-cell">Quand on a que l'amour</td>
+                      <td class="number-cell">293</td>
+                    </tr><tr>
+                      <td class="link-cell">Quand t’es dans le désert</td>
+                      <td class="number-cell">58</td>
+                    </tr><tr>
+                      <td class="link-cell">quatre vingt quinze pour cent</td>
+                      <td class="number-cell">1036</td>
+                    </tr><tr>
+                      <td class="link-cell">Que c'est triste Venise</td>
+                      <td class="number-cell">250</td>
+                    </tr><tr>
+                      <td class="link-cell">Que je t'aime</td>
+                      <td class="number-cell">232</td>
+                    </tr><tr>
+                      <td class="link-cell">Que Marianne était jolie</td>
+                      <td class="number-cell">268 - 151</td>
+                    </tr><tr>
+                      <td class="link-cell">Que Reste t il de nos amours</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Qui Saura</td>
+                      <td class="number-cell">269</td>
+                    </tr><tr>
+                      <td class="link-cell">Quoi</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Rafale de Vent</td>
+                      <td class="number-cell">8</td>
+                    </tr><tr>
+                      <td class="link-cell">Reality</td>
+                      <td class="number-cell">19</td>
+                    </tr><tr>
+                      <td class="link-cell">remparts de Varsovie</td>
+                      <td class="number-cell">1036</td>
+                    </tr><tr>
+                      <td class="link-cell">Requiem pour un fou</td>
+                      <td class="number-cell">270</td>
+                    </tr><tr>
+                      <td class="link-cell">Résiste</td>
+                      <td class="number-cell">36</td>
+                    </tr><tr>
+                      <td class="link-cell">Retiens la nuit</td>
+                      <td class="number-cell">98</td>
+                    </tr><tr>
+                      <td class="link-cell">Retrouvailles Les</td>
+                      <td class="number-cell">234</td>
+                    </tr><tr>
+                      <td class="link-cell">Rimes</td>
+                      <td class="number-cell">1028</td>
+                    </tr><tr>
+                      <td class="link-cell">Riquita</td>
+                      <td class="number-cell">3012</td>
+                    </tr><tr>
+                      <td class="link-cell">rire du sergent Le</td>
+                      <td class="number-cell">73</td>
+                    </tr><tr>
+                      <td class="link-cell">Rital Le</td>
+                      <td class="number-cell">238</td>
+                    </tr><tr>
+                      <td class="link-cell">Rivers of Babylon</td>
+                      <td class="number-cell">22</td>
+                    </tr><tr>
+                      <td class="link-cell">Rock Collection</td>
+                      <td class="number-cell">59</td>
+                    </tr><tr>
+                      <td class="link-cell">Rosa</td>
+                      <td class="number-cell">1038</td>
+                    </tr><tr>
+                      <td class="link-cell">Rossignol de mes amours</td>
+                      <td class="number-cell">3178</td>
+                    </tr><tr>
+                      <td class="link-cell">rouille La</td>
+                      <td class="number-cell">94</td>
+                    </tr><tr>
+                      <td class="link-cell">Rum and Coca Cola</td>
+                      <td class="number-cell">75</td>
+                    </tr><tr>
+                      <td class="link-cell">Runaway</td>
+                      <td class="number-cell">16</td>
+                    </tr><tr>
+                      <td class="link-cell">sabots d'Hélène</td>
+                      <td class="number-cell">2076</td>
+                    </tr><tr>
+                      <td class="link-cell">Sacrée bouteille</td>
+                      <td class="number-cell">239</td>
+                    </tr><tr>
+                      <td class="link-cell">Salade de fruit</td>
+                      <td class="number-cell">3164</td>
+                    </tr><tr>
+                      <td class="link-cell">salle de bain La</td>
+                      <td class="number-cell">1110</td>
+                    </tr><tr>
+                      <td class="link-cell">Salut</td>
+                      <td class="number-cell">240</td>
+                    </tr><tr>
+                      <td class="link-cell">Salut les amoureux</td>
+                      <td class="number-cell">241</td>
+                    </tr><tr>
+                      <td class="link-cell">samba brésilienne La</td>
+                      <td class="number-cell">3072</td>
+                    </tr><tr>
+                      <td class="link-cell">Santiano</td>
+                      <td class="number-cell">14</td>
+                    </tr><tr>
+                      <td class="link-cell">Sarah</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Sarbacane</td>
+                      <td class="number-cell">46</td>
+                    </tr><tr>
+                      <td class="link-cell">Sardines Les</td>
+                      <td class="number-cell">74</td>
+                    </tr><tr>
+                      <td class="link-cell">Satin Doll</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Satisfaction</td>
+                      <td class="number-cell">120</td>
+                    </tr><tr>
+                      <td class="link-cell">Sauf le respect que je vous dois</td>
+                      <td class="number-cell">2002</td>
+                    </tr><tr>
+                      <td class="link-cell">señorita</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Sentinelle La</td>
+                      <td class="number-cell">105</td>
+                    </tr><tr>
+                      <td class="link-cell">should i stay or should i go</td>
+                      <td class="number-cell">125</td>
+                    </tr><tr>
+                      <td class="link-cell">Si j'étais elle</td>
+                      <td class="number-cell">225</td>
+                    </tr><tr>
+                      <td class="link-cell">Si maman si</td>
+                      <td class="number-cell">271</td>
+                    </tr><tr>
+                      <td class="link-cell">Si t'étais là</td>
+                      <td class="number-cell">150</td>
+                    </tr><tr>
+                      <td class="link-cell">Si tu ne me laisses pas tomber</td>
+                      <td class="number-cell">206</td>
+                    </tr><tr>
+                      <td class="link-cell">Si tu vas à Rio</td>
+                      <td class="number-cell">3174</td>
+                    </tr><tr>
+                      <td class="link-cell">Si tu veux m'essayer</td>
+                      <td class="number-cell">3</td>
+                    </tr><tr>
+                      <td class="link-cell">Siffler sur la colline</td>
+                      <td class="number-cell">29</td>
+                    </tr><tr>
+                      <td class="link-cell">Sign of the times</td>
+                      <td class="number-cell">150</td>
+                    </tr><tr>
+                      <td class="link-cell">Smoke on the water</td>
+                      <td class="number-cell">125</td>
+                    </tr><tr>
+                      <td class="link-cell">Snowman</td>
+                      <td class="number-cell">150</td>
+                    </tr><tr>
+                      <td class="link-cell">Sous le ciel de Paris</td>
+                      <td class="number-cell">76</td>
+                    </tr><tr>
+                      <td class="link-cell">Sous les ponts de Paris</td>
+                      <td class="number-cell">3028</td>
+                    </tr><tr>
+                      <td class="link-cell">Sous les sunlights des tropiques</td>
+                      <td class="number-cell">25</td>
+                    </tr><tr>
+                      <td class="link-cell">Souvenirs Souvenirs</td>
+                      <td class="number-cell">96</td>
+                    </tr><tr>
+                      <td class="link-cell">stand by me</td>
+                      <td class="number-cell">125</td>
+                    </tr><tr>
+                      <td class="link-cell">Stay</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Stuck in the middle white you</td>
+                      <td class="number-cell">135</td>
+                    </tr><tr>
+                      <td class="link-cell">Sucettes Les</td>
+                      <td class="number-cell">23</td>
+                    </tr><tr>
+                      <td class="link-cell">Sud Le</td>
+                      <td class="number-cell">243</td>
+                    </tr><tr>
+                      <td class="link-cell">Sultan of the swing</td>
+                      <td class="number-cell">125</td>
+                    </tr><tr>
+                      <td class="link-cell">Sunny</td>
+                      <td class="number-cell">125</td>
+                    </tr><tr>
+                      <td class="link-cell">Superman</td>
+                      <td class="number-cell">236</td>
+                    </tr><tr>
+                      <td class="link-cell">Supplique pour être enterré à la plage de Sète</td>
+                      <td class="number-cell">2031</td>
+                    </tr><tr>
+                      <td class="link-cell">surveillant général le</td>
+                      <td class="number-cell">243</td>
+                    </tr><tr>
+                      <td class="link-cell">Suzie Q</td>
+                      <td class="number-cell">130</td>
+                    </tr><tr>
+                      <td class="link-cell">Sway</td>
+                      <td class="number-cell">13</td>
+                    </tr><tr>
+                      <td class="link-cell">Sweet Caroline</td>
+                      <td class="number-cell">100</td>
+                    </tr><tr>
+                      <td class="link-cell">Sweet dreams</td>
+                      <td class="number-cell">130</td>
+                    </tr><tr>
+                      <td class="link-cell">sweet home alabama</td>
+                      <td class="number-cell">130</td>
+                    </tr><tr>
+                      <td class="link-cell">Sweet ome Chicago</td>
+                      <td class="number-cell">130</td>
+                    </tr><tr>
+                      <td class="link-cell">Syracuse</td>
+                      <td class="number-cell">213</td>
+                    </tr><tr>
+                      <td class="link-cell">T’as beau pas être beau</td>
+                      <td class="number-cell">24</td>
+                    </tr><tr>
+                      <td class="link-cell">Ta Katie t'as quitté</td>
+                      <td class="number-cell">254</td>
+                    </tr><tr>
+                      <td class="link-cell">tactique du gendarme La</td>
+                      <td class="number-cell">PC</td>
+                    </tr><tr>
+                      <td class="link-cell">Tainted Love</td>
+                      <td class="number-cell">130</td>
+                    </tr><tr>
+                      <td class="link-cell">Take me to Church</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Take the a train</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Tata Yoyo</td>
+                      <td class="number-cell">74</td>
+                    </tr><tr>
+                      <td class="link-cell">Tchi Tchi</td>
+                      <td class="number-cell">3056</td>
+                    </tr><tr>
+                      <td class="link-cell">Telephon Le</td>
+                      <td class="number-cell">26</td>
+                    </tr><tr>
+                      <td class="link-cell">temps des cathédrales</td>
+                      <td class="number-cell">266</td>
+                    </tr><tr>
+                      <td class="link-cell">temps des cerises</td>
+                      <td class="number-cell">3062</td>
+                    </tr><tr>
+                      <td class="link-cell">Temps est bon Le</td>
+                      <td class="number-cell">226</td>
+                    </tr><tr>
+                      <td class="link-cell">tendresse La</td>
+                      <td class="number-cell">3060</td>
+                    </tr><tr>
+                      <td class="link-cell">The Girl From Ipanema</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">The Road to Hell</td>
+                      <td class="number-cell">130</td>
+                    </tr><tr>
+                      <td class="link-cell">The Sound of Silence</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">The wall (Anoter brick in)</td>
+                      <td class="number-cell">130</td>
+                    </tr><tr>
+                      <td class="link-cell">these boots are made for walking</td>
+                      <td class="number-cell">125</td>
+                    </tr><tr>
+                      <td class="link-cell">This Is The Life</td>
+                      <td class="number-cell">140</td>
+                    </tr><tr>
+                      <td class="link-cell">Ti Amo</td>
+                      <td class="number-cell">274</td>
+                    </tr><tr>
+                      <td class="link-cell">Tie a Yellow Ribbon Round Ole Oak Tree</td>
+                      <td class="number-cell">140</td>
+                    </tr><tr>
+                      <td class="link-cell">Tiroli Tirola</td>
+                      <td class="number-cell">276</td>
+                    </tr><tr>
+                      <td class="link-cell">Toi + Moi</td>
+                      <td class="number-cell">68</td>
+                    </tr><tr>
+                      <td class="link-cell">Tombe la neige</td>
+                      <td class="number-cell">293</td>
+                    </tr><tr>
+                      <td class="link-cell">Tomorrow</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Torrent (Le)</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">tourbillon</td>
+                      <td class="number-cell">1008</td>
+                    </tr><tr>
+                      <td class="link-cell">Tous les bateaux tous les oiseaux</td>
+                      <td class="number-cell">203</td>
+                    </tr><tr>
+                      <td class="link-cell">Tout Savoir</td>
+                      <td class="number-cell">76</td>
+                    </tr><tr>
+                      <td class="link-cell">Toute la Pluie Tombe sur moi</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Toutes les femmes sont belles</td>
+                      <td class="number-cell">3159</td>
+                    </tr><tr>
+                      <td class="link-cell">trois cloches Les</td>
+                      <td class="number-cell">3047</td>
+                    </tr><tr>
+                      <td class="link-cell">Trois petites note de musique</td>
+                      <td class="number-cell">1134</td>
+                    </tr><tr>
+                      <td class="link-cell">Trompettes de la renommée</td>
+                      <td class="number-cell">2035</td>
+                    </tr><tr>
+                      <td class="link-cell">Trousse Chemise</td>
+                      <td class="number-cell">1070</td>
+                    </tr><tr>
+                      <td class="link-cell">Tu verras</td>
+                      <td class="number-cell">285</td>
+                    </tr><tr>
+                      <td class="link-cell">Tulsa Time</td>
+                      <td class="number-cell">141</td>
+                    </tr><tr>
+                      <td class="link-cell">Twist a Saint Tropez</td>
+                      <td class="number-cell">47</td>
+                    </tr><tr>
+                      <td class="link-cell">Twist and Shot</td>
+                      <td class="number-cell">62</td>
+                    </tr><tr>
+                      <td class="link-cell">Un an d'amour (C'est irréparable)</td>
+                      <td class="number-cell">236</td>
+                    </tr><tr>
+                      <td class="link-cell">Un ano de amore</td>
+                      <td class="number-cell">236</td>
+                    </tr><tr>
+                      <td class="link-cell">Un autre monde</td>
+                      <td class="number-cell">69</td>
+                    </tr><tr>
+                      <td class="link-cell">Un gamin de Paris</td>
+                      <td class="number-cell">3128</td>
+                    </tr><tr>
+                      <td class="link-cell">Un homme et une femme</td>
+                      <td class="number-cell">1102</td>
+                    </tr><tr>
+                      <td class="link-cell">Un jour mon Prince Viendra</td>
+                      <td class="number-cell">50</td>
+                    </tr><tr>
+                      <td class="link-cell">un jour tu verras</td>
+                      <td class="number-cell">3055</td>
+                    </tr><tr>
+                      <td class="link-cell">Un p'tit peu d'argent</td>
+                      <td class="number-cell">3088</td>
+                    </tr><tr>
+                      <td class="link-cell">Un petit cabanon</td>
+                      <td class="number-cell">3134</td>
+                    </tr><tr>
+                      <td class="link-cell">Unchain my heart</td>
+                      <td class="number-cell">135</td>
+                    </tr><tr>
+                      <td class="link-cell">Une Belle Histoire</td>
+                      <td class="number-cell">272</td>
+                    </tr><tr>
+                      <td class="link-cell">Une chanson</td>
+                      <td class="number-cell">1020</td>
+                    </tr><tr>
+                      <td class="link-cell">Une fille aux yeux clairs</td>
+                      <td class="number-cell">244</td>
+                    </tr><tr>
+                      <td class="link-cell">Une jolie fleur dans une peau de vache</td>
+                      <td class="number-cell">2054</td>
+                    </tr><tr>
+                      <td class="link-cell">Une Partie de Pétanque</td>
+                      <td class="number-cell">3031</td>
+                    </tr><tr>
+                      <td class="link-cell">Une seule vie</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">valse à mille temps La</td>
+                      <td class="number-cell">1044</td>
+                    </tr><tr>
+                      <td class="link-cell">valse brune La</td>
+                      <td class="number-cell">3042</td>
+                    </tr><tr>
+                      <td class="link-cell">Vanina</td>
+                      <td class="number-cell">16</td>
+                    </tr><tr>
+                      <td class="link-cell">vent nous portera Le</td>
+                      <td class="number-cell">13</td>
+                    </tr><tr>
+                      <td class="link-cell">Vénus callipyge</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Vie d'Artiste</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">vie en rose La</td>
+                      <td class="number-cell">3194</td>
+                    </tr><tr>
+                      <td class="link-cell">vie par procuration La</td>
+                      <td class="number-cell">33</td>
+                    </tr><tr>
+                      <td class="link-cell">Vienne</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Viens danser le twist</td>
+                      <td class="number-cell">48</td>
+                    </tr><tr>
+                      <td class="link-cell">vieux Léon</td>
+                      <td class="number-cell">2062</td>
+                    </tr><tr>
+                      <td class="link-cell">VieuxMariés (Les)</td>
+                      <td class="number-cell">145</td>
+                    </tr><tr>
+                      <td class="link-cell">vingt deux septembre</td>
+                      <td class="number-cell">2056</td>
+                    </tr><tr>
+                      <td class="link-cell">voiliers Les</td>
+                      <td class="number-cell">3067</td>
+                    </tr><tr>
+                      <td class="link-cell">Voulez-vous danser grand-mère?</td>
+                      <td class="number-cell">3022</td>
+                    </tr><tr>
+                      <td class="link-cell">Walk on the wild side</td>
+                      <td class="number-cell">130</td>
+                    </tr><tr>
+                      <td class="link-cell">Welcome to Burlesque</td>
+                      <td class="number-cell">211</td>
+                    </tr><tr>
+                      <td class="link-cell">When the Saints</td>
+                      <td class="number-cell">76</td>
+                    </tr><tr>
+                      <td class="link-cell">When We were young</td>
+                      <td class="number-cell">125</td>
+                    </tr><tr>
+                      <td class="link-cell">White Wedding</td>
+                      <td class="number-cell">135</td>
+                    </tr><tr>
+                      <td class="link-cell">Wight is Wight</td>
+                      <td class="number-cell">75</td>
+                    </tr><tr>
+                      <td class="link-cell">Winner take it all The</td>
+                      <td class="number-cell">217</td>
+                    </tr><tr>
+                      <td class="link-cell">Yellow submarine</td>
+                      <td class="number-cell">7</td>
+                    </tr><tr>
+                      <td class="link-cell">Yesterday</td>
+                      <td class="number-cell">293</td>
+                    </tr><tr>
+                      <td class="link-cell">You Can Leave Your Hat On</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">You Never Can Tell</td>
+                      <td class="number-cell">145</td>
+                    </tr><tr>
+                      <td class="link-cell">You've got to hide your love away</td>
+                      <td class="number-cell">244</td>
+                    </tr><tr>
+                      <td class="link-cell">Your Song</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Your Song</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell">Zizi (Le)</td>
+                      <td class="number-cell">14</td>
+                    </tr><tr>
+                      <td class="link-cell">Fille du coupeur de joints (La)</td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell"></td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell"></td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell"></td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell"></td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell"></td>
+                      <td class="number-cell"></td>
+                    </tr><tr>
+                      <td class="link-cell"></td>
+                      <td class="number-cell"></td>
+                    </tr>
         </tbody>
       </table>
     </body>
