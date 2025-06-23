@@ -2,7 +2,7 @@
     <!DOCTYPE html>
     <html lang="fr">
     <head>
-      <meta charset="UTF-8">
+      <meta charset="UTF-8" />
       <title>Scène ouverte</title>
       <style>
         body {
@@ -14,21 +14,36 @@
           width: 100%;
           border-collapse: collapse;
           background-color: #fff;
+          table-layout: auto; /* Permet ajustement largeur colonnes */
         }
         th, td {
           padding: 10px;
           border: 1px solid #ddd;
-          text-align: left;
+          vertical-align: middle;
         }
         th {
           background-color: #eee;
         }
+        td.link-cell {
+          color: #1a0dab;
+          text-decoration: underline;
+          width: max-content;
+          max-width: 400px; /* Empêche la colonne d’être trop large */
+          white-space: nowrap; /* Evite retour à la ligne */
+        }
         td.link-cell a {
           color: #1a0dab;
           text-decoration: underline;
+          display: inline-block;
+          max-width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
         }
         td.number-cell {
           color: #000;
+          text-align: center;
+          width: 80px; /* Largeur fixe pour centrer joliment */
         }
         tbody tr:nth-child(odd) {
           background-color: #ffffff;
