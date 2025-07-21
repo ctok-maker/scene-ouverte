@@ -2,631 +2,1705 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Scène ouverte</title>
-<style>
-  body { font-family: Arial, sans-serif; }
-  thead th { position: sticky; top: 0; background: #fff; }
-  .link-cell a { color: blue; text-decoration: underline; }
-  table { border-collapse: collapse; width: 100%; }
-  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-  /* Barre de recherche stylée si nécessaire */
-</style>
+  <meta charset="UTF-8" />
+  <title>Scène ouverte - PréPub</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #fff;
+      color: #333;
+    }
+
+    .title-block {
+      text-align: center;
+      color: #e91e63;
+      font-weight: bold;
+      font-size: 3em;
+      margin-bottom: 40px;
+      line-height: 1.2;
+    }
+
+    #searchBar {
+      width: 100%;
+      padding: 16px;
+      font-size: 2em;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1.2em;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+
+    .link a {
+      color: #2196f3;
+      text-decoration: underline;
+    }
+
+    tr.hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
-  <!-- Barre de recherche (si tu veux, adapte selon ta version) -->
-  <input type="search" id="search" placeholder="Recherche..." oninput="filterTable()" />
-  <table>
+
+  <div class="title-block">
+    <div>Votre micro vous attend</div>
+    <div>Pour vos soirées Publique ou Privées</div>
+    <div>06 81 43 38 72</div>
+  </div>
+
+  <input type="text" id="searchBar" placeholder="🔍 Recherche..." onkeyup="filterTable()" />
+
+  <table id="dataTable">
     <thead>
       <tr>
-        <th>Nom / Lien</th>
-        <th>Col B</th>
-        <th>Col C</th>
-        <th>Col D</th>
-        <th>Col E</th>
+        <th>Titre</th>
+        <th>Catégorie</th>
+        <th>Autre</th>
       </tr>
     </thead>
     <tbody>
-      <tr><td class="link-cell">off</td><td></td><td>A l’ombre des maris</td><td>2014</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>A nos souvenirs</td><td>205</td><td>3 cafés gourmands</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>A Paris</td><td>1132</td><td>Yves Montand</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>A tes seins</td><td>295</td><td>Real Book</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>A Toi</td><td>284</td><td>Joe Dassin</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>absent L’</td><td>1081 – 293</td><td>Gilbert Bécaud</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>accordéoniste L’</td><td>3142</td><td>Edith Piaf</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Ah le petit vin blanc</td><td>3007</td><td>Lina Margy</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>ai se eu te pego</td><td>44</td><td>Michel Teló (Portugais)</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>aigle noir L&#039;</td><td>300 ou 1058</td><td>Barbara</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Aimer à perdre la raison</td><td>293 / 1005</td><td>Jean Ferrat</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Ain&#039;t no sunshin</td><td>135</td><td>Bill Wither</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Aline</td><td>209</td><td>Christophe</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>All along the watch Tower</td><td>100</td><td>Jimi Hendrix</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>All of Me</td><td>295</td><td>Real Book</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>All The Things You Are</td><td>295</td><td>Real Book</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Allo Maman Bobo</td><td>216</td><td>Alain Souchon</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Allumer le feu</td><td>145</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Always Remembers Us This Way</td><td>75</td><td>Lady Gaga</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Amado Mio</td><td>125</td><td>Pink Martini</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>amants d’un jour Les</td><td>3156</td><td>Edith Piaf</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>amour ça fait passer le temps L&#039;</td><td>191</td><td>Marcel Amont</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Amour en Fuite L&#039;</td><td>20</td><td>Alain Souchon</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>amour est un bouquet de violettes L&#039;</td><td>3197</td><td>Luis Mariano</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Amoureux de ma femme</td><td>17</td><td>Richard Anthonny</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Anamour L&#039;</td><td>200</td><td>Serge Gainsbourg</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Aragon et Castille</td><td>293</td><td>Boby Lapointe</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Armstrong</td><td>201</td><td>Claude Nougaro</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Arrêtez les aiguilles</td><td>3052</td><td>Berthe Sylva</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>au bal de l&#039;amour</td><td>3102</td><td>Tino Rossi</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Au bord de la Tiretaine</td><td>3182</td><td>Jean Maupoint</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Au Café des Délices</td><td>6</td><td>Patrick Bruel</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Auprès de mon arbre</td><td>293 / 2027</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Autumn Leaves</td><td>295</td><td>Real Book</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Avant de nous dire adieu</td><td>250</td><td>Jeane Manson</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Avec les filles je ne sais pas</td><td>30</td><td>Philippe Lavil</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Aventurier (L&#039;)</td><td>55</td><td>Indochine</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Back in USSR</td><td>100</td><td>The Beatles</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Back to Black</td><td>140</td><td>Amy Winehouse</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Bahia</td><td>77</td><td>Véronique Sanson</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Ballade de Jim (La)</td><td>145</td><td>Alain Souchon</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>ballade des gens heureux La</td><td>59</td><td>Gérard Lenorman</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Ballade Nord Irlandaise La</td><td>260</td><td>Renaud</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>bals populaires Les</td><td>3</td><td>Michel Sardou</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Bamba La</td><td>62</td><td>Los Bobos</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Bambino</td><td>3172</td><td>Dalida</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Be Bop a Lula</td><td>100</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Beautiful that way</td><td>213</td><td>Noa</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Before you accuse me</td><td>100</td><td>Eric Clapton</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Believe</td><td>115</td><td>Cher</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Belle</td><td>251</td><td>Notre Dame de Paris</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Belle Belle Belle</td><td>4</td><td>Claude François</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Belle La</td><td>203</td><td>Louis Chedid</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>belle vie La</td><td>284</td><td>Sacha Distel</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Bensonhurst Blues</td><td>288</td><td>Oscar Benton</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Berry Blues</td><td>PC</td><td>Les Charlots</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Besame Mucho</td><td>3001 (espagnol)</td><td>Consuelo Velazquez</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Black Magic Woman</td><td>100</td><td>Santana</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Black Orpheus</td><td>295</td><td>Real Book</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Black Trombone</td><td>76</td><td>Serge Gainsbourg</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Blues du Businessman Le</td><td>261</td><td>Starmania</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Bohème La</td><td>293 / 1066</td><td>Charles Aznavour</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Bombe Humaine La</td><td>43</td><td>Téléphone</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Bonne du Curé La</td><td>74</td><td>Annie Cordy</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Born to be wild (easy rider)</td><td>135</td><td>Steppenwolf</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>boudeuse La</td><td>3048</td><td>Tino Rossi</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Boum</td><td>3118</td><td>Charles Trenet</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Braconne La</td><td>203</td><td>Serge Lama</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Brand New Cadillac</td><td>100</td><td>The Clash</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Brave Margot</td><td>2068</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Bruxelles</td><td>288</td><td>Dick Annegarn</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Bruyères Corréziennes</td><td>3186</td><td>Jean Ségurel</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>bulletin de santé Le</td><td>2046</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>C&#039;est Beau La Vie</td><td>34</td><td>Jean Ferrat</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>C’est comme ça que je t’aime</td><td>252</td><td>Mike Brandt</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>C&#039;est Extra</td><td>253</td><td>Léo Férré</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>C&#039;est la vie, fais la belle</td><td>145</td><td>Eddy Mitchell</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>C&#039;est ma Vie</td><td>205</td><td>Salvatore Adamo</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>C&#039;est un mauvais garçon</td><td>3078</td><td>Henri Garat</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Ça c’est vraiment toi</td><td>19</td><td>Téléphone</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Ça je ne l&#039;ai jamais vu</td><td>204</td><td>graeme allwright</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Cactus Les</td><td>37</td><td>Jacques Dutronc</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Can&#039;t Help Falling In Love</td><td>208</td><td>Elvis Presley</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Caroline</td><td>140</td><td>Status Quo</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>cascade La</td><td>3039</td><td>J-Désiré Bailly</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Casser la voix</td><td>280</td><td>Patrick Bruel</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Ce n&#039;est rien</td><td>205</td><td>Julien Clerc</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Célimene</td><td>254</td><td>David Martial</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Céline</td><td>255</td><td>Hugues Aufray</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Cendrillon</td><td>10</td><td>Téléphone</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>cerisiers roses et pommiers blancs</td><td>3120</td><td>André Claveau</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Cette année-là</td><td>65</td><td>Claude François</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Champs Élysée Aux</td><td>206</td><td>joe dassin</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Chanson de Lara (La)</td><td>3064</td><td>Chanson de Film</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>chanson de Prévert La</td><td>1078</td><td>Serge Gainsbourg</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>chanson des blés d&#039;or La</td><td>3040</td><td>André Dassary</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Chanson populaire</td><td>61</td><td>Claude François</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Chanson pour l&#039;Auvergnat</td><td>256 / 2024</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Chanson pour Pierrot</td><td>316</td><td>Renaud</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Chanson sur ma drôle de vie</td><td>288</td><td>Véronique Sanson</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Chansonnette à celle qui reste pucelle</td><td>2066</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>chant du gardian Le</td><td>3050</td><td>Tino Rossi</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Chante</td><td>5</td><td>Les Forbans</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Chante comme si tu devais</td><td>206</td><td>Michel Fugain</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Chanteur (Le)</td><td>300</td><td>Daniel Balavoine</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Chanteur Malheureux (Le)</td><td>29</td><td>Claude François</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>chapelle au clair de lune La</td><td>3166</td><td>Léo Marjane</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>chasse aux papillons La</td><td>2018</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Chasseur Le</td><td>262</td><td>Michel Delpech</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Chenille (la)</td><td>258</td><td>La Bande à Basile</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Chevalier de la table ronde</td><td>3183</td><td>Chansons à boire</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Chica de Cuba La</td><td>15</td><td>Philippe Lavil</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Clodi Clodo</td><td>1030</td><td>Claude Nougaro</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Cocaine</td><td>105</td><td>Eric Clapton</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Come Away With Me</td><td>115</td><td>Norah Jones</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Come together</td><td>105</td><td>The Beatles</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Comédiens Les</td><td>206 / 1072</td><td>Charles Aznavour</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Comme d&#039;habitude</td><td>60</td><td>Claude François</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Comme de bien entendu</td><td>3097</td><td>Arletty et Michel Simon</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Comme toi</td><td>51</td><td>Jean-Jacques Goldmann</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>comme tout l&#039; monde</td><td>3097</td><td>Ray Ventura</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Comme un arbre</td><td>293</td><td>Maxime Leforestier</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Comme un avion sans ailes</td><td>67</td><td>Charlélie Couture</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Comme un Boomerang</td><td>75</td><td>Etienne Daho / Dani</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>complainte de la Butte La</td><td>76</td><td>Cora Vaucaire</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>complainte du phoque en Alaska La</td><td>1018</td><td>Beau Dommage</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Confidence pour confidence</td><td>62</td><td>Jean Schultheis</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Copains d&#039;abord Les</td><td>206 / 2041</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>coq et la pendule Le</td><td>1026</td><td>Claude Nougaro</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>corons Les</td><td>1052</td><td>Pierre Bachelet</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Country road, Take me home</td><td>243</td><td>John denver</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>coup de soleil (Le)</td><td>283</td><td>Richard Cocciante</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Creep</td><td>71</td><td>Radiohead</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>croquants (Les)</td><td>2039</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>dame de Haute Savoie La</td><td>36</td><td>Francis Cabrel</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Dancing in the Moonlight</td><td>130</td><td>Thin Lizzy</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Daniela</td><td>35</td><td>Ulmer Foolbeat</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Dans les Prisons de Nantes</td><td>53</td><td>trad</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Dans les Yeux d&#039;Emilie</td><td>145</td><td>joe dassin</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Dans mon HLM</td><td>332</td><td>Renaud</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>danseur de Charleston Le</td><td>3086</td><td>Philippe Clay</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Day Tripper</td><td>105</td><td>The Beatles</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Débit de l&#039;eau débit de lait</td><td>293/1048</td><td>CharlesTrenet</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Déjeuner en paix</td><td>292</td><td>Stephan Eicher</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Démons de minuit les</td><td>221</td><td>Emile et Image</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>dénicheur Le</td><td>3020</td><td>Fréhel</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Derrière l&#039;amour</td><td>207</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Dès que le vent soufflera</td><td>207</td><td>Renaud</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Dessins animés</td><td>143</td><td>film</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Diamonds-On-The-Inside</td><td>105</td><td>Ben Harper</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Diego</td><td>226</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Dis Lui</td><td>257</td><td>Mike Brandt</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Dis quand reviendras tu</td><td>293</td><td>Barbara</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Domino</td><td>3136</td><td>André Claveau</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Don&#039;t Speak</td><td>75</td><td>No Doubt</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Don&#039;t You Remember</td><td>75</td><td>Adele</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Douce France</td><td>293</td><td>Charles Trenet</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Dream a Little Dream of Me</td><td>295</td><td>Real Book</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Du gris</td><td>3018</td><td>Berthe Sylva</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Du Rhum des Femmes</td><td>6</td><td>Soldat louis</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Dust in the Wind</td><td>106</td><td>Kansas</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Élisa</td><td>208</td><td>Serge Gainsbourg</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Elle était si jolie</td><td>186</td><td>Alain Barrière</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Elle préfère l’amour en mer</td><td>34</td><td>Philippe Lavil</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>emmène moi danser ce soir</td><td>216/3127</td><td>Michèle Torr</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Emmenez-moi</td><td>209</td><td>Charles Aznavour</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>En chantant</td><td>243</td><td>Michel Sardou</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>enfants du Pirée (Les)</td><td>209</td><td>Dalida</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Enola Gay</td><td>105</td><td>Orchestral Manoeuvres In The Dark</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Envie ( L’)</td><td>31</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Envole moi</td><td>69</td><td>Jean-Jacques Goldmann</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Et Bam</td><td>56</td><td>Mentissa</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Et maintenant</td><td>209 / 1086</td><td>Gilbert becaud</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Et même après je t&#039;aimerai</td><td>244</td><td>Hoshi</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Et Moi Je Chante</td><td>38</td><td>Gérard Lenorman</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Et moi, et moi, et moi</td><td>44</td><td>Jacques Dutronc</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Et mon père</td><td>210</td><td>Nicolas Peyrac</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Et puis je sais</td><td>280</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Et si tu n&#039;existait pas</td><td>150</td><td>joe dassin</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>été (L&#039;) &quot;Lavilliers&quot;</td><td>244</td><td>Bernard Lavillier</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Éteins la lumière</td><td>292</td><td>Axel Bauer</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Étoile des neiges</td><td>3014</td><td>Line Renaud</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>étoile des troubadours L&#039;</td><td>3011</td><td>Roger Sy</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Every Breath You Take</td><td>110</td><td>Sting</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Eviva Espana</td><td>3092</td><td>Georgette Plana</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>facteur de Santa-Cruz Le</td><td>3170</td><td>Henri Genès</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Faire un Pont</td><td>243</td><td>Dick Rivers</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Fais comme l&#039;oiseau</td><td>211</td><td>Michel Fugain</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Fantôme Le</td><td>2086</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Félicie aussi</td><td>3162</td><td>Fernandel</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Femme libérée / The Passenger</td><td>11</td><td>Cookie Dingler / Iggy Pop</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Femme que j&#039;aime</td><td>280</td><td>Jean-Luc Lahaye</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Fernande</td><td>211 / 2012</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>feuilles mortes les</td><td>1136</td><td>Yves Montand</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>fiancés d&#039;Auvergne</td><td>3003</td><td>André Verchuren</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Fille du coupeur de joints (La)</td><td>77</td><td>Hubert Félix Thiéfaine</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Fille du Motel La</td><td>26</td><td>Eddy Mitchell</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Fille du père Noël La</td><td>39</td><td>Jacques dutronc</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>filles de mon pays les</td><td>216</td><td>Enrico Macias</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Fleur aux dents La</td><td>28</td><td>joe dassin</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Fleur de Paris</td><td>3074</td><td>Maurice Chevalier</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Flipper</td><td>40</td><td>Téléphone</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Fly me To the Moon</td><td>295</td><td>Real Book</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Fontenay aux roses</td><td>18</td><td>Maxime Leforestier</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Foule La</td><td>211</td><td>Edith Piaf</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Foule sentimentale</td><td>211</td><td>Alain Souchon</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>France Le</td><td>217</td><td>Michel Sardou</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Frou Frou</td><td>3008</td><td>Berthe Sylva</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Gabrielle</td><td>20</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Gaby oh Gaby</td><td>21</td><td>Alain Bashung</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>gars de la marine</td><td>3024</td><td>Chanson de Film</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Germaine</td><td>211</td><td>Renaud</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Get Back</td><td>110</td><td>The Beatles</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>gibier manque Le</td><td>211</td><td>Serge Lama</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Gimme all your lovin</td><td>110</td><td>ZZ Top</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Girl</td><td>285</td><td>The Beatles</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Goffa Lolita (La)</td><td>46</td><td>La Petite Culotte</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>gorille Le</td><td>2020</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Gottingen</td><td>293</td><td>Barbara par Pomme</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>goualante du pauvre Jean La</td><td>3138</td><td>Edith Piaf</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>grand chêne Le</td><td>2050</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Grand sommeil Le</td><td>42</td><td>Étienne Daho</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>grande Zoa La</td><td>196</td><td>Régine</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Grenade (La)</td><td>64</td><td>Clara Luciani</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Groupie du Pianiste (La)</td><td>74</td><td>Michel Berger</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Guantanamera</td><td>212</td><td>joe dassin</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Hallelujah</td><td>288</td><td>Lèonard Cohen</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Hécatombe</td><td>2080</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Hexagone</td><td>326</td><td>Renaud</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Hey Joe</td><td>110</td><td>jimmy hendrix</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Hey you&#039;ve got to hide your love away</td><td>227</td><td>The Beatles</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Histoire de faussaire</td><td>213 / 2006</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>homme à la moto L’</td><td>3155</td><td>Edith Piaf</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Honesty</td><td>68</td><td>Billy Joel</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Honky Tonk women</td><td>110</td><td>The Rolling Stones</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Hotel California</td><td>100</td><td>Eagles</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Hotesse de l&#039;air L&#039;</td><td>213</td><td>Jacques Dutronc</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Hygiaphone</td><td>40</td><td>Téléphone</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>I Can See Clearly Now</td><td>213</td><td>Jimmy Cliff</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>I Heart It Trough The Grapvine</td><td>110</td><td>Creedence Clearwater Revival</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>I Hung My Head</td><td>140</td><td>Sting</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>I shot the sheriff</td><td>110</td><td>Eric Clapton</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>I Will Survive</td><td>279</td><td>Gloria Gaynor</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Idole des Jeunes (L&#039;)</td><td>53</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Il était un fois nous deux</td><td>70</td><td>Joe Dassin</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Il Jouait du Piano Debout</td><td>30</td><td>France Gall</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Il suffira d&#039;un signe</td><td>56</td><td>Jean-Jacques Goldmann</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Il suffirait de presque rien</td><td>1120</td><td>Serge Reggiani</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Il tape sur des bambous</td><td>49</td><td>Philippe Lavil</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Il venait d&#039;avoir 18 ans</td><td>277</td><td>Dalida</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Il voyage en solitaire</td><td>206</td><td>Gérard Manset</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Il y a</td><td>340</td><td>Vanessa Paradis</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Imagine</td><td>115</td><td>John Lenon</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>important c’est la rose L’</td><td>1082</td><td>Gilbert Bécaud</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>It&#039; s a heartache</td><td>215</td><td>Bonnie Tyler</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Italiano (L&#039;)</td><td>273</td><td>Toto Cutugno (Italien)</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Itsi bitsi petit bikini</td><td>63</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>J&#039; t &#039;emmène au vent</td><td>41</td><td>Louise Attaque</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>J&#039; te pardonne</td><td>226</td><td>Hoshi</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>J&#039;ai demandé à la lune</td><td>4</td><td>Indochine</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>J&#039;ai encore rêvé d&#039;elle</td><td>258</td><td>Il était une fois</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>J’ai la mémoire qui flanche</td><td>1010</td><td>Jeanne Moreau</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>J&#039;ai Oubliè de Vivre</td><td>54</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>J&#039;ai rencontré l&#039;homme de ma vie</td><td>284</td><td>Diane Dufresne</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>J&#039;ai rendez-vous avec vous</td><td>2074</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>J&#039;ai un problème</td><td>213</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>J&#039;aime les filles</td><td>214</td><td>Jacques Dutronc</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>J&#039;en Parlerai au Diable</td><td>7</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>J&#039;irai où ti iras</td><td>300</td><td>Céline Dion</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>j&#039;veux du soleil</td><td>18</td><td>Au petit bonheur</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Jardin d&#039;hiver</td><td>76</td><td>Henri Salvador</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>jardin extraordinaire Le</td><td>3104</td><td>Charles Trenet</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>java bleue La</td><td>3010</td><td>Fréhel</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>java de Broadway La</td><td>45</td><td>Michel Sardou</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>java des bombes atomiques La</td><td>1118</td><td>Boris Vian</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Javanaise (La)</td><td>215 / 1074</td><td>Serge Gainsbourg</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Jazz et la Java (Le)</td><td>293</td><td>Claude Nouaro</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Je m’ voyais déjà</td><td>215 / 1067</td><td>Charles Aznavour</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Je me suis fait tout petit</td><td>2032</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Je n&#039;aurai pas le temps</td><td>213</td><td>Michel Fugain</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Je ne veux pas travailler</td><td>293</td><td>Pink Martini</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Je pars</td><td>284</td><td>Nicolas Peyrac</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Je partirai demain</td><td>67</td><td>Fred Blondin</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Je reviens chez nous</td><td>3068</td><td>Jean-Pierre Ferland</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Je Reviens te Chercher</td><td>48</td><td>Gilbert becaud</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Je suis un voyou</td><td>2060</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Je suis venu te dire que je m&#039;en vais</td><td>13</td><td>Serge Gainsbourg</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Je t&#039;aime à la folie</td><td>160</td><td>Serge Lama</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Je te le dis quand même</td><td>160</td><td>Patrick Bruel</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Je te promets</td><td>300</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Jerk Le</td><td>15</td><td>Thierry Hazard</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Jésus Reviens</td><td>262</td><td>La vie est un long fleuve</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>jeune fille du métro La</td><td>3130</td><td>Jean Rousselière</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Johnny and Mary</td><td>115</td><td>Robert Palmer</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Johnny be good</td><td>115</td><td>Chuck Berry</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Jolie Bouteille</td><td>238</td><td>Graemme Alwright</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Jolie môme</td><td>1014</td><td>Léo Ferré</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>jolies colonies de vacances Les</td><td>215</td><td>Pierre Peret</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Joue pas de Rock &#039;n Roll</td><td>90</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Jumpin Jack Flash</td><td>115</td><td>Rolling Stones</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Jusqu’à la ceinture</td><td>8</td><td>Graeme Allwright</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Just Take Me</td><td>115</td><td>Status Quo</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Juste Quelqu&#039;un de bien</td><td>209</td><td>Enzo Enzo</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Lacs du Connemara Les</td><td>72</td><td>Michel Sardou</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Lady Lay</td><td>59.1</td><td>Pierre Groscolas</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Lady Madona</td><td>115</td><td>The Beatles</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Laisse béton</td><td>320</td><td>Renaud</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Laura</td><td>13</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Layla</td><td>120</td><td>Eric Clapton</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Let it be</td><td>71</td><td>The Beatles</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Lily Marlene</td><td>3161</td><td>Suzy Solidor</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>lion est mort ce soir (Le)</td><td>1</td><td>Henri Salvador</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Liste (La)</td><td>207</td><td>Rose</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Loir et Cher (Le)</td><td>8</td><td>Michel Delpech</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Long Train Running</td><td>135</td><td>Doobie Brothers</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Loup La Biche Le Chevalier Le</td><td>57</td><td>Henri Salvador</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>loup, le renard et la belette Le</td><td>52</td><td>trad</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Love Boat The</td><td>293</td><td>film</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Love me tender</td><td>74</td><td>Elvis Presley</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>lundi au soleil Le</td><td>28.1</td><td>Claude François</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Ma fille</td><td>288</td><td>Serge Regiani</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Ma France</td><td>1006</td><td>Jean Ferrat</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Ma Gueule</td><td>220</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Ma môme</td><td>1002</td><td>Jean Ferrat</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Ma Préférence</td><td>2</td><td>Julien Clerc</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Macumba</td><td>32</td><td>Jean-Pierre Mader</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Madame Nostalgie</td><td>1122</td><td>Serge Reggiani</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Madelon La</td><td>3094</td><td>Line Renaud</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Madone aux fleurs La</td><td>3158</td><td>Rina Kety</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Madrague (La)</td><td>160</td><td>Brigitte Bardot</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Mains d&#039;Or (Les)</td><td>205</td><td>Bernard Lavillier</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>maitresse d&#039;école La</td><td>2064</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>maladie d’amour La</td><td>64</td><td>Michel Sardou</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Maldon</td><td>244</td><td>Zouk Machine</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>mama La</td><td>1060</td><td>Charles Aznavour</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Marcia Baila</td><td>60</td><td>Rita Mitsouko</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Marguerite</td><td>178</td><td>Richard Cocciante</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Marinela</td><td>3058</td><td>Tino Rossi</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Marionnettes Les</td><td>54</td><td>Christophe</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Maritza La</td><td>207</td><td>Sylvie Vartan</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Marjolaine</td><td>3036</td><td>Francis Lemarque</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Marquise</td><td>2058</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Mary had a little lamb</td><td>140</td><td>Stevie Ray Vaughan</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>mauvais sujet repenti Le</td><td>2010</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Méditérannée</td><td>3186</td><td>Luis Mariano</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Méditerranéenne</td><td>286</td><td>Hervé Vilard</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Ménilmontant</td><td>1046</td><td>Charles Trenet</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Ménilmontant La marche de</td><td>3132</td><td>Maurice Chevalier</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Mère à Titi La</td><td>293</td><td>Renaud</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Mes emmerdes</td><td>221 / 1062</td><td>Charles Aznavour</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Mes mains</td><td>1084</td><td>Gilbert Bécaud</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Message in the bottle</td><td>120</td><td>The Police</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>métèque Le</td><td>28</td><td>Georges Moustaki</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Mexico</td><td>221</td><td>Luis Mariano</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Michèle (Lenorman)</td><td>24</td><td>Gérard Lenorman</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Million Reasons</td><td>209</td><td>Lady Gaga</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Mirza</td><td>50</td><td>Nino Ferrer</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Mistral gagnant</td><td>265</td><td>Renaud</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Moi j’aime le music-hall</td><td>3108</td><td>Charles Trenet</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Moins joli</td><td>63</td><td>Iliona</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Mon amant de Saint Jean</td><td>76</td><td>Patrick Bruel</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Mon Dieu</td><td>3193</td><td>Edith Piaf</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Mon Frère</td><td>145</td><td>Maxime Leforestier</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Mon manège à moi</td><td>3140</td><td>Edith Piaf</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Mon vieux</td><td>10/1054</td><td>Daniel Guichard</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Montagne La</td><td>285</td><td>Jean Ferra</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Moulins de mon cœur (Les)</td><td>293 /1016</td><td>Michel Grand</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>mourir d&#039;aimer</td><td>1063</td><td>Charles Aznavour</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Mourir pour des idées</td><td>1092</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Mourir sur scène</td><td>278</td><td>Dalida</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>murs de poussière</td><td>75</td><td>Francis Cabrel</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>musique que j&#039;aime La</td><td>221</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>n&#039;avoue jamais</td><td>70/3198</td><td>Guy Mardel</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Nathalie</td><td>216</td><td>Gilbert Bécaud</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Nature Boy</td><td>295</td><td>Real Book</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>neiges du Kilimandjaro</td><td>39</td><td>Pascal Danel</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>New York avec toi</td><td>38</td><td>Téléphone</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Nice very nice</td><td>1029</td><td>Claude Nougaro</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Nini peau de chien</td><td>3016</td><td>Aristide Bruant</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>no woman no cry</td><td>120</td><td>Bob Marley</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Noël interdit</td><td>285</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Noir c&#039;est Noir</td><td>23</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Non je ne regrette rien</td><td>3150</td><td>Edith Piaf</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Nuit de Folie</td><td>57</td><td>Début de soirée</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>nymphomane La</td><td>1112</td><td>Serge Lama</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>O gué Vive la rose (Mon amant me délaisse)</td><td>3165</td><td>Guy Béart</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>O Sole mio</td><td>275</td><td>Italien</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Obladi Oblada</td><td>105</td><td>The Beatles</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>ogresse L’</td><td>1108</td><td>Serge Lama</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Oh ma jolie Sarah</td><td>102</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>oiseau et l&#039;enfant L&#039;</td><td>150/3190</td><td>Marie Myriam</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Olé torero</td><td>3070</td><td>Luis Mariano</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>On a pas tous les jours 20 ans</td><td>3044</td><td>Berthe Sylva</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>On est pas là pour se faire engueller</td><td>  286 - 1116</td><td>Boris Vian</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>On laisse tous un jour</td><td>222</td><td>Michel Fugain</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>On the sunny side of the street</td><td>295</td><td>Real Book</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>On va s’aimer</td><td>74</td><td>Gilbert Montagné</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Opportuniste L’</td><td>223</td><td>Jacques Dutronc</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Orage L’</td><td>224 / 2005</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>p&#039;tit bal du samedi soir</td><td>3089</td><td>Georges Guétary</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>p&#039;tites femmes de Pigalle</td><td>160</td><td>Serge Lama</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Padam... Padam... Padam...</td><td>3152</td><td>Edith Piaf</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>parapluie Le</td><td>2040</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Parce que c&#039;est toi</td><td>227</td><td>Axelle Red</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Paris canaille</td><td>1013</td><td>Léo Ferré</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Pas de Boogie Woogie</td><td>9</td><td>Eddy Mitchell</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>passantes Les</td><td>2042</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Passer ma route</td><td>226</td><td>Maxime Leforestier</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Paulette</td><td>266</td><td>Les Charlots</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Pauvres Diables</td><td>226</td><td>Julio Iglesias</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>peintre des étoiles (Le)</td><td>280</td><td>Demis Roussos</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>pénitencier Le</td><td>264</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Personal Jesus</td><td>140</td><td>Depeche mode</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Petit</td><td>243</td><td>Michel Sardou</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>petit bal de la marine Le</td><td>3168</td><td>François Deguelt</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>petit bonheur</td><td>213</td><td>Félix Leclerc</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>petit pain au chocolat Le</td><td>2</td><td>joe dassin</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Petit papa noël</td><td>293</td><td>Tino Rossi</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>petits papiers Les</td><td>227 / 1076</td><td>Régine</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Piensa en mi</td><td>234</td><td>Luz Casal (Espagnol)</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>plat pays Le</td><td>1034</td><td>Jacques Brel</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>plus beau des tangos du monde</td><td>3054</td><td>Tino Rossi</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Plus bleu que tes yeux</td><td>1064</td><td>Charles Aznavour</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>poinçonneur des lilas</td><td>243</td><td>Serge Gainsbourg</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Porque te vas</td><td>267</td><td>Jeannette (Espagnol)</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>poupée qui fait non La</td><td>228</td><td>Michel Polnareff</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Pour un flirt</td><td>64</td><td>Michel Delpech</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Premier Pas Le</td><td>263</td><td>Claude-Michel Schönberg</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>première fille qu&#039;on a pris dans ses bras La</td><td>1052</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Pretty Woman</td><td>120</td><td>film</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>prière La</td><td>1084</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Proud Mary</td><td>120</td><td>Creedence Clearwater Revival</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Puisque tu pars</td><td>300</td><td>Jean-Jacques Goldmann</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Puisque vous partez en voyage</td><td>293 / 1056</td><td>Jean Sablon</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Pull Marine</td><td>222</td><td>Isabelle Adjani</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Purple Haze</td><td>120</td><td>jimmy hendrix</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Purple rain</td><td>293</td><td>Jeff Beck &amp; Beth Hart</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>putain de toi</td><td>1072</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>quand il est mort le poète</td><td>1089</td><td>Gilbert becaud</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Quand j’étais chanteur</td><td>27</td><td>Michel Delpech</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Quand on a que l&#039;amour</td><td>293</td><td>Jacques Brel</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Quand t’es dans le désert</td><td>58</td><td>Jean-Patrick Capdevielle</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>quatre vingt quinze pour cent</td><td>1036</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Que c&#039;est triste Venise</td><td>250</td><td>Charles Aznavour</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Que je t&#039;aime</td><td>232</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Que Marianne était jolie</td><td>268 - 151</td><td>Michel Delpech</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Qui Saura</td><td>269</td><td>Mike Brandt</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Rafale de Vent</td><td>8</td><td>Florent Pagny</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Reality</td><td>19</td><td>La Boum</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Rehab</td><td>100</td><td>Amy Winehouse</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>remparts de Varsovie</td><td>1036</td><td>Jacques Brel</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Requiem pour un fou</td><td>270</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Résiste</td><td>36</td><td>France Gall</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Retiens la nuit</td><td>98</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Retrouvailles Les</td><td>234</td><td>graeme allwright</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Rimes</td><td>1028</td><td>Claude Nougaro</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Riquita</td><td>3012</td><td>Georgette Plana</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>rire du sergent Le</td><td>73</td><td>Michel Sardou</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Rital Le</td><td>238</td><td>Claude Barzoti</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Rivers of Babylon</td><td>22</td><td>Bonney M</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Rock Collection</td><td>59</td><td>Laurent Voulzy</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Rosa</td><td>1038</td><td>Jacques Brel</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Rossignol de mes amours</td><td>3178</td><td>Luis Mariano</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>rouille La</td><td>94</td><td>Maxime Leforestier</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Rum and Coca Cola</td><td>75</td><td>Calypso Rose </td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Runaway</td><td>16</td><td>Del Shannon</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>sabots d&#039;Hélène</td><td>2076</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Sacrée bouteille</td><td>239</td><td>graeme allwright</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Salade de fruit</td><td>3164</td><td>Bourvil</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>salle de bain La</td><td>1110</td><td>Serge Lama</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Salut</td><td>240</td><td>Michel Sardou</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Salut les amoureux</td><td>241</td><td>Joe Dassin</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>samba brésilienne La</td><td>3072</td><td>Luis Mariano</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Santiano</td><td>14</td><td>Hugues Aufray</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Sarbacane</td><td>46</td><td>Francis Cabrel</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Sardines Les</td><td>74</td><td>Patrick Sebastien</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Satin Doll</td><td>295</td><td>Real Book</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Satisfaction</td><td>120</td><td>The rolling Stones</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Sauf le respect que je vous dois</td><td>2002</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Sentinelle La</td><td>105</td><td>Luke</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>should i stay or should i go</td><td>125</td><td>The Clash</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Si j&#039;étais elle</td><td>225</td><td>Julien Clerc</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Si maman si</td><td>271</td><td>France Gall</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Si t&#039;étais là</td><td>150</td><td>Louane</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Si tu ne me laisses pas tomber</td><td>206</td><td>Gérard Lenorman</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Si tu vas à Rio</td><td>3174</td><td>Dario Moreno</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Si tu veux m&#039;essayer</td><td>3</td><td>Florent Pagny</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Siffler sur la colline</td><td>29</td><td>joe dassin</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Sign of the times</td><td>150</td><td>Harry Styles</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Smoke on the water</td><td>125</td><td>Deep Purple</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Snowman</td><td>150</td><td>Sia</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Sous le ciel de Paris</td><td>76</td><td>Edith Piaf</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Sous les ponts de Paris</td><td>3028</td><td>Maurice Chevalier</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Sous les sunlights des tropiques</td><td>25</td><td>Gilbert Montagné</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Souvenirs Souvenirs</td><td>96</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>stand by me</td><td>125</td><td>Ben E. King</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Stuck in the middle white you</td><td>135</td><td>Stealers Wheel</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Sucettes Les</td><td>23</td><td>Serge Gainsbourg</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Sud Le</td><td>243</td><td>Nino Ferrer</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Sultan of the swing</td><td>125</td><td>The Police</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Sunny</td><td>125</td><td>Bobby Hebb</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Superman</td><td>236</td><td>Serge Lama</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Supplique pour être enterré à la plage de Sète</td><td>2031</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>surveillant général le</td><td>243</td><td>Michel Sardou</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Suzie Q</td><td>130</td><td>Creedence Clearwater Revival</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Sway</td><td>13</td><td>Dean Martin</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Sweet Caroline</td><td>100</td><td>Neil Diamond</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Sweet dreams</td><td>130</td><td>Marilyn Manson</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>sweet home alabama</td><td>130</td><td>Lynyrd Skynyrd</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Sweet ome Chicago</td><td>130</td><td>The Blues Brothers</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Syracuse</td><td>213</td><td>Yves Montand</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>T’as beau pas être beau</td><td>24</td><td>Louis Chedid</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Ta Katie t&#039;as quitté</td><td>254</td><td>Boby Lapointe</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>tactique du gendarme La</td><td>PC</td><td>Bourvil</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Tainted Love</td><td>130</td><td>Soft Cell </td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Take the a train</td><td>295</td><td>Real Book</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Tata Yoyo</td><td>74</td><td>Annie Cordy</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Tchi Tchi</td><td>3056</td><td>Tino Rossi</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Telephon Le</td><td>26</td><td>Nino Ferrer</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>temps des cathédrales</td><td>266</td><td>Comédie Musicale</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>temps des cerises</td><td>3062</td><td>Jean-Baptiste Clément</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Temps est bon Le</td><td>226</td><td>Isabelle Pierre</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>tendresse La</td><td>3060</td><td>Marie Laforet</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>The Girl From Ipanema</td><td>295</td><td>Real Book</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>The Road to Hell</td><td>130</td><td>Chris Rea</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>The wall (Anoter brick in)</td><td>130</td><td>Pink floyd</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>these boots are made for walking</td><td>125</td><td>Nancy Sinatra</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>This Is The Life</td><td>140</td><td>Amy Macdonald</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Ti Amo</td><td>274</td><td>Umberto Tozzi (Italien)</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Tie a Yellow Ribbon Round Ole Oak Tree</td><td>140</td><td>Dawn</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Tiroli Tirola</td><td>276</td><td>Linda de Suza (Portugais)</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Toi + Moi</td><td>68</td><td>Grégoire</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Tombe la neige</td><td>293</td><td>Salvatore Adamo</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>tourbillon (Le)</td><td>1008</td><td>Jeanne Moreau</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Tous les bateaux tous les oiseaux</td><td>203</td><td>Michel Polnareff</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Tout Savoir</td><td>76</td><td>Adé</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Toutes les femmes sont belles</td><td>3159</td><td>Frank Michael</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>trois cloches Les</td><td>3047</td><td>Edith Piaf</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Trois petites note de musique</td><td>1134</td><td>Yves Montand</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Trompettes de la renommée</td><td>2035</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Trousse Chemise</td><td>1070</td><td>Charles Aznavour</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Tu verras</td><td>285</td><td>Claude Nougaro</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Tulsa Time</td><td>141</td><td>Eric Clapton</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Twist a Saint Tropez</td><td>47</td><td>Les Chats Sauvages</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Twist and Shot</td><td>62</td><td>The Beatles</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Un an d&#039;amour (C&#039;est irréparable)</td><td>236</td><td>Nino Ferrer</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Un ano de amore</td><td>236</td><td>Luz Casal (Espagnol)</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Un autre monde</td><td>69</td><td>Téléphone</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Un gamin de Paris</td><td>3128</td><td>Yves Montand</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Un homme et une femme</td><td>1102</td><td>Chanson de Film</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Un jour mon Prince Viendra</td><td>50</td><td>Elodie Frégé</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>un jour tu verras</td><td>3055</td><td>Marcel Mouloudji</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Un p&#039;tit peu d&#039;argent</td><td>3088</td><td>Yvette Giraud</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Un petit cabanon</td><td>3134</td><td>Alibert</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Unchain my heart</td><td>135</td><td>Joe Coker</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Une Belle Histoire</td><td>272</td><td>Michel Fugain</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Une chanson</td><td>1020</td><td>Charles Dumont</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Une fille aux yeux clairs</td><td>244</td><td>Michel Sardou</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Une jolie fleur dans une peau de vache</td><td>2054</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Une Partie de Pétanque</td><td>3031</td><td>Darcelys</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>valse à mille temps La</td><td>1044</td><td>Jacques Brel</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>valse brune La</td><td>3042</td><td>Fréhel</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Vanina</td><td>16</td><td>Dave</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>vent nous portera Le</td><td>13</td><td>Noir désir</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>vie en rose La</td><td>3194</td><td>Edith Piaf</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>vie par procuration La</td><td>33</td><td>Jean-Jacques Goldmann</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Viens danser le twist</td><td>48</td><td>Johnny Hallyday</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>vieux Léon</td><td>2062</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>VieuxMariés (Les)</td><td>145</td><td>Michel Sardou</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>vingt deux septembre</td><td>2056</td><td>Georges Brassens</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>voiliers Les</td><td>3067</td><td>François Deguelt</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Voulez-vous danser grand-mère?</td><td>3022</td><td>Lina Margy</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Walk on the wild side</td><td>130</td><td>Lou reed</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Welcome to Burlesque</td><td>211</td><td>Cher</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>When the Saints</td><td>76</td><td>Real Book</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>When We were young</td><td>125</td><td>Adèle</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>White Wedding</td><td>135</td><td>Billy Eliott</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Wight is Wight</td><td>75</td><td>Michel Delpech</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>Winner take it all The</td><td>217</td><td>Abba</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Yellow submarine</td><td>7</td><td>The Beatles</td></tr>
-<tr><td class="link-cell">off</td><td></td><td>Yesterday</td><td>293</td><td>The Beatles</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>You Can Leave Your Hat On</td><td>120</td><td>Joe Coker</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>You Know I&#039;m no Good</td><td>145</td><td>Amy Winehouse</td></tr>
-<tr><td class="link-cell">off</td><td>g</td><td>You Never Can Tell</td><td>145</td><td>Emmylou Harris</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>You&#039;ve got to hide your love away</td><td>244</td><td>The Beatles</td></tr>
-<tr><td class="link-cell">off</td><td>s</td><td>Zizi (Le)</td><td>14</td><td>Pierre Perret</td></tr>
+      
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,a-toi,14668" target="_blank" rel="noopener">A Toi</a></td>
+        <td>284</td>
+        <td>Joe Dassin</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,ai-se-eu-te-pego,216219" target="_blank" rel="noopener">ai se eu te pego</a></td>
+        <td>44</td>
+        <td>Michel Teló (Portugais)</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,l-aigle-noir,14766" target="_blank" rel="noopener">aigle noir L&#039;</a></td>
+        <td>300 ou 1058</td>
+        <td>Barbara</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,aimer-a-perdre-la-raison,14731" target="_blank" rel="noopener">Aimer à perdre la raison</a></td>
+        <td>293 / 1005</td>
+        <td>Jean Ferrat</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,aline,14419" target="_blank" rel="noopener">Aline</a></td>
+        <td>209</td>
+        <td>Christophe</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.net/ella-fitzgerald/paroles-all-of-me" target="_blank" rel="noopener">All of Me</a></td>
+        <td>295</td>
+        <td>Real Book</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.net/ella-fitzgerald/paroles-all-the-things-you-are" target="_blank" rel="noopener">All The Things You Are</a></td>
+        <td>295</td>
+        <td>Real Book</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,allo-maman-bobo,14391" target="_blank" rel="noopener">Allo Maman Bobo</a></td>
+        <td>216</td>
+        <td>Alain Souchon</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,allumer-le-feu,14377" target="_blank" rel="noopener">Allumer le feu</a></td>
+        <td>145</td>
+        <td>Johnny Hallyday</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.net/lady-gaga/paroles-always-remember-us-this-way" target="_blank" rel="noopener">Always Remembers Us This Way</a></td>
+        <td>75</td>
+        <td>Lady Gaga</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,l-amour-ca-fait-passer-le-temps,35665" target="_blank" rel="noopener">amour ça fait passer le temps L&#039;</a></td>
+        <td>191</td>
+        <td>Marcel Amont</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,amoureux-de-ma-femme,15207" target="_blank" rel="noopener">Amoureux de ma femme</a></td>
+        <td>17</td>
+        <td>Richard Anthonny</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,amsterdam,15157" target="_blank" rel="noopener">Amsterdam</a></td>
+        <td></td>
+        <td>Jacques Brel</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,l-anamour,15148" target="_blank" rel="noopener">Anamour L&#039;</a></td>
+        <td>200</td>
+        <td>Serge Gainsbourg</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,aragon-et-castille,15305" target="_blank" rel="noopener">Aragon et Castille</a></td>
+        <td>293</td>
+        <td>Boby Lapointe</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,armstrong,15272" target="_blank" rel="noopener">Armstrong</a></td>
+        <td>201</td>
+        <td>Claude Nougaro</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,au-cafe-des-delices,15230" target="_blank" rel="noopener">Au Café des Délices</a></td>
+        <td>6</td>
+        <td>Patrick Bruel</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,aupres-de-mon-arbre,14838" target="_blank" rel="noopener">Auprès de mon arbre</a></td>
+        <td>293 / 2027</td>
+        <td>Georges Brassens</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.net/nat-king-cole/paroles-autumn-leaves" target="_blank" rel="noopener">Autumn Leaves</a></td>
+        <td>295</td>
+        <td>Real Book</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,avant-de-nous-dire-adieu,15077" target="_blank" rel="noopener">Avant de nous dire adieu</a></td>
+        <td>250</td>
+        <td>Jeane Manson</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,avec-les-filles-je-ne-sais-pas,15045" target="_blank" rel="noopener">Avec les filles je ne sais pas</a></td>
+        <td>30</td>
+        <td>Philippe Lavil</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,back-to-black,17993" target="_blank" rel="noopener">Back to Black</a></td>
+        <td>140</td>
+        <td>Amy Winehouse</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-ballade-de-jim,13637" target="_blank" rel="noopener">Ballade de Jim (La)</a></td>
+        <td>145</td>
+        <td>Alain Souchon</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-ballade-des-gens-heureux,13586" target="_blank" rel="noopener">ballade des gens heureux La</a></td>
+        <td>59</td>
+        <td>Gérard Lenorman</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-ballade-nord-irlandaise,13577" target="_blank" rel="noopener">Ballade Nord Irlandaise La</a></td>
+        <td>260</td>
+        <td>Renaud</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,les-bals-populaires,13599" target="_blank" rel="noopener">bals populaires Les</a></td>
+        <td>3</td>
+        <td>Michel Sardou</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-bamba,26722" target="_blank" rel="noopener">Bamba La</a></td>
+        <td>62</td>
+        <td>Los Bobos</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,be-bop-a-lula,71739" target="_blank" rel="noopener">Be Bop a Lula</a></td>
+        <td>100</td>
+        <td>Johnny Hallyday</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.net/noa-achinoam-nini/paroles-beautiful-that-way" target="_blank" rel="noopener">Beautiful that way</a></td>
+        <td>213</td>
+        <td>Noa</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.net/eric-clapton/paroles-before-you-accuse-me-take-a-l" target="_blank" rel="noopener">Before you accuse me</a></td>
+        <td>100</td>
+        <td>Eric Clapton</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.net/cher/paroles-believe" target="_blank" rel="noopener">Believe</a></td>
+        <td>115</td>
+        <td>Cher</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,bella-ciao,217148" target="_blank" rel="noopener">Bella Ciao</a></td>
+        <td></td>
+        <td>Italien</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,belle,71703" target="_blank" rel="noopener">Belle</a></td>
+        <td>251</td>
+        <td>Notre Dame de Paris</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,belles-belles-belles,13681" target="_blank" rel="noopener">Belle Belle Belle</a></td>
+        <td>4</td>
+        <td>Claude François</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-belle,51624" target="_blank" rel="noopener">Belle La</a></td>
+        <td>203</td>
+        <td>Louis Chedid</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,besoin-de-personne,13414" target="_blank" rel="noopener">Besoin de personne</a></td>
+        <td></td>
+        <td>Véronique Sanson</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.google.com/search?q=les+betises+paroles&sca_esv=eb50063a5605cecb&biw=1309&bih=672&sxsrf=AE3TifOzLDCn-sDf4AABOXbx5E-DLbP2dw%3A1753080792199&ei=2ON9aO3xC5mnkdUP1YSV0A0&oq=les+betises+paroles&gs_lp=Egxnd3Mtd2l6LXNlcnAiE2xlcyBiZXRpc2VzIHBhcm9sZXMqAggAMgUQABiABDIGEAAYBxgeMggQABgHGAoYHjIGEAAYBxgeMgYQABgHGB4yBhAAGAcYHjIGEAAYCBgeMgUQABjvBUigLFAAWOYVcAB4AZABAJgBkwGgAeUGqgEDOC4zuAEByAEA-AEBmAILoAK9B8ICAhAmwgIKEAAYgAQYQxiKBcICCBAAGAcYCBgemAMAkgcDOC4zoAffQrIHAzguM7gHvQfCBwUyLTguM8gHTw&sclient=gws-wiz-serp" target="_blank" rel="noopener">Bêtises (Les)</a></td>
+        <td></td>
+        <td>Sabine Paturelle</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,black-magic-woman,185154" target="_blank" rel="noopener">Black Magic Woman</a></td>
+        <td>100</td>
+        <td>Santana</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.songlyrics.com/connie-evingson/black-orpheus-lyrics/" target="_blank" rel="noopener">Black Orpheus</a></td>
+        <td>295</td>
+        <td>Real Book</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,le-blues-du-businessman,13524" target="_blank" rel="noopener">Blues du Businessman Le</a></td>
+        <td>261</td>
+        <td>Starmania</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-boheme,13539" target="_blank" rel="noopener">Bohème La</a></td>
+        <td>293 / 1066</td>
+        <td>Charles Aznavour</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-bombe-humaine,13493" target="_blank" rel="noopener">Bombe Humaine La</a></td>
+        <td>43</td>
+        <td>Téléphone</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-braconne,14126" target="_blank" rel="noopener">Braconne La</a></td>
+        <td>203</td>
+        <td>Serge Lama</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles-musique.com/paroles-Vince-Taylor-Brand-New-Cadillac-lyrics,p08641981" target="_blank" rel="noopener">Brand New Cadillac</a></td>
+        <td>100</td>
+        <td>The Clash</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,c-est-beau-la-vie,14076" target="_blank" rel="noopener">C&#039;est Beau La Vie</a></td>
+        <td>34</td>
+        <td>Jean Ferrat</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,c-est-comme-ca-que-je-t-aime,14300" target="_blank" rel="noopener">C’est comme ça que je t’aime</a></td>
+        <td>252</td>
+        <td>Mike Brandt</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,c-est-extra,14275" target="_blank" rel="noopener">C&#039;est Extra</a></td>
+        <td>253</td>
+        <td>Léo Férré</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,c-est-ma-vie,14185" target="_blank" rel="noopener">C&#039;est ma Vie</a></td>
+        <td>205</td>
+        <td>Salvatore Adamo</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,ca-je-ne-l-ai-jamais-vu,13820" target="_blank" rel="noopener">Ça je ne l&#039;ai jamais vu</a></td>
+        <td>204</td>
+        <td>graeme allwright</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,les-cactus,14021" target="_blank" rel="noopener">Cactus Les</a></td>
+        <td>37</td>
+        <td>Jacques Dutronc</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,can-you-feel-the-love-tonight,46431" target="_blank" rel="noopener">Can You Feel the Love Tonight</a></td>
+        <td></td>
+        <td>Elton John</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,can-t-help-falling-in-love,44253" target="_blank" rel="noopener">Can&#039;t Help Falling In Love</a></td>
+        <td>208</td>
+        <td>Elvis Presley</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,carillon-d-alsace,12631" target="_blank" rel="noopener">Carillon d&#039;Alsace</a></td>
+        <td></td>
+        <td>André Verchuren</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,casser-la-voix,12597" target="_blank" rel="noopener">Casser la voix</a></td>
+        <td>280</td>
+        <td>Patrick Bruel</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,ce-n-est-rien,12553" target="_blank" rel="noopener">Ce n&#039;est rien</a></td>
+        <td>205</td>
+        <td>Julien Clerc</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,celimene,12537" target="_blank" rel="noopener">Célimene</a></td>
+        <td>254</td>
+        <td>David Martial</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,celine,12536" target="_blank" rel="noopener">Céline</a></td>
+        <td>255</td>
+        <td>Hugues Aufray</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,cendrillon,72532" target="_blank" rel="noopener">Cendrillon</a></td>
+        <td>10</td>
+        <td>Téléphone</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,aux-champs-elysees,191566" target="_blank" rel="noopener">Champs Élysée Aux</a></td>
+        <td>206</td>
+        <td>joe dassin</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,chanson-populaire,117633" target="_blank" rel="noopener">Chanson populaire</a></td>
+        <td>61</td>
+        <td>Claude François</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,chanson-pour-l-auvergnat,12277" target="_blank" rel="noopener">Chanson pour l&#039;Auvergnat</a></td>
+        <td>256 / 2024</td>
+        <td>Georges Brassens</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,drole-de-vie,226015" target="_blank" rel="noopener">Chanson sur ma drôle de vie</a></td>
+        <td>288</td>
+        <td>Véronique Sanson</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.net/michel-fugain/paroles-chante-comme-si-tu-devais-mourir-demain" target="_blank" rel="noopener">Chante comme si tu devais</a></td>
+        <td>206</td>
+        <td>Michel Fugain</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,le-chanteur,12459" target="_blank" rel="noopener">Chanteur (Le)</a></td>
+        <td>300</td>
+        <td>Daniel Balavoine</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,le-chanteur-malheureux,126103" target="_blank" rel="noopener">Chanteur Malheureux (Le)</a></td>
+        <td>29</td>
+        <td>Claude François</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,le-chasseur,12403" target="_blank" rel="noopener">Chasseur Le</a></td>
+        <td>262</td>
+        <td>Michel Delpech</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-chenille,13158" target="_blank" rel="noopener">Chenille (la)</a></td>
+        <td>258</td>
+        <td>La Bande à Basile</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-chica-de-cuba,13075" target="_blank" rel="noopener">Chica de Cuba La</a></td>
+        <td>15</td>
+        <td>Philippe Lavil</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,cocaine,69348" target="_blank" rel="noopener">Cocaine</a></td>
+        <td>105</td>
+        <td>Eric Clapton</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.azlyrics.com/lyrics/norahjones/comeawaywithme.html" target="_blank" rel="noopener">Come Away With Me</a></td>
+        <td>115</td>
+        <td>Norah Jones</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.net/claudio-capeo/paroles-come-prima" target="_blank" rel="noopener">Come Prima</a></td>
+        <td></td>
+        <td>Italien</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,come-together,34459" target="_blank" rel="noopener">Come together</a></td>
+        <td>105</td>
+        <td>The Beatles</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,les-comediens,12880" target="_blank" rel="noopener">Comédiens Les</a></td>
+        <td>206 / 1072</td>
+        <td>Charles Aznavour</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,comme-d-habitude,12898" target="_blank" rel="noopener">Comme d&#039;habitude</a></td>
+        <td>60</td>
+        <td>Claude François</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,comme-toi,12859" target="_blank" rel="noopener">Comme toi</a></td>
+        <td>51</td>
+        <td>Jean-Jacques Goldmann</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,comme-un-avion-sans-aile,12820" target="_blank" rel="noopener">Comme un avion sans ailes</a></td>
+        <td>67</td>
+        <td>Charlélie Couture</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,comment-te-dire-adieu,12793" target="_blank" rel="noopener">Comment te dire adieu</a></td>
+        <td></td>
+        <td>Françoise Hardy</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-complainte-de-la-butte,72602" target="_blank" rel="noopener">complainte de la Butte La</a></td>
+        <td>76</td>
+        <td>Cora Vaucaire</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,les-copains-d-abord,12965" target="_blank" rel="noopener">Copains d&#039;abord Les</a></td>
+        <td>206 / 2041</td>
+        <td>Georges Brassens</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,creep,239759" target="_blank" rel="noopener">Creep</a></td>
+        <td>71</td>
+        <td>Radiohead</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-dame-de-haute-savoie,11735" target="_blank" rel="noopener">dame de Haute Savoie La</a></td>
+        <td>36</td>
+        <td>Francis Cabrel</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.google.com/search?q=dance+monkey+lyrics&sca_esv=76514260854d2b95&sxsrf=AE3TifM45zioK4GoQtzwuqZUYclEEv-ePA%3A1753077590298&ei=Vtd9aKb9EbOmkdUP2_PYwAg&oq=dance+monkey+&gs_lp=Egxnd3Mtd2l6LXNlcnAiDWRhbmNlIG1vbmtleSAqAggAMgoQABiABBhDGIoFMgUQABiABDIFEAAYgAQyBRAuGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAESPkpUIYZWIYZcAF4AZABAJgBqQOgAakDqgEDNC0xuAEByAEA-AEBmAICoALZA8ICChAAGLADGNYEGEfCAg0QLhiABBiwAxhDGIoFwgINEAAYgAQYsAMYQxiKBZgDAIgGAZAGCpIHBTEuNC0xoAfoB7IHAzQtMbgHwwPCBwUzLTEuMcgHKQ&sclient=gws-wiz-serp" target="_blank" rel="noopener">Dance Monkey</a></td>
+        <td></td>
+        <td>Tones and I</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,daniela,11749" target="_blank" rel="noopener">Daniela</a></td>
+        <td>35</td>
+        <td>Ulmer Foolbeat</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,les-prisons-de-nantes-la-fille-du-geolier,69654" target="_blank" rel="noopener">Dans les Prisons de Nantes</a></td>
+        <td>53</td>
+        <td>trad</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-derniere-seance,28115" target="_blank" rel="noopener">Dernière Séance (La)</a></td>
+        <td></td>
+        <td>Eddy Mitchell</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,derriere-l-amour,11412" target="_blank" rel="noopener">Derrière l&#039;amour</a></td>
+        <td>207</td>
+        <td>Johnny Hallyday</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,des-que-le-vent-soufflera,11369" target="_blank" rel="noopener">Dès que le vent soufflera</a></td>
+        <td>207</td>
+        <td>Renaud</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,diego-libre-dans-sa-tete,72191" target="_blank" rel="noopener">Diego</a></td>
+        <td>226</td>
+        <td>Johnny Hallyday</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,dieu-fumeur-de-havanes,12062" target="_blank" rel="noopener">Dieu fumeur de havanes</a></td>
+        <td></td>
+        <td>Serge Gainsbourg</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,dis-lui-feelings,12241" target="_blank" rel="noopener">Dis Lui</a></td>
+        <td>257</td>
+        <td>Mike Brandt</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,dis-quand-reviendras-tu,12214" target="_blank" rel="noopener">Dis quand reviendras tu</a></td>
+        <td>293</td>
+        <td>Barbara</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles-musique.com/paroles-No-Doubt-Don-t-Speak-lyrics,p18209" target="_blank" rel="noopener">Don&#039;t Speak</a></td>
+        <td>75</td>
+        <td>No Doubt</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,dream-a-little-dream-of-me,226870" target="_blank" rel="noopener">Dream a Little Dream of Me</a></td>
+        <td>295</td>
+        <td>Real Book</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,du-rhum-des-femmes,11813" target="_blank" rel="noopener">Du Rhum des Femmes</a></td>
+        <td>6</td>
+        <td>Soldat louis</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,elisa,11963" target="_blank" rel="noopener">Élisa</a></td>
+        <td>208</td>
+        <td>Serge Gainsbourg</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,elle-etait-si-jolie,11881" target="_blank" rel="noopener">Elle était si jolie</a></td>
+        <td>186</td>
+        <td>Alain Barrière</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,elle-prefere-l-amour-en-mer,10576" target="_blank" rel="noopener">Elle préfère l’amour en mer</a></td>
+        <td>34</td>
+        <td>Philippe Lavil</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,emmene-moi-danser-ce-soir,10556" target="_blank" rel="noopener">emmène moi danser ce soir</a></td>
+        <td>216/3127</td>
+        <td>Michèle Torr</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,emmenez-moi,10555" target="_blank" rel="noopener">Emmenez-moi</a></td>
+        <td>209</td>
+        <td>Charles Aznavour</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,en-chantant,10508" target="_blank" rel="noopener">En chantant</a></td>
+        <td>243</td>
+        <td>Michel Sardou</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,les-enfants-du-piree,10667" target="_blank" rel="noopener">enfants du Pirée (Les)</a></td>
+        <td>209</td>
+        <td>Dalida</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,enola-gay,181411" target="_blank" rel="noopener">Enola Gay</a></td>
+        <td>105</td>
+        <td>Orchestral Manoeuvres In The Dark</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,l-envie,10603" target="_blank" rel="noopener">Envie ( L’)</a></td>
+        <td>31</td>
+        <td>Johnny Hallyday</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.net/mentissa-aziza/paroles-et-bam" target="_blank" rel="noopener">Et Bam</a></td>
+        <td>56</td>
+        <td>Mentissa</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,et-maintenant,10296" target="_blank" rel="noopener">Et maintenant</a></td>
+        <td>209 / 1086</td>
+        <td>Gilbert becaud</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.net/hoshi/paroles-et-meme-apres-je-t-aimerai" target="_blank" rel="noopener">Et même après je t&#039;aimerai</a></td>
+        <td>244</td>
+        <td>Hoshi</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,et-moi-et-moi-et-moi,10261" target="_blank" rel="noopener">Et moi, et moi, et moi</a></td>
+        <td>44</td>
+        <td>Jacques Dutronc</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,et-mon-pere,10258" target="_blank" rel="noopener">Et mon père</a></td>
+        <td>210</td>
+        <td>Nicolas Peyrac</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,et-si-tu-n-existais-pas,10231" target="_blank" rel="noopener">Et si tu n&#039;existait pas</a></td>
+        <td>150</td>
+        <td>joe dassin</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,l-ete,35055" target="_blank" rel="noopener">été (L&#039;) &quot;Lavilliers&quot;</a></td>
+        <td>244</td>
+        <td>Bernard Lavillier</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,eteins-la-lumiere,10235" target="_blank" rel="noopener">Éteins la lumière</a></td>
+        <td>292</td>
+        <td>Axel Bauer</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,every-breath-you-take,55274" target="_blank" rel="noopener">Every Breath You Take</a></td>
+        <td>110</td>
+        <td>Sting</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,fais-comme-l-oiseau,10396" target="_blank" rel="noopener">Fais comme l&#039;oiseau</a></td>
+        <td>211</td>
+        <td>Michel Fugain</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,femme-liberee,10988" target="_blank" rel="noopener">Femme libérée / The Passenger</a></td>
+        <td>11</td>
+        <td>Cookie Dingler / Iggy Pop</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,fernande,11208" target="_blank" rel="noopener">Fernande</a></td>
+        <td>211 / 2012</td>
+        <td>Georges Brassens</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-fille-du-coupeur-de-joints,11126" target="_blank" rel="noopener">Fille du coupeur de joints (La)</a></td>
+        <td>77</td>
+        <td>Hubert Félix Thiéfaine</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-fille-du-motel,11122" target="_blank" rel="noopener">Fille du Motel La</a></td>
+        <td>26</td>
+        <td>Eddy Mitchell</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-fille-du-pere-noel,11118" target="_blank" rel="noopener">Fille du père Noël La</a></td>
+        <td>39</td>
+        <td>Jacques dutronc</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-fleur-aux-dents,10815" target="_blank" rel="noopener">Fleur aux dents La</a></td>
+        <td>28</td>
+        <td>joe dassin</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,fly-me-to-the-moon,55491" target="_blank" rel="noopener">Fly me To the Moon</a></td>
+        <td>295</td>
+        <td>Real Book</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-foule,10758" target="_blank" rel="noopener">Foule La</a></td>
+        <td>211</td>
+        <td>Edith Piaf</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,foule-sentimentale,10757" target="_blank" rel="noopener">Foule sentimentale</a></td>
+        <td>211</td>
+        <td>Alain Souchon</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,le-france,10965" target="_blank" rel="noopener">France Le</a></td>
+        <td>217</td>
+        <td>Michel Sardou</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,gabrielle,10943" target="_blank" rel="noopener">Gabrielle</a></td>
+        <td>20</td>
+        <td>Johnny Hallyday</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,gaby-oh-gaby,10942" target="_blank" rel="noopener">Gaby oh Gaby</a></td>
+        <td>21</td>
+        <td>Alain Bashung</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,germaine,9566" target="_blank" rel="noopener">Germaine</a></td>
+        <td>211</td>
+        <td>Renaud</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,le-gibier-manque-et-les-femmes-sont-rares,9525" target="_blank" rel="noopener">gibier manque Le</a></td>
+        <td>211</td>
+        <td>Serge Lama</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,gimme-all-your-lovin,44646" target="_blank" rel="noopener">Gimme all your lovin</a></td>
+        <td>110</td>
+        <td>ZZ Top</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.net/la-petite-culotte/paroles-la-goffa-lolita" target="_blank" rel="noopener">Goffa Lolita (La)</a></td>
+        <td>46</td>
+        <td>La Petite Culotte</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,gottingen,9511" target="_blank" rel="noopener">Gottingen</a></td>
+        <td>293</td>
+        <td>Barbara par Pomme</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-grande-zoa,9681" target="_blank" rel="noopener">grande Zoa La</a></td>
+        <td>196</td>
+        <td>Régine</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-groupie-du-pianiste,9645" target="_blank" rel="noopener">Groupie du Pianiste (La)</a></td>
+        <td>74</td>
+        <td>Michel Berger</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,guantanamera,9644" target="_blank" rel="noopener">Guantanamera</a></td>
+        <td>212</td>
+        <td>joe dassin</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,hallelujah,72224" target="_blank" rel="noopener">Hallelujah</a></td>
+        <td>288</td>
+        <td>Lèonard Cohen</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,hasta-siempre,68115" target="_blank" rel="noopener">Hasta Siempre</a></td>
+        <td></td>
+        <td>Nathalie Cardone</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,hexagone,9305" target="_blank" rel="noopener">Hexagone</a></td>
+        <td>326</td>
+        <td>Renaud</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles-musique.com/paroles-Jimi_Hendrix-Hey_Joe-lyrics,p63374" target="_blank" rel="noopener">Hey Joe</a></td>
+        <td>110</td>
+        <td>jimmy hendrix</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,you-ve-got-to-hide-your-love-away,29034" target="_blank" rel="noopener">Hey you&#039;ve got to hide your love away</a></td>
+        <td>227</td>
+        <td>The Beatles</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,histoire-de-faussaires,9239" target="_blank" rel="noopener">Histoire de faussaire</a></td>
+        <td>213 / 2006</td>
+        <td>Georges Brassens</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,honesty,56984" target="_blank" rel="noopener">Honesty</a></td>
+        <td>68</td>
+        <td>Billy Joel</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,honky-tonk-woman,151620" target="_blank" rel="noopener">Honky Tonk women</a></td>
+        <td>110</td>
+        <td>The Rolling Stones</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,hotel-california,41424" target="_blank" rel="noopener">Hotel California</a></td>
+        <td>100</td>
+        <td>Eagles</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,l-hotesse-de-l-air,9393" target="_blank" rel="noopener">Hotesse de l&#039;air L&#039;</a></td>
+        <td>213</td>
+        <td>Jacques Dutronc</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,hygiaphone,9384" target="_blank" rel="noopener">Hygiaphone</a></td>
+        <td>40</td>
+        <td>Téléphone</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,i-can-see-clearly-now,56134" target="_blank" rel="noopener">I Can See Clearly Now</a></td>
+        <td>213</td>
+        <td>Jimmy Cliff</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,i-shot-the-sheriff,287194" target="_blank" rel="noopener">I shot the sheriff</a></td>
+        <td>110</td>
+        <td>Eric Clapton</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,i-will-survive,47533" target="_blank" rel="noopener">I Will Survive</a></td>
+        <td>279</td>
+        <td>Gloria Gaynor</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,l-idole-des-jeunes,9371" target="_blank" rel="noopener">Idole des Jeunes (L&#039;)</a></td>
+        <td>53</td>
+        <td>Johnny Hallyday</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,il-est-trop-tard,9337" target="_blank" rel="noopener">Il est trop tard</a></td>
+        <td></td>
+        <td>Georges Moustaki</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,il-etait-une-fois-nous-deux,10062" target="_blank" rel="noopener">Il était un fois nous deux</a></td>
+        <td>70</td>
+        <td>Joe Dassin</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,il-tape-sur-des-bambous,9965" target="_blank" rel="noopener">Il tape sur des bambous</a></td>
+        <td>49</td>
+        <td>Philippe Lavil</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,il-venait-d-avoir-18-ans,9991" target="_blank" rel="noopener">Il venait d&#039;avoir 18 ans</a></td>
+        <td>277</td>
+        <td>Dalida</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,il-voyage-en-solitaire,9988" target="_blank" rel="noopener">Il voyage en solitaire</a></td>
+        <td>206</td>
+        <td>Gérard Manset</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,imagine,56128" target="_blank" rel="noopener">Imagine</a></td>
+        <td>115</td>
+        <td>John Lenon</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,it-s-a-heartache,55614" target="_blank" rel="noopener">It&#039; s a heartache</a></td>
+        <td>215</td>
+        <td>Bonnie Tyler</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,l-italiano,174440" target="_blank" rel="noopener">Italiano (L&#039;)</a></td>
+        <td>273</td>
+        <td>Toto Cutugno (Italien)</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,itsi-bitsi-petit-bikini,9800" target="_blank" rel="noopener">Itsi bitsi petit bikini</a></td>
+        <td>63</td>
+        <td>Johnny Hallyday</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,j-ai-rencontre-l-homme-de-ma-vie,9933" target="_blank" rel="noopener">J&#039;ai rencontré l&#039;homme de ma vie</a></td>
+        <td>284</td>
+        <td>Diane Dufresne</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,j-aime-les-filles,9878" target="_blank" rel="noopener">J&#039;aime les filles</a></td>
+        <td>214</td>
+        <td>Jacques Dutronc</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,j-irai-ou-tu-iras,24930" target="_blank" rel="noopener">J&#039;irai où ti iras</a></td>
+        <td>300</td>
+        <td>Céline Dion</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,j-veux-du-soleil,24847" target="_blank" rel="noopener">j&#039;veux du soleil</a></td>
+        <td>18</td>
+        <td>Au petit bonheur</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-java-de-broadway,25040" target="_blank" rel="noopener">java de Broadway La</a></td>
+        <td>45</td>
+        <td>Michel Sardou</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-javanaise,25062" target="_blank" rel="noopener">Javanaise (La)</a></td>
+        <td>215 / 1074</td>
+        <td>Serge Gainsbourg</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,je-m-voyais-deja,70803" target="_blank" rel="noopener">Je m’ voyais déjà</a></td>
+        <td>215 / 1067</td>
+        <td>Charles Aznavour</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,je-n-aurai-pas-le-temps,24628" target="_blank" rel="noopener">Je n&#039;aurai pas le temps</a></td>
+        <td>213</td>
+        <td>Michel Fugain</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,je-pars,171436" target="_blank" rel="noopener">Je pars</a></td>
+        <td>284</td>
+        <td>Nicolas Peyrac</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,je-suis-venu-te-dire-que-je-m-en-vais,24733" target="_blank" rel="noopener">Je suis venu te dire que je m&#039;en vais</a></td>
+        <td>13</td>
+        <td>Serge Gainsbourg</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,je-t-aime-a-la-folie,24702" target="_blank" rel="noopener">Je t&#039;aime à la folie</a></td>
+        <td>160</td>
+        <td>Serge Lama</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,je-te-promets,25385" target="_blank" rel="noopener">Je te promets</a></td>
+        <td>300</td>
+        <td>Johnny Hallyday</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,johnny-et-mary,225605" target="_blank" rel="noopener">Johnny and Mary</a></td>
+        <td>115</td>
+        <td>Robert Palmer</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,johnny-b-goode,55670" target="_blank" rel="noopener">Johnny be good</a></td>
+        <td>115</td>
+        <td>Chuck Berry</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,jolie-bouteille,271938" target="_blank" rel="noopener">Jolie Bouteille</a></td>
+        <td>238</td>
+        <td>Graemme Alwright</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,les-jolies-colonies-de-vacances,25498" target="_blank" rel="noopener">jolies colonies de vacances Les</a></td>
+        <td>215</td>
+        <td>Pierre Peret</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,joue-pas-de-rock-n-roll-pour-moi,25454" target="_blank" rel="noopener">Joue pas de Rock &#039;n Roll</a></td>
+        <td>90</td>
+        <td>Johnny Hallyday</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,jumping-jack-flash,151619" target="_blank" rel="noopener">Jumpin Jack Flash</a></td>
+        <td>115</td>
+        <td>Rolling Stones</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,jusqu-a-la-ceinture,25156" target="_blank" rel="noopener">Jusqu’à la ceinture</a></td>
+        <td>8</td>
+        <td>Graeme Allwright</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,les-lacs-du-connemara,25291" target="_blank" rel="noopener">Lacs du Connemara Les</a></td>
+        <td>72</td>
+        <td>Michel Sardou</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,lady-lady-lay,158883" target="_blank" rel="noopener">Lady Lay</a></td>
+        <td>59.1</td>
+        <td>Pierre Groscolas</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,lady-madonna,34416" target="_blank" rel="noopener">Lady Madona</a></td>
+        <td>115</td>
+        <td>The Beatles</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,laura,25246" target="_blank" rel="noopener">Laura</a></td>
+        <td>13</td>
+        <td>Johnny Hallyday</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,let-it-be,34415" target="_blank" rel="noopener">Let it be</a></td>
+        <td>71</td>
+        <td>The Beatles</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,libertine,23851" target="_blank" rel="noopener">Libertine</a></td>
+        <td></td>
+        <td>Mylène Farmer</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,le-lion-est-mort-ce-soir,146950" target="_blank" rel="noopener">lion est mort ce soir (Le)</a></td>
+        <td>1</td>
+        <td>Henri Salvador</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,le-loir-et-cher,24023" target="_blank" rel="noopener">Loir et Cher (Le)</a></td>
+        <td>8</td>
+        <td>Michel Delpech</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,long-train-running,27967" target="_blank" rel="noopener">Long Train Running</a></td>
+        <td>135</td>
+        <td>Doobie Brothers</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,le-loup-la-biche-et-le-chevalier,124999" target="_blank" rel="noopener">Loup La Biche Le Chevalier Le</a></td>
+        <td>57</td>
+        <td>Henri Salvador</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,love-me-tender,44211" target="_blank" rel="noopener">Love me tender</a></td>
+        <td>74</td>
+        <td>Elvis Presley</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,ma-preference,23561" target="_blank" rel="noopener">Ma Préférence</a></td>
+        <td>2</td>
+        <td>Julien Clerc</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,macumba,23547" target="_blank" rel="noopener">Macumba</a></td>
+        <td>32</td>
+        <td>Jean-Pierre Mader</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-madrague,23723" target="_blank" rel="noopener">Madrague (La)</a></td>
+        <td>160</td>
+        <td>Brigitte Bardot</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-maladie-d-amour,24404" target="_blank" rel="noopener">maladie d’amour La</a></td>
+        <td>64</td>
+        <td>Michel Sardou</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,marcia-baila,24535" target="_blank" rel="noopener">Marcia Baila</a></td>
+        <td>60</td>
+        <td>Rita Mitsouko</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,marguerite,24527" target="_blank" rel="noopener">Marguerite</a></td>
+        <td>178</td>
+        <td>Richard Cocciante</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,les-marionnettes,24487" target="_blank" rel="noopener">Marionnettes Les</a></td>
+        <td>54</td>
+        <td>Christophe</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-maritza,24482" target="_blank" rel="noopener">Maritza La</a></td>
+        <td>207</td>
+        <td>Sylvie Vartan</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,mediterraneenne,24106" target="_blank" rel="noopener">Méditerranéenne</a></td>
+        <td>286</td>
+        <td>Hervé Vilard</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,mes-emmerdes,24289" target="_blank" rel="noopener">Mes emmerdes</a></td>
+        <td>221 / 1062</td>
+        <td>Charles Aznavour</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,le-meteque,24251" target="_blank" rel="noopener">métèque Le</a></td>
+        <td>28</td>
+        <td>Georges Moustaki</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,mexico,24208" target="_blank" rel="noopener">Mexico</a></td>
+        <td>221</td>
+        <td>Luis Mariano</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.google.com/search?sca_esv=76514260854d2b95&sxsrf=AE3TifORAprIaJuLjccCXQ1m3QlMQFcGyg:1753079519717&q=paroles+de+sir+chloe+michelle&si=AMgyJEvqW5sXx7gcAsA_f6v6KBatNeP4fzAb4eYmkrh1_rMA4rPG1HDoeczUiuNSqqCSet-PscsImibgvU2mD5ST7l4Q8YtVTPEai6qzjqydCHW296cJAWK4DDlvnWqXEQBY5zJoouVc20pQWWrOgCdV4F4_jNHf7duySI7EDwuJeBuxX4zia-Y%3D&sa=X&ved=2ahUKEwiStaSQqs2OAxVvRaQEHQsGJX8QyNoBKAB6BAgYEAA&ictx=1&biw=1309&bih=672&dpr=1.1" target="_blank" rel="noopener">Michelle</a></td>
+        <td></td>
+        <td>Sir Chloé</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles-musique.com/paroles-Lady-Gaga-Million-Reasons-lyrics,p190799" target="_blank" rel="noopener">Million Reasons</a></td>
+        <td>209</td>
+        <td>Lady Gaga</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,mirza,22866" target="_blank" rel="noopener">Mirza</a></td>
+        <td>50</td>
+        <td>Nino Ferrer</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,mistral-gagnant,22872" target="_blank" rel="noopener">Mistral gagnant</a></td>
+        <td>265</td>
+        <td>Renaud</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,mon-amant-de-saint-jean,22822" target="_blank" rel="noopener">Mon amant de Saint Jean</a></td>
+        <td>76</td>
+        <td>Patrick Bruel</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.google.com/search?sca_esv=eb50063a5605cecb&sxsrf=AE3TifOmij3EwDHYXSDGpHCE-d09uJL95w:1753079997367&q=paroles+de+slimane+mon+amour&si=AMgyJEvqW5sXx7gcAsA_f6v6KBatNeP4fzAb4eYmkrh1_rMA4rPG1HDoeczUiuNSqqCSet8y6ItyVwQu07yxiPrahnv4SbNcX0-X_zZya30NAFMWq_yt4dAukw5WrqRxKnE3Z14o2Bt_qOnv15wd4kgOGkvRuGQ8wdugFEcEUB-dXMRbCwn4n0I%3D&sa=X&ved=2ahUKEwip74X0q82OAxV9NfsDHTHjGrMQw_oBegQIThAB&ictx=1&biw=1309&bih=672&dpr=1.1" target="_blank" rel="noopener">Mon Amour</a></td>
+        <td></td>
+        <td>Slimane</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,mon-frere,22966" target="_blank" rel="noopener">Mon Frère</a></td>
+        <td>145</td>
+        <td>Maxime Leforestier</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="../../../../../../../../export/hda3/borglet/local_ram_fs_dirs/281.prod-us.changeling-worker-libreoffice.apps-docs-changeling-worker-libreoffice.7239570232652.549eedb1e9d07f8c/ramdisk/dir3d734ecaf41bcf99031626538512722/Montagne La" target="_blank" rel="noopener">Montagne La</a></td>
+        <td>285</td>
+        <td>Jean Ferra</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,les-moulins-de-mon-coeur,22505" target="_blank" rel="noopener">Moulins de mon cœur (Les)</a></td>
+        <td>293 /1016</td>
+        <td>Michel Grand</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,mourir-sur-scene,22522" target="_blank" rel="noopener">Mourir sur scène</a></td>
+        <td>278</td>
+        <td>Dalida</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,les-murs-de-poussieres,101437" target="_blank" rel="noopener">murs de poussière</a></td>
+        <td>75</td>
+        <td>Francis Cabrel</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,toute-la-musique-que-j-aime,161983" target="_blank" rel="noopener">musique que j&#039;aime La</a></td>
+        <td>221</td>
+        <td>Johnny Hallyday</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,n-avoue-jamais,22712" target="_blank" rel="noopener">n&#039;avoue jamais</a></td>
+        <td>70/3198</td>
+        <td>Guy Mardel</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,kilimandjaro,25071" target="_blank" rel="noopener">neiges du Kilimandjaro</a></td>
+        <td>39</td>
+        <td>Pascal Danel</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,new-york-avec-toi,23337" target="_blank" rel="noopener">New York avec toi</a></td>
+        <td>38</td>
+        <td>Téléphone</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,no-woman-no-cry,46668" target="_blank" rel="noopener">no woman no cry</a></td>
+        <td>120</td>
+        <td>Bob Marley</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,noel-interdit,23282" target="_blank" rel="noopener">Noël interdit</a></td>
+        <td>285</td>
+        <td>Johnny Hallyday</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,noir-c-est-noir,23275" target="_blank" rel="noopener">Noir c&#039;est Noir</a></td>
+        <td>23</td>
+        <td>Johnny Hallyday</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,ob-la-di-ob-la-da,240231" target="_blank" rel="noopener">Obladi Oblada</a></td>
+        <td>105</td>
+        <td>The Beatles</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,l-oiseau-et-l-enfant,134147" target="_blank" rel="noopener">oiseau et l&#039;enfant L&#039;</a></td>
+        <td>150/3190</td>
+        <td>Marie Myriam</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,on-laisse-tous-un-jour,23243" target="_blank" rel="noopener">On laisse tous un jour</a></td>
+        <td>222</td>
+        <td>Michel Fugain</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles-musique.com/paroles-Frank-Sinatra-On-the-Sunny-Side-of-the-Street-lyrics,p033089" target="_blank" rel="noopener">On the sunny side of the street</a></td>
+        <td>295</td>
+        <td>Real Book</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,l-opportuniste,23152" target="_blank" rel="noopener">Opportuniste L’</a></td>
+        <td>223</td>
+        <td>Jacques Dutronc</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,l-orage,23148" target="_blank" rel="noopener">Orage L’</a></td>
+        <td>224 / 2005</td>
+        <td>Georges Brassens</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,parce-que-c-est-toi,21950" target="_blank" rel="noopener">Parce que c&#039;est toi</a></td>
+        <td>227</td>
+        <td>Axelle Red</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,pas-de-boogie-woogie,21568" target="_blank" rel="noopener">Pas de Boogie Woogie</a></td>
+        <td>9</td>
+        <td>Eddy Mitchell</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,le-penitencier,21686" target="_blank" rel="noopener">pénitencier Le</a></td>
+        <td>264</td>
+        <td>Johnny Hallyday</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,petit,21668" target="_blank" rel="noopener">Petit</a></td>
+        <td>243</td>
+        <td>Michel Sardou</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,le-petit-bonheur,21797" target="_blank" rel="noopener">petit bonheur</a></td>
+        <td>213</td>
+        <td>Félix Leclerc</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,le-petit-pain-au-chocolat,22372" target="_blank" rel="noopener">petit pain au chocolat Le</a></td>
+        <td>2</td>
+        <td>joe dassin</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,petit-papa-noel,70078" target="_blank" rel="noopener">Petit papa noël</a></td>
+        <td>293</td>
+        <td>Tino Rossi</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,les-petits-papiers,22266" target="_blank" rel="noopener">petits papiers Les</a></td>
+        <td>227 / 1076</td>
+        <td>Régine</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,piensa-en-mi,27403" target="_blank" rel="noopener">Piensa en mi</a></td>
+        <td>234</td>
+        <td>Luz Casal (Espagnol)</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,porque-te-vas,56114" target="_blank" rel="noopener">Porque te vas</a></td>
+        <td>267</td>
+        <td>Jeannette (Espagnol)</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-poupee-qui-fait-non,22229" target="_blank" rel="noopener">poupée qui fait non La</a></td>
+        <td>228</td>
+        <td>Michel Polnareff</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,pour-le-plaisir,22235" target="_blank" rel="noopener">Pour le plaisir</a></td>
+        <td></td>
+        <td>Herbert Léonard</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,pour-que-tu-m-aimes-encore,69683" target="_blank" rel="noopener">Pour que tu m&#039;aimes encore</a></td>
+        <td></td>
+        <td>Céline Dion</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,pour-un-flirt,22165" target="_blank" rel="noopener">Pour un flirt</a></td>
+        <td>64</td>
+        <td>Michel Delpech</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,pretty-women,137485" target="_blank" rel="noopener">Pretty Woman</a></td>
+        <td>120</td>
+        <td>film</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,proud-mary,166028" target="_blank" rel="noopener">Proud Mary</a></td>
+        <td>120</td>
+        <td>Creedence Clearwater Revival</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,puisque-tu-pars,20937" target="_blank" rel="noopener">Puisque tu pars</a></td>
+        <td></td>
+        <td>Jean-Jacques Goldmann</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,puisque-tu-pars,20937" target="_blank" rel="noopener">Puisque tu pars</a></td>
+        <td>300</td>
+        <td>Jean-Jacques Goldmann</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,puisque-vous-partez-en-voyage,69649" target="_blank" rel="noopener">Puisque vous partez en voyage</a></td>
+        <td>293 / 1056</td>
+        <td>Jean Sablon</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,pull-marine,20966" target="_blank" rel="noopener">Pull Marine</a></td>
+        <td>222</td>
+        <td>Isabelle Adjani</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,quand-j-etais-chanteur,20893" target="_blank" rel="noopener">Quand j’étais chanteur</a></td>
+        <td>27</td>
+        <td>Michel Delpech</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,que-c-est-triste-venise,20473" target="_blank" rel="noopener">Que c&#039;est triste Venise</a></td>
+        <td>250</td>
+        <td>Charles Aznavour</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,que-je-t-aime,20688" target="_blank" rel="noopener">Que je t&#039;aime</a></td>
+        <td>232</td>
+        <td>Johnny Hallyday</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,que-marianne-etait-jolie,20680" target="_blank" rel="noopener">Que Marianne était jolie</a></td>
+        <td>268 - 151</td>
+        <td>Michel Delpech</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,que-reste-t-il-de-nos-amours,69854" target="_blank" rel="noopener">Que Reste t il de nos amours</a></td>
+        <td></td>
+        <td>Charles Trenet</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,qui-a-le-droit,20647" target="_blank" rel="noopener">Qui a le droit</a></td>
+        <td></td>
+        <td>Patrick Bruel</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,qui-saura,20593" target="_blank" rel="noopener">Qui Saura</a></td>
+        <td>269</td>
+        <td>Mike Brandt</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,reality,43243" target="_blank" rel="noopener">Reality</a></td>
+        <td>19</td>
+        <td>La Boum</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,rehab,18006" target="_blank" rel="noopener">Rehab</a></td>
+        <td>100</td>
+        <td>Amy Winehouse</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,requiem-pour-un-fou,21459" target="_blank" rel="noopener">Requiem pour un fou</a></td>
+        <td>270</td>
+        <td>Johnny Hallyday</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,retiens-la-nuit,21423" target="_blank" rel="noopener">Retiens la nuit</a></td>
+        <td>98</td>
+        <td>Johnny Hallyday</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,il-faut-que-je-m-en-aille-les-retrouvailles,10038" target="_blank" rel="noopener">Retrouvailles Les</a></td>
+        <td>234</td>
+        <td>graeme allwright</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,le-rire-du-sergent,21083" target="_blank" rel="noopener">rire du sergent Le</a></td>
+        <td>73</td>
+        <td>Michel Sardou</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,le-rital,21081" target="_blank" rel="noopener">Rital Le</a></td>
+        <td>238</td>
+        <td>Claude Barzoti</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,rivers-of-babylon,55637" target="_blank" rel="noopener">Rivers of Babylon</a></td>
+        <td>22</td>
+        <td>Bonney M</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,jolie-bouteille,271938" target="_blank" rel="noopener">Sacrée bouteille</a></td>
+        <td>239</td>
+        <td>graeme allwright</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,salut,19806" target="_blank" rel="noopener">Salut</a></td>
+        <td>240</td>
+        <td>Michel Sardou</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,salut-les-amoureux,19804" target="_blank" rel="noopener">Salut les amoureux</a></td>
+        <td>241</td>
+        <td>Joe Dassin</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,santiano,19703" target="_blank" rel="noopener">Santiano</a></td>
+        <td>14</td>
+        <td>Hugues Aufray</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,sarbacane,19697" target="_blank" rel="noopener">Sarbacane</a></td>
+        <td>46</td>
+        <td>Francis Cabrel</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,les-sardines,34409" target="_blank" rel="noopener">Sardines Les</a></td>
+        <td>74</td>
+        <td>Patrick Sebastien</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,satin-doll,259889" target="_blank" rel="noopener">Satin Doll</a></td>
+        <td>295</td>
+        <td>Real Book</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,should-i-stay-or-should-i-go,146360" target="_blank" rel="noopener">should i stay or should i go</a></td>
+        <td>125</td>
+        <td>The Clash</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,si-maman-si,19435" target="_blank" rel="noopener">Si maman si</a></td>
+        <td>271</td>
+        <td>France Gall</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.google.com/search?q=si+seulement+paroles&oq=si+seulement+&gs_lcrp=EgZjaHJvbWUqBwgGEAAYgAQyBggAEEUYOTIHCAEQLhiABDIHCAIQLhiABDIHCAMQABiABDIHCAQQABiABDIHCAUQLhiABDIHCAYQABiABDIHCAcQLhiABDIHCAgQABiABNIBCjE0MDE0ajBqMTWoAgiwAgHxBanWDhM-p9S_8QWp1g4TPqfUvw&sourceid=chrome&ie=UTF-8" target="_blank" rel="noopener">Si seulement</a></td>
+        <td></td>
+        <td>Kenji Girac</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.letras.com/louane-emera/si-tetais-la/" target="_blank" rel="noopener">Si t&#039;étais là</a></td>
+        <td>150</td>
+        <td>Louane</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.google.com/search?q=si+tu+m%27aimes+demain+iliona+paroles&client=ms-google-coop&sca_esv=8f64bcc4a96fe9ce&cx=partner-pub-5795822907416308%3A5530791584&sxsrf=AE3TifPOUhN5UnefukvKn8cpiJe7M96Nvg%3A1752785738908&ei=SmN5aOOVN_KckdUPjryk-Q4&oq=iliona+si+tu&gs_lp=Egxnd3Mtd2l6LXNlcnAiDGlsaW9uYSBzaSB0dSoCCAIyBxAuGIAEGBMyBxAAGIAEGBMyChAAGBMYFhgKGB4yCBAAGBMYFhgeMggQABgTGBYYHjIIEAAYExgWGB4yCBAAGBMYFhgeMggQABgTGBYYHjIIEAAYExgWGB4yCBAAGBMYFhgeSMkpUOEIWOkScAF4AZABAJgBVKAByAOqAQE2uAEByAEA-AEBmAIIoALtFsICChAAGLADGNYEGEfCAg0QABiABBiwAxhDGIoFwgIOEAAYsAMY5AIY1gTYAQHCAhMQLhiABBiwAxhDGMgDGIoF2AEBwgIFEC4YgATCAgoQLhiABBhDGIoFwgIFEAAYgATCAgoQABiABBhDGIoFwgIUEC4YgAQYlwUY3AQY3gQY3wTYAQHCAgoQLhiABBixAxgKwgIHEAAYgAQYCsICCBAAGBYYChgewgIGEAAYFhgewgIUEC4YgAQYlwUY3AQY3gQY4ATYAQHCAhYQLhiABBgTGJcFGNwEGN4EGOAE2AEBmAMAiAYBkAYTugYGCAEQARgJkgcHMy40LjgtMaAH-VWyBwMyLjS4B7kEwgcHMi0yLjMuM8gHgQE&sclient=gws-wiz-serp" target="_blank" rel="noopener">Si tu m&#039;aimes demain</a></td>
+        <td></td>
+        <td>Iliona</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,siffler-sur-la-colline,19651" target="_blank" rel="noopener">Siffler sur la colline</a></td>
+        <td>29</td>
+        <td>joe dassin</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.e-chords.com/chords/harry-styles/sign-of-the-times" target="_blank" rel="noopener">Sign of the times</a></td>
+        <td>150</td>
+        <td>Harry Styles</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.e-chords.com/chords/sia/snowman" target="_blank" rel="noopener">Snowman</a></td>
+        <td>150</td>
+        <td>Sia</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://genius.com/Mort-shuman-sorrow-lyrics" target="_blank" rel="noopener">Sorrow</a></td>
+        <td></td>
+        <td>Mort Shumann</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,sous-le-ciel-de-paris,70624" target="_blank" rel="noopener">Sous le ciel de Paris</a></td>
+        <td>76</td>
+        <td>Edith Piaf</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,stand-by-me,46491" target="_blank" rel="noopener">stand by me</a></td>
+        <td>125</td>
+        <td>Ben E. King</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.chordie.com/chord.pere/www.guitartabs.cc/tabs/s/stealers_wheel/stuck_in_the_middle_with_you_crd_ver_4.html" target="_blank" rel="noopener">Stuck in the middle white you</a></td>
+        <td>135</td>
+        <td>Stealers Wheel</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,les-sucettes-feat-serge-gainsbourg,109805" target="_blank" rel="noopener">Sucettes Les</a></td>
+        <td>23</td>
+        <td>Serge Gainsbourg</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,sunny,35415" target="_blank" rel="noopener">Sunny</a></td>
+        <td>125</td>
+        <td>Bobby Hebb</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,superman,20410" target="_blank" rel="noopener">Superman</a></td>
+        <td>236</td>
+        <td>Serge Lama</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,suzie-q,251964" target="_blank" rel="noopener">Suzie Q</a></td>
+        <td>130</td>
+        <td>Creedence Clearwater Revival</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,sweet-dreams,55478" target="_blank" rel="noopener">Sweet dreams</a></td>
+        <td>130</td>
+        <td>Marilyn Manson</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,sweet-home-alabama,39017" target="_blank" rel="noopener">sweet home alabama</a></td>
+        <td>130</td>
+        <td>Lynyrd Skynyrd</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,sweet-home-chicago,178862" target="_blank" rel="noopener">Sweet ome Chicago</a></td>
+        <td>130</td>
+        <td>The Blues Brothers</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,syracuse,20055" target="_blank" rel="noopener">Syracuse</a></td>
+        <td>213</td>
+        <td>Yves Montand</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,t-as-beau-pas-etre-beau,20047" target="_blank" rel="noopener">T’as beau pas être beau</a></td>
+        <td>24</td>
+        <td>Louis Chedid</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,ta-katie-t-a-quitte,20013" target="_blank" rel="noopener">Ta Katie t&#039;as quitté</a></td>
+        <td>254</td>
+        <td>Boby Lapointe</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,tata-yoyo,19971" target="_blank" rel="noopener">Tata Yoyo</a></td>
+        <td>74</td>
+        <td>Annie Cordy</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,le-telefon,20198" target="_blank" rel="noopener">Telephon Le</a></td>
+        <td>26</td>
+        <td>Nino Ferrer</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,le-temps-des-cathedrales,70228" target="_blank" rel="noopener">temps des cathédrales</a></td>
+        <td>266</td>
+        <td>Comédie Musicale</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,another-brick-in-the-wall,139435" target="_blank" rel="noopener">The wall (Anoter brick in)</a></td>
+        <td>130</td>
+        <td>Pink floyd</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,these-boots-are-made-for-walking,47301" target="_blank" rel="noopener">these boots are made for walking</a></td>
+        <td>125</td>
+        <td>Nancy Sinatra</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,this-is-the-life,63469" target="_blank" rel="noopener">This Is The Life</a></td>
+        <td>140</td>
+        <td>Amy Macdonald</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,ti-amo,55345" target="_blank" rel="noopener">Ti Amo</a></td>
+        <td>274</td>
+        <td>Umberto Tozzi (Italien)</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.google.com/search?q=tie+a+yellow+ribbon+%27round+the+ole+oak+tree+lyrics&client=ms-google-coop&sca_esv=9029f727d4831701&cx=partner-pub-5795822907416308%3A5530791584&sxsrf=ADLYWIKOEjUKt5SB0kIWa6YLIYPpczg3mw%3A1735033171439&ei=U4FqZ76-Gp6OkdUP9NHO-QU&ved=0ahUKEwj-s-2ejsCKAxUeR6QEHfSoM18Q4dUDCA8&uact=5&oq=tie+a+yellow+ribbon+%27round+the+ole+oak+tree+lyrics&gs_lp=Egxnd3Mtd2l6LXNlcnAiMnRpZSBhIHllbGxvdyByaWJib24gJ3JvdW5kIHRoZSBvbGUgb2FrIHRyZWUgbHlyaWNzMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB5IhRdQswhYrhVwAXgBkAEAmAGPAaAB4wSqAQM0LjK4AQPIAQD4AQGYAgegAqUFwgIKEAAYsAMY1gQYR8ICBBAAGB7CAgUQABjvBcICBhAAGAgYHpgDAIgGAZAGCJIHAzMuNKAH6SE&sclient=gws-wiz-serp" target="_blank" rel="noopener">Tie a Yellow Ribbon Round Ole Oak Tree</a></td>
+        <td>140</td>
+        <td>Dawn</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,tiroli-tirola,40148" target="_blank" rel="noopener">Tiroli Tirola</a></td>
+        <td>276</td>
+        <td>Linda de Suza (Portugais)</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,toi-plus-moi,132349" target="_blank" rel="noopener">Toi + Moi</a></td>
+        <td>68</td>
+        <td>Grégoire</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,tombe-la-neige,18713" target="_blank" rel="noopener">Tombe la neige</a></td>
+        <td>293</td>
+        <td>Salvatore Adamo</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,tous-les-bateaux-tous-les-oiseaux,18836" target="_blank" rel="noopener">Tous les bateaux tous les oiseaux</a></td>
+        <td>203</td>
+        <td>Michel Polnareff</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.net/ade/paroles-tout-savoir" target="_blank" rel="noopener">Tout Savoir</a></td>
+        <td>76</td>
+        <td>Adé</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,twist-a-saint-tropez,19263" target="_blank" rel="noopener">Twist a Saint Tropez</a></td>
+        <td>47</td>
+        <td>Les Chats Sauvages</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,twist-and-shout,57323" target="_blank" rel="noopener">Twist and Shot</a></td>
+        <td>62</td>
+        <td>The Beatles</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,un-ano-de-amor,69240" target="_blank" rel="noopener">Un ano de amore</a></td>
+        <td>236</td>
+        <td>Luz Casal (Espagnol)</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,un-autre-monde,19229" target="_blank" rel="noopener">Un autre monde</a></td>
+        <td>69</td>
+        <td>Téléphone</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,un-jour-mon-prince-viendra,19348" target="_blank" rel="noopener">Un jour mon Prince Viendra</a></td>
+        <td>50</td>
+        <td>Elodie Frégé</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,unchain-my-heart,66709" target="_blank" rel="noopener">Unchain my heart</a></td>
+        <td>135</td>
+        <td>Joe Coker</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,une-belle-histoire,104102" target="_blank" rel="noopener">Une Belle Histoire</a></td>
+        <td>272</td>
+        <td>Michel Fugain</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,une-fille-aux-yeux-clairs,18930" target="_blank" rel="noopener">Une fille aux yeux clairs</a></td>
+        <td>244</td>
+        <td>Michel Sardou</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,une-nuit-sur-son-epaule,19146" target="_blank" rel="noopener">Une nuit sur son épaule</a></td>
+        <td></td>
+        <td>Véronique Sanson</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,vanina,17767" target="_blank" rel="noopener">Vanina</a></td>
+        <td>16</td>
+        <td>Dave</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,le-vent-nous-portera,17720" target="_blank" rel="noopener">vent nous portera Le</a></td>
+        <td>13</td>
+        <td>Noir désir</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-vie-par-procuration,17881" target="_blank" rel="noopener">vie par procuration La</a></td>
+        <td>33</td>
+        <td>Jean-Jacques Goldmann</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,les-vieux-maries,17779" target="_blank" rel="noopener">VieuxMariés (Les)</a></td>
+        <td>145</td>
+        <td>Michel Sardou</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://genius.com/Adele-when-we-were-young-lyrics" target="_blank" rel="noopener">When We were young</a></td>
+        <td>125</td>
+        <td>Adèle</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,wight-is-wight,17557" target="_blank" rel="noopener">Wight is Wight</a></td>
+        <td>75</td>
+        <td>Michel Delpech</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,the-winner-takes-it-all,34190" target="_blank" rel="noopener">Winner take it all The</a></td>
+        <td>217</td>
+        <td>Abba</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,yellow-submarine,34437" target="_blank" rel="noopener">Yellow submarine</a></td>
+        <td>7</td>
+        <td>The Beatles</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://paroles2chansons.lemonde.fr/paroles-joe-cocker/paroles-you-can-leave-your-hat-on.html" target="_blank" rel="noopener">You Can Leave Your Hat On</a></td>
+        <td>120</td>
+        <td>Joe Coker</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,you-know-i-m-no-good,17966" target="_blank" rel="noopener">You Know I&#039;m no Good</a></td>
+        <td>145</td>
+        <td>Amy Winehouse</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.azlyrics.com/lyrics/emmylouharris/younevercantellcestlavie.html" target="_blank" rel="noopener">You Never Can Tell</a></td>
+        <td>145</td>
+        <td>Emmylou Harris</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,you-ve-got-to-hide-your-love-away,29034" target="_blank" rel="noopener">You&#039;ve got to hide your love away</a></td>
+        <td>244</td>
+        <td>The Beatles</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,your-song,46357" target="_blank" rel="noopener">Your Song</a></td>
+        <td></td>
+        <td>Elton John</td>
+      </tr>
+      <tr>
+        <td class="link"><a href="https://www.paroles.cc/chanson,le-zizi,18243" target="_blank" rel="noopener">Zizi (Le)</a></td>
+        <td>14</td>
+        <td>Pierre Perret</td>
+      </tr>
     </tbody>
   </table>
 
   <script>
     function filterTable() {
-      const input = document.getElementById('search');
-      const filter = input.value.toLowerCase();
-      const rows = document.querySelectorAll('tbody tr');
+      const filter = document.getElementById("searchBar").value.toLowerCase();
+      const rows = document.querySelectorAll("#dataTable tbody tr");
+
       rows.forEach(row => {
-        const text = row.textContent.toLowerCase();
-        row.style.display = text.includes(filter) ? '' : 'none';
+        const text = row.innerText.toLowerCase();
+        row.classList.toggle("hidden", !text.includes(filter));
       });
     }
   </script>
+
 </body>
 </html>
-  
