@@ -28,6 +28,11 @@
       font-size: 2em;
       margin-bottom: 20px;
       box-sizing: border-box;
+        position: sticky;   /* reste accroché */
+  top: 0;             /* collé en haut */
+  background: #fff;   /* fond blanc pour cacher ce qui défile derrière */
+  z-index: 1000;      /* au-dessus des autres éléments */
+  border-bottom: 2px solid #e91e63; /* optionnel, séparation visuelle */
     }
 
     table {
