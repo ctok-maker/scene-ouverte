@@ -3,117 +3,66 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8"/>
-<title>Sc?ne ouverte - Pr?Pub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Scène ouverte - PréPub</title>
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #fff;
-    color: #333;
-  }
-  .header-block {
-    text-align: center;
-    padding: 30px;
-    margin: 20px;
-    border: 8px solid #e91e63;
-    border-radius: 12px;
-    background: #ffe6f0;
-    line-height: 2;
-  }
-  .header-block h1 {
-    color: #e91e63;
-    font-size: 3em;
-    margin: 0;
-    font-weight: bold;
-  }
-  .header-block .subtitle {
-    font-size: 1.8em;
-    margin-top: 10px;
-  }
-  .header-block .phone {
-    font-size: 1.8em;
-    font-weight: bold;
-    margin-top: 5px;
-  }
-  .search-container {
-    position: sticky;
-    top: 0;
-    background: #fff;
-    padding: 10px;
-    z-index: 100;
-    border-bottom: 2px solid #e91e63;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  #searchBar {
-    flex: 1;
-    padding: 16px;
-    font-size: 2em;
-    box-sizing: border-box;
-  }
-  #clearBtn {
-    font-size: 2em;
-    cursor: pointer;
-    color: #e91e63;
-    background: none;
-    border: none;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 1.2em;
-  }
-  th, td {
-    padding: 12px;
-    border: 2px solid #e91e63;
-    text-align: left;
-  }
-  th {
-    background: #ffe6f0;
-    color: #e91e63;
-    font-weight: bold;
-    text-align: center;
-  }
-  .link a {
-    color: #2196f3;
-    text-decoration: underline;
-  }
-  tr.hidden {
-    display: none;
-  }
+body { font-family: Arial, sans-serif; margin:0; padding:10px; background:#fff; color:#333; }
+
+/* ----- En-tête stylisé ----- */
+.header-box { 
+  border: 6px solid #e91e63; 
+  padding: 20px; 
+  margin-bottom: 30px; 
+  text-align: center; 
+  line-height: 2; 
+  border-radius: 15px;
+  background: #fff0f6;
+}
+.header-box .title { font-size: clamp(2em, 6vw, 4em); color: #e91e63; font-weight: bold; text-transform: uppercase; }
+.header-box .subtitle { font-size: clamp(1.5em, 4vw, 2.5em); margin-top: 10px; }
+.header-box .phone { font-size: clamp(1.3em, 3.5vw, 2.2em); margin-top: 5px; }
+
+/* ----- Barre de recherche ----- */
+.search-container { position:sticky; top:0; z-index:1000; background:#fff; padding:10px 0; }
+#searchBar { width:100%; padding:14px; font-size:clamp(1.2em, 4vw, 2em); box-sizing:border-box; border:2px solid #e91e63; border-radius:8px; }
+#clearBtn { position:absolute; right:25px; top:22px; font-size:clamp(1.5em, 5vw, 2em); cursor:pointer; color:#888; }
+
+/* ----- Tableau ----- */
+table { width:100%; border-collapse:collapse; font-size:clamp(1em, 3.5vw, 1.4em); line-height:2; }
+th, td { padding:10px; border:1px solid #e91e63; text-align:left; }
+th { background:#ffe6ef; }
+.link a { color:#2196f3; text-decoration:underline; word-break: break-word; }
+tr.hidden { display:none; }
 </style>
 </head>
 <body>
-<div class="header-block">
-  <h1>Sc?ne ouverte</h1>
+
+<div class="header-box">
+  <div class="title">Scène ouverte</div>
   <div class="subtitle">Richard</div>
   <div class="phone">06 81 43 38 72</div>
 </div>
-<div class="search-container">
-  <input type="text" id="searchBar" placeholder="? Recherche..." onkeyup="filterTable()" />
-  <button id="clearBtn" onclick="clearSearch()">?</button>
+
+<div class="search-container" style="position:relative;">
+  <input type="text" id="searchBar" placeholder="🔍 Recherche..." onkeyup="filterTable()" />
+  <span id="clearBtn" onclick="clearSearch()">❌</span>
 </div>
+
 <table id="dataTable">
-  <thead>
-    <tr>
-      <th>Titres</th>
-      <th>Num?ro de Chapitre</th>
-      <th>Artistes</th>
-    </tr>
-  </thead>
-  <tbody>
-    
+<thead>
+<tr><th>Titres</th><th>Numéro de Chapitre</th><th>Artistes</th></tr>
+</thead>
+<tbody>
+
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,a-toi,14668" target="_blank" rel="noopener">A Toi</a></td>
         <td>284</td>
         <td>Joe Dassin</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,l-absent,14643" target="_blank" rel="noopener">absent L?</a></td>
-        <td>1081 ? 293</td>
-        <td>Gilbert B?caud</td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,l-absent,14643" target="_blank" rel="noopener">absent L’</a></td>
+        <td>1081 – 293</td>
+        <td>Gilbert Bécaud</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,ah-le-petit-vin-blanc,71969" target="_blank" rel="noopener">Ah le petit vin blanc</a></td>
@@ -123,7 +72,7 @@
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,ai-se-eu-te-pego,216219" target="_blank" rel="noopener">ai se eu te pego</a></td>
         <td>44</td>
-        <td>Michel Tel? (Portugais)</td>
+        <td>Michel Teló (Portugais)</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,l-aigle-noir,14766" target="_blank" rel="noopener">aigle noir L&#039;</a></td>
@@ -131,7 +80,7 @@
         <td>Barbara</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,aimer-a-perdre-la-raison,14731" target="_blank" rel="noopener">Aimer ? perdre la raison</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,aimer-a-perdre-la-raison,14731" target="_blank" rel="noopener">Aimer à perdre la raison</a></td>
         <td>293 / 1005</td>
         <td>Jean Ferrat</td>
       </tr>
@@ -166,7 +115,7 @@
         <td>Lady Gaga</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,l-amour-ca-fait-passer-le-temps,35665" target="_blank" rel="noopener">amour ?a fait passer le temps L&#039;</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,l-amour-ca-fait-passer-le-temps,35665" target="_blank" rel="noopener">amour ça fait passer le temps L&#039;</a></td>
         <td>191</td>
         <td>Marcel Amont</td>
       </tr>
@@ -191,12 +140,12 @@
         <td>Claude Nougaro</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,au-cafe-des-delices,15230" target="_blank" rel="noopener">Au Caf? des D?lices</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,au-cafe-des-delices,15230" target="_blank" rel="noopener">Au Café des Délices</a></td>
         <td>6</td>
         <td>Patrick Bruel</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,aupres-de-mon-arbre,14838" target="_blank" rel="noopener">Aupr?s de mon arbre</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,aupres-de-mon-arbre,14838" target="_blank" rel="noopener">Auprès de mon arbre</a></td>
         <td>293 / 2027</td>
         <td>Georges Brassens</td>
       </tr>
@@ -228,7 +177,7 @@
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,bahia,13648" target="_blank" rel="noopener">Bahia</a></td>
         <td>77</td>
-        <td>V?ronique Sanson</td>
+        <td>Véronique Sanson</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,la-ballade-de-jim,13637" target="_blank" rel="noopener">Ballade de Jim (La)</a></td>
@@ -238,7 +187,7 @@
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,la-ballade-des-gens-heureux,13586" target="_blank" rel="noopener">ballade des gens heureux La</a></td>
         <td>59</td>
-        <td>G?rard Lenorman</td>
+        <td>Gérard Lenorman</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,la-ballade-nord-irlandaise,13577" target="_blank" rel="noopener">Ballade Nord Irlandaise La</a></td>
@@ -288,7 +237,7 @@
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,belles-belles-belles,13681" target="_blank" rel="noopener">Belle Belle Belle</a></td>
         <td>4</td>
-        <td>Claude Fran?ois</td>
+        <td>Claude François</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,la-belle,51624" target="_blank" rel="noopener">Belle La</a></td>
@@ -336,17 +285,17 @@
         <td>Starmania</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,la-boheme,13539" target="_blank" rel="noopener">Boh?me La</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-boheme,13539" target="_blank" rel="noopener">Bohème La</a></td>
         <td>293 / 1066</td>
         <td>Charles Aznavour</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,la-bombe-humaine,13493" target="_blank" rel="noopener">Bombe Humaine La</a></td>
         <td>43</td>
-        <td>T?l?phone</td>
+        <td>Téléphone</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,la-bonne-du-cure,13471" target="_blank" rel="noopener">Bonne du Cur? La</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-bonne-du-cure,13471" target="_blank" rel="noopener">Bonne du Curé La</a></td>
         <td>74</td>
         <td>Annie Cordy</td>
       </tr>
@@ -376,14 +325,14 @@
         <td>Jean Ferrat</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,c-est-comme-ca-que-je-t-aime,14300" target="_blank" rel="noopener">C?est comme ?a que je t?aime</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,c-est-comme-ca-que-je-t-aime,14300" target="_blank" rel="noopener">C’est comme ça que je t’aime</a></td>
         <td>252</td>
         <td>Mike Brandt</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,c-est-extra,14275" target="_blank" rel="noopener">C&#039;est Extra</a></td>
         <td>253</td>
-        <td>L?o F?rr?</td>
+        <td>Léo Férré</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.net/eddy-mitchell/paroles-crest-la-vie-fais-la-belle-you-never-can-tell" target="_blank" rel="noopener">C&#039;est la vie, fais la belle</a></td>
@@ -396,12 +345,12 @@
         <td>Salvatore Adamo</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,c-est-un-mauvais-garcon,13885" target="_blank" rel="noopener">C&#039;est un mauvais gar?on</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,c-est-un-mauvais-garcon,13885" target="_blank" rel="noopener">C&#039;est un mauvais garçon</a></td>
         <td>3078</td>
         <td>Henri Garat</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,ca-je-ne-l-ai-jamais-vu,13820" target="_blank" rel="noopener">?a je ne l&#039;ai jamais vu</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,ca-je-ne-l-ai-jamais-vu,13820" target="_blank" rel="noopener">Ça je ne l&#039;ai jamais vu</a></td>
         <td>204</td>
         <td>graeme allwright</td>
       </tr>
@@ -431,29 +380,29 @@
         <td>Julien Clerc</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,celimene,12537" target="_blank" rel="noopener">C?limene</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,celimene,12537" target="_blank" rel="noopener">Célimene</a></td>
         <td>254</td>
         <td>David Martial</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,celine,12536" target="_blank" rel="noopener">C?line</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,celine,12536" target="_blank" rel="noopener">Céline</a></td>
         <td>255</td>
         <td>Hugues Aufray</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,cendrillon,72532" target="_blank" rel="noopener">Cendrillon</a></td>
         <td>10</td>
-        <td>T?l?phone</td>
+        <td>Téléphone</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,aux-champs-elysees,191566" target="_blank" rel="noopener">Champs ?lys?e Aux</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,aux-champs-elysees,191566" target="_blank" rel="noopener">Champs Élysée Aux</a></td>
         <td>206</td>
         <td>joe dassin</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,chanson-populaire,117633" target="_blank" rel="noopener">Chanson populaire</a></td>
         <td>61</td>
-        <td>Claude Fran?ois</td>
+        <td>Claude François</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,chanson-pour-l-auvergnat,12277" target="_blank" rel="noopener">Chanson pour l&#039;Auvergnat</a></td>
@@ -466,9 +415,9 @@
         <td>Renaud</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,drole-de-vie,226015" target="_blank" rel="noopener">Chanson sur ma dr?le de vie</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,drole-de-vie,226015" target="_blank" rel="noopener">Chanson sur ma drôle de vie</a></td>
         <td>288</td>
-        <td>V?ronique Sanson</td>
+        <td>Véronique Sanson</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.net/michel-fugain/paroles-chante-comme-si-tu-devais-mourir-demain" target="_blank" rel="noopener">Chante comme si tu devais</a></td>
@@ -478,7 +427,7 @@
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,le-chanteur-malheureux,126103" target="_blank" rel="noopener">Chanteur Malheureux (Le)</a></td>
         <td>29</td>
-        <td>Claude Fran?ois</td>
+        <td>Claude François</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,le-chasseur,12403" target="_blank" rel="noopener">Chasseur Le</a></td>
@@ -488,12 +437,12 @@
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,la-chenille,13158" target="_blank" rel="noopener">Chenille (la)</a></td>
         <td>258</td>
-        <td>La Bande ? Basile</td>
+        <td>La Bande à Basile</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,chevaliers-de-la-table-ronde,13127" target="_blank" rel="noopener">Chevalier de la table ronde</a></td>
         <td>3183</td>
-        <td>Chansons ? boire</td>
+        <td>Chansons à boire</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,la-chica-de-cuba,13075" target="_blank" rel="noopener">Chica de Cuba La</a></td>
@@ -516,14 +465,14 @@
         <td>The Beatles</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,les-comediens,12880" target="_blank" rel="noopener">Com?diens Les</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,les-comediens,12880" target="_blank" rel="noopener">Comédiens Les</a></td>
         <td>206 / 1072</td>
         <td>Charles Aznavour</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,comme-d-habitude,12898" target="_blank" rel="noopener">Comme d&#039;habitude</a></td>
         <td>60</td>
-        <td>Claude Fran?ois</td>
+        <td>Claude François</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,comme-toi,12859" target="_blank" rel="noopener">Comme toi</a></td>
@@ -533,7 +482,7 @@
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,comme-un-avion-sans-aile,12820" target="_blank" rel="noopener">Comme un avion sans ailes</a></td>
         <td>67</td>
-        <td>Charl?lie Couture</td>
+        <td>Charlélie Couture</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,comme-un-boomerang,12819" target="_blank" rel="noopener">Comme un Boomerang</a></td>
@@ -586,12 +535,12 @@
         <td>trad</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,derriere-l-amour,11412" target="_blank" rel="noopener">Derri?re l&#039;amour</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,derriere-l-amour,11412" target="_blank" rel="noopener">Derrière l&#039;amour</a></td>
         <td>207</td>
         <td>Johnny Hallyday</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,des-que-le-vent-soufflera,11369" target="_blank" rel="noopener">D?s que le vent soufflera</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,des-que-le-vent-soufflera,11369" target="_blank" rel="noopener">Dès que le vent soufflera</a></td>
         <td>207</td>
         <td>Renaud</td>
       </tr>
@@ -646,24 +595,24 @@
         <td>Kansas</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,elisa,11963" target="_blank" rel="noopener">?lisa</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,elisa,11963" target="_blank" rel="noopener">Élisa</a></td>
         <td>208</td>
         <td>Serge Gainsbourg</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,elle-etait-si-jolie,11881" target="_blank" rel="noopener">Elle ?tait si jolie</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,elle-etait-si-jolie,11881" target="_blank" rel="noopener">Elle était si jolie</a></td>
         <td>186</td>
-        <td>Alain Barri?re</td>
+        <td>Alain Barrière</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,elle-prefere-l-amour-en-mer,10576" target="_blank" rel="noopener">Elle pr?f?re l?amour en mer</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,elle-prefere-l-amour-en-mer,10576" target="_blank" rel="noopener">Elle préfère l’amour en mer</a></td>
         <td>34</td>
         <td>Philippe Lavil</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,emmene-moi-danser-ce-soir,10556" target="_blank" rel="noopener">emm?ne moi danser ce soir</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,emmene-moi-danser-ce-soir,10556" target="_blank" rel="noopener">emmène moi danser ce soir</a></td>
         <td>216/3127</td>
-        <td>Mich?le Torr</td>
+        <td>Michèle Torr</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,emmenez-moi,10555" target="_blank" rel="noopener">Emmenez-moi</a></td>
@@ -676,7 +625,7 @@
         <td>Michel Sardou</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,les-enfants-du-piree,10667" target="_blank" rel="noopener">enfants du Pir?e (Les)</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,les-enfants-du-piree,10667" target="_blank" rel="noopener">enfants du Pirée (Les)</a></td>
         <td>209</td>
         <td>Dalida</td>
       </tr>
@@ -696,7 +645,7 @@
         <td>Gilbert becaud</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.net/hoshi/paroles-et-meme-apres-je-t-aimerai" target="_blank" rel="noopener">Et m?me apr?s je t&#039;aimerai</a></td>
+        <td class="link"><a href="https://www.paroles.net/hoshi/paroles-et-meme-apres-je-t-aimerai" target="_blank" rel="noopener">Et même après je t&#039;aimerai</a></td>
         <td>244</td>
         <td>Hoshi</td>
       </tr>
@@ -706,7 +655,7 @@
         <td>Jacques Dutronc</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,et-mon-pere,10258" target="_blank" rel="noopener">Et mon p?re</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,et-mon-pere,10258" target="_blank" rel="noopener">Et mon père</a></td>
         <td>210</td>
         <td>Nicolas Peyrac</td>
       </tr>
@@ -721,22 +670,22 @@
         <td>joe dassin</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,l-ete,35055" target="_blank" rel="noopener">?t? (L&#039;) &quot;Lavilliers&quot;</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,l-ete,35055" target="_blank" rel="noopener">été (L&#039;) &quot;Lavilliers&quot;</a></td>
         <td>244</td>
         <td>Bernard Lavillier</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,eteins-la-lumiere,10235" target="_blank" rel="noopener">?teins la lumi?re</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,eteins-la-lumiere,10235" target="_blank" rel="noopener">Éteins la lumière</a></td>
         <td>292</td>
         <td>Axel Bauer</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,etoile-des-neiges,70987" target="_blank" rel="noopener">?toile des neiges</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,etoile-des-neiges,70987" target="_blank" rel="noopener">Étoile des neiges</a></td>
         <td>3014</td>
         <td>Line Renaud</td>
       </tr>
       <tr>
-        <td class="link"><a href="http://www.pdbzro.com/jargon/danses/valses/troubadours.html" target="_blank" rel="noopener">?toile des troubadours L&#039;</a></td>
+        <td class="link"><a href="http://www.pdbzro.com/jargon/danses/valses/troubadours.html" target="_blank" rel="noopener">étoile des troubadours L&#039;</a></td>
         <td>3011</td>
         <td>Roger Sy</td>
       </tr>
@@ -761,22 +710,22 @@
         <td>Michel Fugain</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,femme-liberee,10988" target="_blank" rel="noopener">Femme lib?r?e / The Passenger</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,femme-liberee,10988" target="_blank" rel="noopener">Femme libérée / The Passenger</a></td>
         <td>11</td>
         <td>Cookie Dingler / Iggy Pop</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,les-fiances-d-auvergne,11179" target="_blank" rel="noopener">fianc?s d&#039;Auvergne</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,les-fiances-d-auvergne,11179" target="_blank" rel="noopener">fiancés d&#039;Auvergne</a></td>
         <td>3003</td>
-        <td>Andr? Verchuren</td>
+        <td>André Verchuren</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,la-fille-du-coupeur-de-joints,11126" target="_blank" rel="noopener">Fille du coupeur de joints (La)</a></td>
         <td>77</td>
-        <td>Hubert F?lix Thi?faine</td>
+        <td>Hubert Félix Thiéfaine</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,la-fille-du-pere-noel,11118" target="_blank" rel="noopener">Fille du p?re No?l La</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-fille-du-pere-noel,11118" target="_blank" rel="noopener">Fille du père Noël La</a></td>
         <td>39</td>
         <td>Jacques dutronc</td>
       </tr>
@@ -858,7 +807,7 @@
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,la-grande-zoa,9681" target="_blank" rel="noopener">grande Zoa La</a></td>
         <td>196</td>
-        <td>R?gine</td>
+        <td>Régine</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,guantanamera,9644" target="_blank" rel="noopener">Guantanamera</a></td>
@@ -868,7 +817,7 @@
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,hallelujah,72224" target="_blank" rel="noopener">Hallelujah</a></td>
         <td>288</td>
-        <td>L?onard Cohen</td>
+        <td>Lèonard Cohen</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,hexagone,9305" target="_blank" rel="noopener">Hexagone</a></td>
@@ -913,7 +862,7 @@
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,hygiaphone,9384" target="_blank" rel="noopener">Hygiaphone</a></td>
         <td>40</td>
-        <td>T?l?phone</td>
+        <td>Téléphone</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,i-can-see-clearly-now,56134" target="_blank" rel="noopener">I Can See Clearly Now</a></td>
@@ -936,7 +885,7 @@
         <td>Johnny Hallyday</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,il-etait-une-fois-nous-deux,10062" target="_blank" rel="noopener">Il ?tait un fois nous deux</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,il-etait-une-fois-nous-deux,10062" target="_blank" rel="noopener">Il était un fois nous deux</a></td>
         <td>70</td>
         <td>Joe Dassin</td>
       </tr>
@@ -958,7 +907,7 @@
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,il-voyage-en-solitaire,9988" target="_blank" rel="noopener">Il voyage en solitaire</a></td>
         <td>206</td>
-        <td>G?rard Manset</td>
+        <td>Gérard Manset</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,imagine,56128" target="_blank" rel="noopener">Imagine</a></td>
@@ -966,9 +915,9 @@
         <td>John Lenon</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,l-important-c-est-la-rose,10178" target="_blank" rel="noopener">important c?est la rose L?</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,l-important-c-est-la-rose,10178" target="_blank" rel="noopener">important c’est la rose L’</a></td>
         <td>1082</td>
-        <td>Gilbert B?caud</td>
+        <td>Gilbert Bécaud</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,it-s-a-heartache,55614" target="_blank" rel="noopener">It&#039; s a heartache</a></td>
@@ -986,17 +935,17 @@
         <td>Johnny Hallyday</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,j-ai-oublie-de-vivre,9713" target="_blank" rel="noopener">J&#039;ai Oubli? de Vivre</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,j-ai-oublie-de-vivre,9713" target="_blank" rel="noopener">J&#039;ai Oubliè de Vivre</a></td>
         <td>54</td>
         <td>Johnny Hallyday</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,j-ai-rencontre-l-homme-de-ma-vie,9933" target="_blank" rel="noopener">J&#039;ai rencontr? l&#039;homme de ma vie</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,j-ai-rencontre-l-homme-de-ma-vie,9933" target="_blank" rel="noopener">J&#039;ai rencontré l&#039;homme de ma vie</a></td>
         <td>284</td>
         <td>Diane Dufresne</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,j-ai-un-probleme-en-duo-avec-johnny-hallyday,173826" target="_blank" rel="noopener">J&#039;ai un probl?me</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,j-ai-un-probleme-en-duo-avec-johnny-hallyday,173826" target="_blank" rel="noopener">J&#039;ai un problème</a></td>
         <td>213</td>
         <td>Johnny Hallyday</td>
       </tr>
@@ -1018,7 +967,7 @@
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,la-java-bleue,25041" target="_blank" rel="noopener">java bleue La</a></td>
         <td>3010</td>
-        <td>Fr?hel</td>
+        <td>Fréhel</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,la-java-de-broadway,25040" target="_blank" rel="noopener">java de Broadway La</a></td>
@@ -1031,7 +980,7 @@
         <td>Serge Gainsbourg</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,je-m-voyais-deja,70803" target="_blank" rel="noopener">Je m? voyais d?j?</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,je-m-voyais-deja,70803" target="_blank" rel="noopener">Je m’ voyais déjà</a></td>
         <td>215 / 1067</td>
         <td>Charles Aznavour</td>
       </tr>
@@ -1061,12 +1010,12 @@
         <td>Serge Gainsbourg</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,je-t-aime-a-la-folie,24702" target="_blank" rel="noopener">Je t&#039;aime ? la folie</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,je-t-aime-a-la-folie,24702" target="_blank" rel="noopener">Je t&#039;aime à la folie</a></td>
         <td>160</td>
         <td>Serge Lama</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,j-te-l-dis-quand-meme,24888" target="_blank" rel="noopener">Je te le dis quand m?me</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,j-te-l-dis-quand-meme,24888" target="_blank" rel="noopener">Je te le dis quand même</a></td>
         <td>160</td>
         <td>Patrick Bruel</td>
       </tr>
@@ -1106,7 +1055,7 @@
         <td>Rolling Stones</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,jusqu-a-la-ceinture,25156" target="_blank" rel="noopener">Jusqu?? la ceinture</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,jusqu-a-la-ceinture,25156" target="_blank" rel="noopener">Jusqu’à la ceinture</a></td>
         <td>8</td>
         <td>Graeme Allwright</td>
       </tr>
@@ -1158,10 +1107,10 @@
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,le-lundi-au-soleil,23970" target="_blank" rel="noopener">lundi au soleil Le</a></td>
         <td>28.1</td>
-        <td>Claude Fran?ois</td>
+        <td>Claude François</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,ma-preference,23561" target="_blank" rel="noopener">Ma Pr?f?rence</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,ma-preference,23561" target="_blank" rel="noopener">Ma Préférence</a></td>
         <td>2</td>
         <td>Julien Clerc</td>
       </tr>
@@ -1176,7 +1125,7 @@
         <td>Brigitte Bardot</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,la-maladie-d-amour,24404" target="_blank" rel="noopener">maladie d?amour La</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,la-maladie-d-amour,24404" target="_blank" rel="noopener">maladie d’amour La</a></td>
         <td>64</td>
         <td>Michel Sardou</td>
       </tr>
@@ -1196,9 +1145,9 @@
         <td>Sylvie Vartan</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,mediterraneenne,24106" target="_blank" rel="noopener">M?diterran?enne</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,mediterraneenne,24106" target="_blank" rel="noopener">Méditerranéenne</a></td>
         <td>286</td>
-        <td>Herv? Vilard</td>
+        <td>Hervé Vilard</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,mes-emmerdes,24289" target="_blank" rel="noopener">Mes emmerdes</a></td>
@@ -1206,7 +1155,7 @@
         <td>Charles Aznavour</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,le-meteque,24251" target="_blank" rel="noopener">m?t?que Le</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,le-meteque,24251" target="_blank" rel="noopener">métèque Le</a></td>
         <td>28</td>
         <td>Georges Moustaki</td>
       </tr>
@@ -1246,17 +1195,17 @@
         <td>Jean Ferra</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,les-moulins-de-mon-coeur,22505" target="_blank" rel="noopener">Moulins de mon c?ur (Les)</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,les-moulins-de-mon-coeur,22505" target="_blank" rel="noopener">Moulins de mon cœur (Les)</a></td>
         <td>293 /1016</td>
         <td>Michel Grand</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,mourir-sur-scene,22522" target="_blank" rel="noopener">Mourir sur sc?ne</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,mourir-sur-scene,22522" target="_blank" rel="noopener">Mourir sur scène</a></td>
         <td>278</td>
         <td>Dalida</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,les-murs-de-poussieres,101437" target="_blank" rel="noopener">murs de poussi?re</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,les-murs-de-poussieres,101437" target="_blank" rel="noopener">murs de poussière</a></td>
         <td>75</td>
         <td>Francis Cabrel</td>
       </tr>
@@ -1278,7 +1227,7 @@
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,new-york-avec-toi,23337" target="_blank" rel="noopener">New York avec toi</a></td>
         <td>38</td>
-        <td>T?l?phone</td>
+        <td>Téléphone</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,nini-peau-d-chien,68484" target="_blank" rel="noopener">Nini peau de chien</a></td>
@@ -1291,7 +1240,7 @@
         <td>Bob Marley</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,noel-interdit,23282" target="_blank" rel="noopener">No?l interdit</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,noel-interdit,23282" target="_blank" rel="noopener">Noël interdit</a></td>
         <td>285</td>
         <td>Johnny Hallyday</td>
       </tr>
@@ -1326,12 +1275,12 @@
         <td>Real Book</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,l-opportuniste,23152" target="_blank" rel="noopener">Opportuniste L?</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,l-opportuniste,23152" target="_blank" rel="noopener">Opportuniste L’</a></td>
         <td>223</td>
         <td>Jacques Dutronc</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,l-orage,23148" target="_blank" rel="noopener">Orage L?</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,l-orage,23148" target="_blank" rel="noopener">Orage L’</a></td>
         <td>224 / 2005</td>
         <td>Georges Brassens</td>
       </tr>
@@ -1356,7 +1305,7 @@
         <td>Julio Iglesias</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,le-penitencier,21686" target="_blank" rel="noopener">p?nitencier Le</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,le-penitencier,21686" target="_blank" rel="noopener">pénitencier Le</a></td>
         <td>264</td>
         <td>Johnny Hallyday</td>
       </tr>
@@ -1368,7 +1317,7 @@
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,le-petit-bonheur,21797" target="_blank" rel="noopener">petit bonheur</a></td>
         <td>213</td>
-        <td>F?lix Leclerc</td>
+        <td>Félix Leclerc</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,le-petit-pain-au-chocolat,22372" target="_blank" rel="noopener">petit pain au chocolat Le</a></td>
@@ -1376,14 +1325,14 @@
         <td>joe dassin</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,petit-papa-noel,70078" target="_blank" rel="noopener">Petit papa no?l</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,petit-papa-noel,70078" target="_blank" rel="noopener">Petit papa noël</a></td>
         <td>293</td>
         <td>Tino Rossi</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,les-petits-papiers,22266" target="_blank" rel="noopener">petits papiers Les</a></td>
         <td>227 / 1076</td>
-        <td>R?gine</td>
+        <td>Régine</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,piensa-en-mi,27403" target="_blank" rel="noopener">Piensa en mi</a></td>
@@ -1431,7 +1380,7 @@
         <td>Jeff Beck &amp; Beth Hart</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,quand-j-etais-chanteur,20893" target="_blank" rel="noopener">Quand j??tais chanteur</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,quand-j-etais-chanteur,20893" target="_blank" rel="noopener">Quand j’étais chanteur</a></td>
         <td>27</td>
         <td>Michel Delpech</td>
       </tr>
@@ -1446,7 +1395,7 @@
         <td>Johnny Hallyday</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,que-marianne-etait-jolie,20680" target="_blank" rel="noopener">Que Marianne ?tait jolie</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,que-marianne-etait-jolie,20680" target="_blank" rel="noopener">Que Marianne était jolie</a></td>
         <td>268 - 151</td>
         <td>Michel Delpech</td>
       </tr>
@@ -1498,7 +1447,7 @@
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,rum-et-coca-cola,220668" target="_blank" rel="noopener">Rum and Coca Cola</a></td>
         <td>75</td>
-        <td>Calypso Rose?</td>
+        <td>Calypso Rose </td>
       </tr>
       <tr>
         <td class="link"><a href="https://youtu.be/7T1P9kzM_go" target="_blank" rel="noopener">Runaway</a></td>
@@ -1506,7 +1455,7 @@
         <td>Del Shannon</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,jolie-bouteille,271938" target="_blank" rel="noopener">Sacr?e bouteille</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,jolie-bouteille,271938" target="_blank" rel="noopener">Sacrée bouteille</a></td>
         <td>239</td>
         <td>graeme allwright</td>
       </tr>
@@ -1556,7 +1505,7 @@
         <td>France Gall</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.letras.com/louane-emera/si-tetais-la/" target="_blank" rel="noopener">Si t&#039;?tais l?</a></td>
+        <td class="link"><a href="https://www.letras.com/louane-emera/si-tetais-la/" target="_blank" rel="noopener">Si t&#039;étais là</a></td>
         <td>150</td>
         <td>Louane</td>
       </tr>
@@ -1646,19 +1595,19 @@
         <td>The Blues Brothers</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,t-as-beau-pas-etre-beau,20047" target="_blank" rel="noopener">T?as beau pas ?tre beau</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,t-as-beau-pas-etre-beau,20047" target="_blank" rel="noopener">T’as beau pas être beau</a></td>
         <td>24</td>
         <td>Louis Chedid</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,ta-katie-t-a-quitte,20013" target="_blank" rel="noopener">Ta Katie t&#039;as quitt?</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,ta-katie-t-a-quitte,20013" target="_blank" rel="noopener">Ta Katie t&#039;as quitté</a></td>
         <td>254</td>
         <td>Boby Lapointe</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles-musique.com/paroles-Soft-Cell-Tainted-Love-lyrics,p63027" target="_blank" rel="noopener">Tainted Love</a></td>
         <td>130</td>
-        <td>Soft Cell?</td>
+        <td>Soft Cell </td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,tata-yoyo,19971" target="_blank" rel="noopener">Tata Yoyo</a></td>
@@ -1671,9 +1620,9 @@
         <td>Nino Ferrer</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,le-temps-des-cathedrales,70228" target="_blank" rel="noopener">temps des cath?drales</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,le-temps-des-cathedrales,70228" target="_blank" rel="noopener">temps des cathédrales</a></td>
         <td>266</td>
-        <td>Com?die Musicale</td>
+        <td>Comédie Musicale</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,another-brick-in-the-wall,139435" target="_blank" rel="noopener">The wall (Anoter brick in)</a></td>
@@ -1708,7 +1657,7 @@
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,toi-plus-moi,132349" target="_blank" rel="noopener">Toi + Moi</a></td>
         <td>68</td>
-        <td>Gr?goire</td>
+        <td>Grégoire</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,tombe-la-neige,18713" target="_blank" rel="noopener">Tombe la neige</a></td>
@@ -1723,7 +1672,7 @@
       <tr>
         <td class="link"><a href="https://www.paroles.net/ade/paroles-tout-savoir" target="_blank" rel="noopener">Tout Savoir</a></td>
         <td>76</td>
-        <td>Ad?</td>
+        <td>Adé</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,toutes-les-femmes-sont-belles,18489" target="_blank" rel="noopener">Toutes les femmes sont belles</a></td>
@@ -1741,7 +1690,7 @@
         <td>The Beatles</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,c-est-irreparable,71902" target="_blank" rel="noopener">Un an d&#039;amour (C&#039;est irr?parable)</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,c-est-irreparable,71902" target="_blank" rel="noopener">Un an d&#039;amour (C&#039;est irréparable)</a></td>
         <td>236</td>
         <td>Nino Ferrer</td>
       </tr>
@@ -1753,12 +1702,12 @@
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,un-autre-monde,19229" target="_blank" rel="noopener">Un autre monde</a></td>
         <td>69</td>
-        <td>T?l?phone</td>
+        <td>Téléphone</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,un-jour-mon-prince-viendra,19348" target="_blank" rel="noopener">Un jour mon Prince Viendra</a></td>
         <td>50</td>
-        <td>Elodie Fr?g?</td>
+        <td>Elodie Frégé</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,unchain-my-heart,66709" target="_blank" rel="noopener">Unchain my heart</a></td>
@@ -1783,7 +1732,7 @@
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,le-vent-nous-portera,17720" target="_blank" rel="noopener">vent nous portera Le</a></td>
         <td>13</td>
-        <td>Noir d?sir</td>
+        <td>Noir désir</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,la-vie-en-rose,17865" target="_blank" rel="noopener">vie en rose La</a></td>
@@ -1796,14 +1745,14 @@
         <td>Jean-Jacques Goldmann</td>
       </tr>
       <tr>
-        <td class="link"><a href="https://www.paroles.cc/chanson,les-vieux-maries,17779" target="_blank" rel="noopener">VieuxMari?s (Les)</a></td>
+        <td class="link"><a href="https://www.paroles.cc/chanson,les-vieux-maries,17779" target="_blank" rel="noopener">VieuxMariés (Les)</a></td>
         <td>145</td>
         <td>Michel Sardou</td>
       </tr>
       <tr>
         <td class="link"><a href="https://genius.com/Adele-when-we-were-young-lyrics" target="_blank" rel="noopener">When We were young</a></td>
         <td>125</td>
-        <td>Ad?le</td>
+        <td>Adèle</td>
       </tr>
       <tr>
         <td class="link"><a href="https://www.paroles.cc/chanson,wight-is-wight,17557" target="_blank" rel="noopener">Wight is Wight</a></td>
@@ -1850,8 +1799,9 @@
         <td>14</td>
         <td>Pierre Perret</td>
       </tr>
-  </tbody>
+</tbody>
 </table>
+
 <script>
 function filterTable() {
   const filter = document.getElementById("searchBar").value.toLowerCase();
@@ -1862,7 +1812,8 @@ function filterTable() {
   });
 }
 function clearSearch() {
-  document.getElementById("searchBar").value = "";
+  const input = document.getElementById("searchBar");
+  input.value = "";
   filterTable();
 }
 </script>
