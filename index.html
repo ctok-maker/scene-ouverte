@@ -3905,25 +3905,161 @@ searchInput.addEventListener(
   filterTable
 );
 
-function filterTable() {
-  const filter = searchInput.value
+
+/*
+ * Met le texte sous une forme comparable :
+ * - sans distinction entre majuscules et minuscules ;
+ * - sans accents ;
+ * - sans ponctuation ;
+ * - avec des espaces uniformisés.
+ */
+function normaliserTexte(texte) {
+  return (texte || "")
+    .toString()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[’'´]/g, " ")
+    .replace(/[^a-zA-Z0-9]+/g, " ")
     .toLowerCase()
-    .trim();
+    .trim()
+    .replace(/s+/g, " ");
+}
+
+
+/*
+ * Calcule le nombre minimal de lettres à ajouter,
+ * supprimer ou remplacer pour passer d'un mot à l'autre.
+ */
+function distanceLevenshtein(motA, motB) {
+  const longueurA = motA.length;
+  const longueurB = motB.length;
+
+  if (longueurA === 0) {
+    return longueurB;
+  }
+
+  if (longueurB === 0) {
+    return longueurA;
+  }
+
+  let lignePrecedente = [];
+
+  for (let j = 0; j <= longueurB; j++) {
+    lignePrecedente[j] = j;
+  }
+
+  for (let i = 1; i <= longueurA; i++) {
+    const ligneCourante = [i];
+
+    for (let j = 1; j <= longueurB; j++) {
+      const cout =
+        motA.charAt(i - 1) === motB.charAt(j - 1)
+          ? 0
+          : 1;
+
+      ligneCourante[j] = Math.min(
+        ligneCourante[j - 1] + 1,
+        lignePrecedente[j] + 1,
+        lignePrecedente[j - 1] + cout
+      );
+    }
+
+    lignePrecedente = ligneCourante;
+  }
+
+  return lignePrecedente[longueurB];
+}
+
+
+/*
+ * Tolérance orthographique :
+ * - 0 erreur pour un mot de 1 à 3 caractères ;
+ * - 1 erreur pour un mot de 4 à 5 caractères ;
+ * - 2 erreurs à partir de 6 caractères.
+ */
+function distanceMaximale(mot) {
+  if (mot.length <= 3) {
+    return 0;
+  }
+
+  if (mot.length <= 5) {
+    return 1;
+  }
+
+  return 2;
+}
+
+
+/*
+ * Vérifie si chaque mot recherché correspond à au moins
+ * un mot de la ligne, même avec une petite faute de frappe.
+ */
+function correspondanceSouple(recherche, texteLigne) {
+  if (!recherche) {
+    return true;
+  }
+
+  if (texteLigne.includes(recherche)) {
+    return true;
+  }
+
+  const motsRecherches = recherche.split(" ");
+  const motsLigne = texteLigne.split(" ");
+
+  return motsRecherches.every(function(motRecherche) {
+    const tolerance = distanceMaximale(motRecherche);
+
+    return motsLigne.some(function(motLigne) {
+      if (motLigne === motRecherche) {
+        return true;
+      }
+
+      if (
+        motRecherche.length >= 4 &&
+        (
+          motLigne.includes(motRecherche) ||
+          motRecherche.includes(motLigne)
+        )
+      ) {
+        return true;
+      }
+
+      return (
+        tolerance > 0 &&
+        distanceLevenshtein(
+          motRecherche,
+          motLigne
+        ) <= tolerance
+      );
+    });
+  });
+}
+
+
+function filterTable() {
+  const recherche = normaliserTexte(
+    searchInput.value
+  );
 
   document
     .querySelectorAll(
       "#dataTable tbody tr"
     )
     .forEach(function(row) {
-      const texteLigne =
-        row.innerText.toLowerCase();
+      const texteLigne = normaliserTexte(
+        row.innerText
+      );
 
       row.classList.toggle(
         "hidden",
-        !texteLigne.includes(filter)
+        !correspondanceSouple(
+          recherche,
+          texteLigne
+        )
       );
     });
 }
+
 
 function effacerRecherche() {
   searchInput.value = "";
