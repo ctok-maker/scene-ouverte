@@ -3982,7 +3982,7 @@ function distanceMaximale(mot) {
     return 0;
   }
 
-  if (mot.length <= 5) {
+  if (mot.length <= 7) {
     return 1;
   }
 
@@ -4051,11 +4051,14 @@ function correspondanceSouple(recherche, texteLigne) {
 
       /*
        * Tolérance orthographique limitée aux mots
-       * dont les longueurs sont suffisamment proches.
+       * de longueur proche et commençant par
+       * les deux mêmes lettres.
        */
       if (
         tolerance > 0 &&
         motLigne.length >= 4 &&
+        motRecherche.slice(0, 2) ===
+          motLigne.slice(0, 2) &&
         Math.abs(
           motRecherche.length -
           motLigne.length
