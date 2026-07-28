@@ -3992,7 +3992,15 @@ function distanceMaximale(mot) {
 
 /*
  * Vérifie si chaque mot recherché correspond à au moins
- * un mot de la ligne, même avec une petite faute de frappe.
+ * un mot de la ligne.
+ *
+ * La recherche accepte :
+ * - les accents, la casse et la ponctuation normalisés ;
+ * - le début d'un mot à partir de 3 caractères ;
+ * - une petite faute de frappe sur des mots de longueur proche.
+ *
+ * Elle évite qu'un mot long corresponde abusivement à
+ * une simple lettre présente dans la ligne.
  */
 function correspondanceSouple(recherche, texteLigne) {
   if (!recherche) {
@@ -4003,8 +4011,13 @@ function correspondanceSouple(recherche, texteLigne) {
     return true;
   }
 
-  const motsRecherches = recherche.split(" ");
-  const motsLigne = texteLigne.split(" ");
+  const motsRecherches = recherche
+    .split(" ")
+    .filter(Boolean);
+
+  const motsLigne = texteLigne
+    .split(" ")
+    .filter(Boolean);
 
   return motsRecherches.every(function(motRecherche) {
     const tolerance = distanceMaximale(motRecherche);
@@ -4014,23 +4027,49 @@ function correspondanceSouple(recherche, texteLigne) {
         return true;
       }
 
+      /*
+       * Recherche par début de mot :
+       * "bec" retrouve "becaud".
+       */
       if (
-        motRecherche.length >= 4 &&
-        (
-          motLigne.includes(motRecherche) ||
-          motRecherche.includes(motLigne)
-        )
+        motRecherche.length >= 3 &&
+        motLigne.startsWith(motRecherche)
       ) {
         return true;
       }
 
-      return (
+      /*
+       * Recherche à l'intérieur d'un mot,
+       * uniquement à partir de 4 caractères.
+       */
+      if (
+        motRecherche.length >= 4 &&
+        motLigne.includes(motRecherche)
+      ) {
+        return true;
+      }
+
+      /*
+       * Tolérance orthographique limitée aux mots
+       * dont les longueurs sont suffisamment proches.
+       */
+      if (
         tolerance > 0 &&
-        distanceLevenshtein(
-          motRecherche,
-          motLigne
+        motLigne.length >= 4 &&
+        Math.abs(
+          motRecherche.length -
+          motLigne.length
         ) <= tolerance
-      );
+      ) {
+        return (
+          distanceLevenshtein(
+            motRecherche,
+            motLigne
+          ) <= tolerance
+        );
+      }
+
+      return false;
     });
   });
 }
