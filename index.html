@@ -12288,15 +12288,24 @@ function correspondanceSouple(recherche, texteLigne, anneeLigne) {
 
   return motsRecherches.every(function(motRecherche) {
     /*
-     * Deux ou quatre chiffres désignent les décennies portant
-     * les deux derniers chiffres de la décennie cherchée.
-     * 2015 ou 10 retrouvent 1810-1819, 1910-1919, 2010-2019.
+     * Une décennie explicite à quatre chiffres (1910) reste
+     * limitée à son siècle : 1910-1919 seulement.
+     * Une autre année (2015) ou deux chiffres (10) retrouvent
+     * toutes les décennies portant cette fin : 1810, 1910, 2010.
      * Les autres nombres conservent leur correspondance exacte.
      */
     if (/^\d+$/.test(motRecherche)) {
       if (/^\d{4}$/.test(motRecherche)) {
-        return /^\d{4}$/.test(anneeLigne) &&
-          (Math.floor(Number(anneeLigne) / 10) * 10) % 100 ===
+        if (!/^\d{4}$/.test(anneeLigne)) {
+          return false;
+        }
+
+        if (Number(motRecherche) % 10 === 0) {
+          return Math.floor(Number(anneeLigne) / 10) ===
+            Number(motRecherche) / 10;
+        }
+
+        return (Math.floor(Number(anneeLigne) / 10) * 10) % 100 ===
           (Math.floor(Number(motRecherche) / 10) * 10) % 100;
       }
 
