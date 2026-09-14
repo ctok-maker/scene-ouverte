@@ -12190,6 +12190,54 @@ document
 
 
 /*
+ * Classe les titres par ordre alphabétique dans le navigateur.
+ * Le tri est insensible aux majuscules et aux accents.
+ */
+function trierTitresAlphabetiquement() {
+  const tbody = document.querySelector(
+    "#dataTable tbody"
+  );
+
+  if (!tbody) {
+    return;
+  }
+
+  const lignes = Array.from(
+    tbody.querySelectorAll("tr")
+  );
+
+  lignes.sort(function(ligneA, ligneB) {
+    const celluleA = ligneA.querySelector("td");
+    const celluleB = ligneB.querySelector("td");
+
+    const titreA = celluleA
+      ? celluleA.textContent.trim()
+      : "";
+
+    const titreB = celluleB
+      ? celluleB.textContent.trim()
+      : "";
+
+    return titreA.localeCompare(
+      titreB,
+      "fr",
+      {
+        sensitivity: "base",
+        numeric: true
+      }
+    );
+  });
+
+  lignes.forEach(function(ligne) {
+    tbody.appendChild(ligne);
+  });
+}
+
+
+trierTitresAlphabetiquement();
+
+
+/*
  * Met le texte sous une forme comparable :
  * - sans distinction entre majuscules et minuscules ;
  * - sans accents ;
