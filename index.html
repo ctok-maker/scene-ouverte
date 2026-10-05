@@ -498,6 +498,45 @@ body {
 
 
 
+#returnBtn {
+
+  position: fixed;
+
+  right: 16px;
+  bottom: 16px;
+
+  z-index: 1100;
+
+  padding: 11px 15px;
+
+  border: 2px solid #e91e63;
+  border-radius: 24px;
+
+  background: #ffffff;
+  color: #e91e63;
+
+  font-size: 1em;
+  font-weight: bold;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.22);
+
+  cursor: pointer;
+
+}
+
+
+
+#returnBtn:hover,
+#returnBtn:focus {
+
+  background: #e91e63;
+  color: #ffffff;
+
+}
+
+
+
 /**************************************************************
 
  * TABLEAU
@@ -23424,6 +23463,22 @@ tr.hidden {
 
 
 
+<button
+
+  id="returnBtn"
+
+  type="button"
+
+  aria-label="Retourner à l'accueil et annuler tous les filtres"
+
+  onclick="retourAccueil();">
+
+  ↩ Accueil
+
+</button>
+
+
+
 <script>
 
 
@@ -23438,11 +23493,21 @@ const modePublicite = true;
 
 
 
+let artisteSelectionne = "";
+
+
+
 searchInput.addEventListener(
 
   "input",
 
-  filterTable
+  function() {
+
+    artisteSelectionne = "";
+
+    filterTable();
+
+  }
 
 );
 
@@ -23916,6 +23981,26 @@ function filterTable() {
 
 
 
+      const boutonArtiste = row.querySelector(
+
+        ".artiste-bouton"
+
+      );
+
+
+
+      const artisteLigne = normaliserTexte(
+
+        boutonArtiste
+
+          ? boutonArtiste.dataset.artiste
+
+          : ""
+
+      );
+
+
+
       const langueCorrespond =
 
         langueChoisie === "toutes" ||
@@ -23934,11 +24019,27 @@ function filterTable() {
 
 
 
+      const artisteCorrespond =
+
+        !artisteSelectionne ||
+
+        artisteLigne === artisteSelectionne;
+
+
+
       row.classList.toggle(
 
         "hidden",
 
-        !(langueCorrespond && texteCorrespond)
+        !(
+
+          langueCorrespond &&
+
+          texteCorrespond &&
+
+          artisteCorrespond
+
+        )
 
       );
 
@@ -23952,7 +24053,19 @@ function filterTable() {
 
 function rechercherArtiste(artiste) {
 
-  searchInput.value = artiste || "";
+  artisteSelectionne = normaliserTexte(
+
+    artiste || ""
+
+  );
+
+
+
+  searchInput.value = "";
+
+
+
+  searchInput.blur();
 
 
 
@@ -23960,7 +24073,17 @@ function rechercherArtiste(artiste) {
 
 
 
-  searchInput.blur();
+  document
+
+    .getElementById("searchWrapper")
+
+    .scrollIntoView({
+
+      behavior: "smooth",
+
+      block: "start"
+
+    });
 
 }
 
@@ -23970,7 +24093,35 @@ function rechercherArtiste(artiste) {
 
 function effacerRecherche() {
 
+  retourAccueil();
+
+}
+
+
+
+function retourAccueil() {
+
+  artisteSelectionne = "";
+
   searchInput.value = "";
+
+
+
+  const toutesLesLangues =
+
+    document.getElementById("langue-toutes");
+
+
+
+  if (toutesLesLangues) {
+
+    toutesLesLangues.checked = true;
+
+  }
+
+
+
+  searchInput.blur();
 
 
 
@@ -23978,7 +24129,13 @@ function effacerRecherche() {
 
 
 
-  searchInput.focus();
+  window.scrollTo({
+
+    top: 0,
+
+    behavior: "smooth"
+
+  });
 
 }
 
